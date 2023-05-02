@@ -1,10 +1,22 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import { Box, Typography } from "@mui/material";
+import Head from "next/head";
+import React from "react";
 
-const login = () => {
+const Login = () => {
   return (
-    <Box>login</Box>
-  )
-}
+    <>
+      <Head>
+        <title>Login Page</title>
+        <meta name="description" content="Login Page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-export default login
+      <Box>
+        <Typography variant="h1">Login</Typography>
+      </Box>
+    </>
+  );
+};
+
+export default Login;
