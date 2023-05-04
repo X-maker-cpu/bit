@@ -99,7 +99,7 @@ const Signup = () => {
               }}>
             <Button type="submit" variant="contained" color="primary">Sign up</Button>
                     
-            <Button type="submit" variant="contained" color="primary" onClick={()=>router.push("/login")}>Login</Button>
+            <Button variant="contained" color="primary" onClick={()=>router.push("/login")}>Login</Button>
 
             </Box>
           </Box>

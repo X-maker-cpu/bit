@@ -62,6 +62,7 @@ function SignInSide() {
           xs={false}
           sm={4}
           md={7}
+          
           sx={{
             backgroundImage: 'url(https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ)',
             backgroundRepeat: 'no-repeat',
