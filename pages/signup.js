@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Paper,
-  Avatar,
-  Typography,
-  TextField,
-  Button,
-} from "@material-ui/core";
+import {Grid,Paper,Avatar,Typography,TextField,Button,} from "@material-ui/core";
 //import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
@@ -17,13 +10,15 @@ import Checkbox from "@material-ui/core/Checkbox";
 import { Box } from "@mui/material";
 import { useRouter } from 'next/router'
 
+
 const Signup = () => {
-  const paperStyle = { padding: "30px 20px", width: 300, margin: "20px auto" };
+  const paperStyle = { padding: "30px 20px", width: 500, margin: "20px auto", borderRadius:50 };
   const headerStyle = { margin: 0 };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
   const marginTop = { marginTop: 5 };
   const router = useRouter()
   return (
+    <div className="background-image">
     <Grid>
       <Paper elevation={20} style={paperStyle}>
         <Grid align="center">
@@ -38,25 +33,22 @@ const Signup = () => {
             fullWidth
             label="First Name"
             placeholder="First Name"
-            required
           />
           <TextField
             fullWidth
             label="Last Name"
             placeholder="Last Name"
-            required
           />
           <TextField
             fullWidth
             label="Email"
             placeholder="Enter your email"
-            required
+
           />
           <TextField
             fullWidth
             label=""
-            placeholder="Enter your email"
-            required
+            placeholder="Confirm email"
           />
           <FormControl component="fieldset" style={marginTop}>
             <FormLabel component="legend">Gender</FormLabel>
@@ -77,19 +69,16 @@ const Signup = () => {
             fullWidth
             label="Phone Number"
             placeholder="Enter your phone number"
-            required
           />
           <TextField
             fullWidth
             label="Password"
             placeholder="Enter your password"
-            required
           />
           <TextField
             fullWidth
             label="Confirm Password"
             placeholder="Confirm your password"
-            required
           />
           <FormControlLabel
             control={<Checkbox name="checkedA" />}
@@ -97,17 +86,27 @@ const Signup = () => {
           />
           <Box
             sx={{
-              gap: 12,
-              display: "flex"
+              gap: 15,
+              display: "grid",      
+                      placeitems: "center",
             }}
           >
+            <Box sx={{ gap: 35,
+              display: "flex",
+              alignItems: "center",
+              placeitems: "center",
+              justifyContents:"center"
+              }}>
             <Button type="submit" variant="contained" color="primary">Sign up</Button>
                     
             <Button type="submit" variant="contained" color="primary" onClick={()=>router.push("/login")}>Login</Button>
+
+            </Box>
           </Box>
         </form>
       </Paper>
     </Grid>
+    </div>
   );
 };
 
