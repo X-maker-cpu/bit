@@ -7,6 +7,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import SaveIcons from '@mui/icons-material/Save'
 
 const MyAccount = () => {
   return (
@@ -42,11 +43,23 @@ const MyAccount = () => {
     </Paper>
  
       </Box>
-      <Box component="form" sx={{p:'3px 5px',display:'grid',left:'20%',width:'100%',backgroundColor:'white'}}>
-        < Typography> Register</Typography>
-        < Typography>Sign Up</Typography>
-        < Typography>Sign Out</Typography>
-        < Typography>Help</Typography>
+      <Box component="form" sx={{p:'3px 5px',display:'grid', marginleft:'5px', left:'20%',width:'100%',backgroundColor:'white'}}>
+      <ul>
+        <li style={{
+          textDecorationColor:'grey',
+        
+        }}>Home</li>
+        <li>Personal info</li>
+        <li>Data & Privacy</li>
+        <li>Security</li>
+        <li>People and Sharing</li>
+        <li>Payments and Subscriptions</li>
+        <Divider/>
+        <br/>
+        <li>About</li>
+      </ul>
+     
+       
       </Box>
     </>
   );
