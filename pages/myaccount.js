@@ -43,7 +43,7 @@ const MyAccount = () => {
  
       </Box>
       <Box component="form" sx={{p:'3px 5px',display:'grid',left:'20%',width:'100%',backgroundColor:'white'}}>
-        < Typography> Register</Typography>
+        <Typography>Register</Typography>
         < Typography>Sign Up</Typography>
         < Typography>Sign Out</Typography>
         < Typography>Help</Typography>
