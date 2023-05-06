@@ -8,7 +8,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import SaveIcons from '@mui/icons-material/Save'
-
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import LockIcon from '@mui/icons-material/Lock';
+import InfoIcon from '@mui/icons-material/Info';
+import PhonelinkLockIcon from '@mui/icons-material/PhonelinkLock';
+import PeopleIcon from '@mui/icons-material/People';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import SettingsAccessibilityIcon from '@mui/icons-material/SettingsAccessibility';
 const MyAccount = () => {
   return (
     <>
@@ -47,16 +53,16 @@ const MyAccount = () => {
       <ul>
         <li style={{
           textDecorationColor:'grey',
-        
-        }}>Home</li>
-        <li>Personal info</li>
-        <li>Data & Privacy</li>
-        <li>Security</li>
-        <li>People and Sharing</li>
-        <li>Payments and Subscriptions</li>
-        <Divider/>
+           PersonOutlineIcon}}
+        >Home</li>
+        <li style={{ SettingsAccessibilityIcon }}>Personal info</li>
+        <li style={{PhonelinkLockIcon}}>Data & Privacy</li>
+        <li  style={{LockIcon}}>Security</li>
+        <li style={{PeopleIcon }}>People and Sharing</li>
+        <li style={{PaymentsIcon }}>Payments and Subscriptions</li>
+        <Divider sx={{lenth:'28',m:1,}} orientation='horizantal'/>
         <br/>
-        <li>About</li>
+        <li style={{InfoIcon}}>About</li>
       </ul>
      
        
