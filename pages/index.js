@@ -15,7 +15,14 @@ export default function Home() {
       </Head>
       <Box>
         <Typography variant="h1">Home Page</Typography>
+    
       </Box>
     </>
+  
   );
 }
+
+  
+  
+
+
