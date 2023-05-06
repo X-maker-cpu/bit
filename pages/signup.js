@@ -112,3 +112,6 @@ const Signup = () => {
 
 
 export default Signup;
+
+
+<Box sx={{marginLeft:5}}><Typography variant="body" color="text.secondary"></Typography></Box>
