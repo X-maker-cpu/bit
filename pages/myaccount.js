@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import Head from 'next/head';
 import React from 'react'
 import Paper from '@mui/material/Paper';
@@ -28,8 +28,7 @@ const MyAccount = () => {
       <Box>
 
     <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 500 , listitems: 'center',  }}
+      sx={{ p: '2px 4px',  width: 500 ,   }}
     >
       <IconButton sx={{ p: '10px' }} aria-label="menu">
         <MenuIcon />
@@ -49,21 +48,18 @@ const MyAccount = () => {
     </Paper>
  
       </Box>
-      <Box component="form" sx={{p:'3px 5px',display:'grid', marginleft:'5px', left:'20%',width:'100%',backgroundColor:'white'}}>
-      <ul>
-        <li style={{
-          textDecorationColor:'grey',
-           PersonOutlineIcon}}
-        >Home</li>
-        <li style={{ SettingsAccessibilityIcon }}>Personal info</li>
-        <li style={{PhonelinkLockIcon}}>Data & Privacy</li>
-        <li  style={{LockIcon}}>Security</li>
-        <li style={{PeopleIcon }}>People and Sharing</li>
-        <li style={{PaymentsIcon }}>Payments and Subscriptions</li>
+      <Box component="form" sx={{p:'3px 5px', marginleft:'5px', left:'20%',width:'100%',backgroundColor:'white'}}>
+      <Box>
+        <Button><PersonOutlineIcon/><a href='#'>Home</a></Button>
+        <Button> <SettingsAccessibilityIcon/><a>Personal info</a></Button>
+        <Button> <PhonelinkLockIcon/><a>Data & Privacy</a> </Button>
+        <Button> <LockIcon/><a href='#'>Security</a></Button>
+        <Button> <PeopleIcon/><a href='#'> People and Sharing</a></Button>
+        <Button> <PaymentsIcon/><a href='#'> Payments and Subscriptions</a></Button>
         <Divider sx={{lenth:'28',m:1,}} orientation='horizantal'/>
-        <br/>
-        <li style={{InfoIcon}}>About</li>
-      </ul>
+  
+        <Button> <InfoIcon/><a href='#'>About</a> </Button>
+      </Box>
      
        
       </Box>
