@@ -34,7 +34,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Your Website 
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -62,8 +62,9 @@ function SignInSide() {
           xs={false}
           sm={4}
           md={7}
+          
           sx={{
-            backgroundImage: 'url(https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ)',
+            backgroundImage: 'url(https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&w=600',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -79,11 +80,14 @@ function SignInSide() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              borderRadius:50,
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
+                  <Avatar
+  alt="Remy Sharp"
+  src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
+  sx={{ width: 500, height: 500 }}
+/>
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
@@ -127,12 +131,11 @@ function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link href="/signup" variant="body2"> {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              
             </Box>
           </Box>
         </Grid>
