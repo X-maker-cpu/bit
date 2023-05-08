@@ -11,8 +11,8 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 const Login = () => {
   return (
     <>
@@ -25,6 +25,7 @@ const Login = () => {
 
       <Box>
   <SignInSide></SignInSide>
+  <MyComponent></MyComponent>
       </Box>
     </>
   )}

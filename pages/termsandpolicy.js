@@ -2,7 +2,23 @@ import { Box } from '@mui/material'
 import React from 'react';
 import { Typography } from "@mui/material";
 import Avatar from '@mui/material/Avatar';
-
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import List from '@mui/material/List';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SendSharpIcon from '@mui/icons-material/SendSharp';
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+import CustomizableTextArea from './CustomizableTextArea';
 
 
 const termsandpolicy = () => {
@@ -120,11 +136,88 @@ For more details, please check out our cookie policy here.
 <Typography variant="h5" color="black"  fontFamily="serif">Governing Law</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If mandatory local law prohibits a dispute under this Agreement from being resolved by the courts of England and Wales, disputes can be brought in your local courts. If mandatory local law prohibits a local court from applying English law to a dispute under this Agreement, that dispute will be resolved according to the laws of your country of residence.</Typography></Box>
 <br/><br/><br/><br/>
-<Typography variant="h2" color="text.secondary" align="center" fontFamily="fantasy">Terms and conditions apply @BIT 2023</Typography>
+<Box sx={{
+    backgroundColor: 'grey',
+    color:'white',
 
-  
-    
-    </Box>
+    }}>
+  <footer style={{ display: 'flex', gap:30 }}>
+  <Avatar
+  alt="Remy Sharp"
+  src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"sx={{ width: 100, height: 100 }}/>
+        <div>
+        <Typography variant="h4" color="white"  fontFamily="serif">Programs</Typography>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Coding</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Web designing</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Mentorship</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Web designing</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Freelancing</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Graphic designing</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Social Business</Typography></Box>
+
+        </div>
+        <div>
+        <Typography variant="h4" color="white"  fontFamily="serif">Our Partners</Typography>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">SIR</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Xavier Project</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">German Cooperation</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Network for Humanitarian Action</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">UNHCR</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">DRC</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">JRC</Typography></Box>
+
+
+
+        </div>
+
+        <div>
+        <Typography variant="h4" color="white"  fontFamily="serif">Get involved</Typography>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Donate</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Volunteer</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Work with us</Typography></Box>
+        </div>
+
+        <div>
+        <Typography variant="h4" color="white"  fontFamily="serif">Reach us</Typography>
+        <List>
+  {['Facebook', 'Twitter', 'Github', 'Youtube', 'Instagram', 'Pinterest', 'LinkedIn', 'Telegram'].map((text, index) => (
+    <ListItem key={text} disablePadding>
+      <ListItemButton>
+        <ListItemIcon>
+          {index === 0 ? <FacebookRoundedIcon /> :
+           index === 1 ? <TwitterIcon /> :
+           index === 2 ? <GitHubIcon /> :
+           index === 3 ? <YouTubeIcon /> :
+           index === 4 ? <InstagramIcon /> :
+           index === 5 ? <PinterestIcon /> :
+           index === 6 ? <LinkedInIcon/> :
+           index === 7 ? <SendSharpIcon/> :
+
+           <MailIcon />}
+        </ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItemButton>
+    </ListItem>
+  ))}
+</List>
+        </div>
+
+<div>
+<div>
+      <CustomizableTextArea
+        value={text}
+        onChange={handleTextChange}
+        rows={4}
+        cols={30}
+        placeholder="Enter your text here"
+      />
+    </div>
+
+</div>
+  </footer>
+</Box>
+</Box>
+
   )
 }
 
