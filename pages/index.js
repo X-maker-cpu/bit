@@ -1,11 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Avatar, Box, Typography } from "@mui/material";
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
@@ -19,7 +15,13 @@ import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-
+import Typography from '@mui/material/Typography';
+import { Avatar } from '@mui/material';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
+import WhatshotRoundedIcon from '@mui/icons-material/WhatshotRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 
 const drawerWidth = 240;
 
@@ -36,28 +38,88 @@ function ResponsiveDrawer(props) {
       <Toolbar />
       <Divider />
       <List>
-         <ListItemButton>
-          <Box>home</Box>
-         </ListItemButton>
-         <ListItemButton>
-          <Box>popular</Box>
-         </ListItemButton>
-         <ListItemButton>
-          <Box>categories</Box>
-         </ListItemButton>
-         <ListItemButton>
-          <Box>favorite</Box>
-         </ListItemButton>
-         <ListItemButton>
-          <Box>your video</Box>
-         </ListItemButton>
+      {/* Home */}
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <HomeRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Home"} />
+            </ListItemButton>
+          </ListItem>
+       {/* Popular */}
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <WhatshotRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Popular"} />
+            </ListItemButton>
+          </ListItem>
+          {/* Categories */}
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <FormatListBulletedRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Categiries"} />
+            </ListItemButton>
+          </ListItem>
+          {/* Favarites */}
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <FavoriteRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Favarites"} />
+            </ListItemButton>
+          </ListItem>
+          {/* Your videos */}
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <VideocamRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Your videos"} />
+            </ListItemButton>
+          </ListItem>
       </List>
-      <body>SUBSCRIPTIONS</body>
+      <Box sx={{
+        alignItems:"center",
+        justifyContent:"center" }}>SUBSCRIPTIONS</Box>
       <List>
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2mHjhf_0E2RUH8SXrVaw-FPJ6whDt7awjQ&usqp=CAU"></Avatar>
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"></Avatar>
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIowiTvupIDXVcDEnmpeWkig90a4kXRgwW8g&usqp=CAU"></Avatar>
-        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6aFkmK5B0Zw_udaEn6Z9hLJ17h0l2gm43jw&usqp=CAU"></Avatar>
+        <ListItemButton>
+          <ListItemIcon>
+          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </ListItemIcon>
+          <ListItemText primary="NATHANAEL"/>
+       </ListItemButton>
+       <ListItemButton>
+          <ListItemIcon>
+          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </ListItemIcon>
+          <ListItemText primary="ABDIZO"/>
+        </ListItemButton>
+        <ListItemButton>
+          <ListItemIcon>
+          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU" ></Avatar>
+          </ListItemIcon>
+          <ListItemText primary="SUNDAY"/>
+        </ListItemButton>
+        <ListItemButton>
+          <ListItemIcon>
+          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </ListItemIcon>
+          <ListItemText primary="ISTARLIN"/>
+        </ListItemButton>
+        <ListItemButton>
+          <ListItemIcon>
+          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </ListItemIcon>
+          <ListItemText primary="EDOUIGE"/>
+        </ListItemButton>
+      
+       
       </List>
     </div>
   );
@@ -72,6 +134,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          bgcolor: "red"
         }}
       >
         <Toolbar>
@@ -127,31 +190,10 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar />
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
+         
         </Typography>
         <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
+          
         </Typography>
       </Box>
     </Box>
@@ -166,18 +208,4 @@ ResponsiveDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Bit</title>
-        <meta name="description" content="Generated by create next app" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Box>
-           <ResponsiveDrawer/>
-      </Box>
-    </>
-  );
-}
+export default ResponsiveDrawer;
