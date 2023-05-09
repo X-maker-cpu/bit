@@ -32,11 +32,11 @@ const MyAccount = () => {
         <Paper
           sx={{ p: '2px 4px', width: 500,display:'absolute',position:'center' }}
         >
-          <IconButton sx={{ p: '10px' }} aria-label="menu">
+          <IconButton sx={{ p: '10px',borderBlockColor:'darkcyan' }} aria-label="menu">
             <MenuIcon />
           </IconButton>
           <InputBase
-            sx={{ ml: 1, flex: 1,position:'center' }}
+            sx={{ ml: 1, flex: 1,position:'center',borderBlockColor:"darkkhaki" }}
             placeholder="Search Google Account "
             inputProps={{ 'aria-label': 'search google maps' }}
             
@@ -63,7 +63,7 @@ const MyAccount = () => {
           <br/>
           <Typography> <PaymentsIcon /> Payments and Subscriptions</Typography>
           <br/>
-          <Divider sx={{ lenth: '28', m: 1, }} orientation='horizantal' />
+          <Divider sx={{ lenth: '50', m: 1,borderBlockColor:'darkred', }} orientation='horizantal' />
 
           <Typography> <InfoIcon />About </Typography>
         </Box>
