@@ -211,12 +211,12 @@ function ResponsiveDrawer(props) {
         <Toolbar />
 
 
-        <Box>
+        {/* <Box>
           
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
         
-          </Box>
+          </Box> */}
 
           
           <Box >
@@ -296,11 +296,11 @@ function ResponsiveDrawer(props) {
       <Box sx={{
         display:"flex"
       }} >
-      <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
+      {/* <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          
+           */}
       </Box>
       
       <Box sx={{
@@ -394,18 +394,13 @@ export default ResponsiveDrawer;
 
 
 
-const MyVideo =(props)=>{  
-  return(
-    <iframe  src={props.src} width={400} height={200} Padding={200}>
+// const MyVideo =(props)=>{  
+//   return(
+//     <iframe  src={props.src} width={400} height={200} Padding={200}>
      
-    </iframe>
-
-
-  
-    // <video controls width="70%" className="videoPlayer" src={{props}}></video>
-   )
+//     </iframe>)
    
-}
+// }
 
 
 const Search = styled('div')(({ theme }) => ({
