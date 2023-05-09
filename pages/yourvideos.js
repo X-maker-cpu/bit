@@ -246,7 +246,6 @@ return (
       width: '100%', 
       bgcolor: 'white'
       }}>
-        <Video src={vidBg}/>
       <Box></Box>
       <Box></Box>
     </Box>
