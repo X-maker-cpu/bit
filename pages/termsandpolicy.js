@@ -30,6 +30,9 @@ const termsandpolicy = () => {
 />
 <Typography variant="h2" color="text.secondary" align="center" fontFamily="fantasy">BIT  Terms and Policies</Typography>
 </Box>
+<Box sx={{
+  paddingLeft: 8
+}}>
 <Typography variant="h4" color="black" fontFamily="serif"  >1. Terms of service:</Typography>
 
 <Box sx={{marginLeft:9}}>
@@ -141,6 +144,7 @@ For more details, please check out our cookie policy here.
 <Typography variant="h4" color="black"  fontFamily="serif">21. Governing Law</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If mandatory local law prohibits a dispute under this Agreement from being resolved by the courts of England and Wales, disputes can be brought in your local courts. If mandatory local law prohibits a local court from applying English law to a dispute under this Agreement, that dispute will be resolved according to the laws of your country of residence.</Typography></Box>
 <br/><br/><br/><br/>
+</Box>
 <Box sx={{
     backgroundColor: '#808080',
     color:'white',
@@ -215,4 +219,4 @@ For more details, please check out our cookie policy here.
   )
 }
 
-export default termsandpolicy
+export default termsandpolicy;
