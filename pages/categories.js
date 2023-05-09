@@ -20,6 +20,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -56,7 +57,7 @@ function ResponsiveDrawer(props) {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CategoryIcon />
+              <FormatListBulletedIcon />
             </ListItemIcon>
             <ListItemText primary={"categories"} />
           </ListItemButton>
