@@ -11,14 +11,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import List from '@mui/material/List';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SendSharpIcon from '@mui/icons-material/SendSharp';
-import TextareaAutosize from '@mui/base/TextareaAutosize';
-import CustomizableTextArea from './CustomizableTextArea';
+// import CustomizableTextArea from './CustomizableTextArea';
 
 
 const termsandpolicy = () => {
@@ -63,12 +61,12 @@ const termsandpolicy = () => {
 <Box sx={{marginLeft:9}}>
 <Typography variant="h6" color="text.secondary" fontFamily="serif">
  The Internet pages of BIT use cookies. Cookies are text files that are stored in a computer system via an Internet browser.
-<br/>
+ <br/><br/><br/>
 For more details, please check out our cookie policy here.
 </Typography>
 </Box>
 <Typography variant="h5" color="black"  fontFamily="serif">Collection of general data and Information</Typography>
-<br/>
+<br/><br/><br/>
 <Box sx={{marginLeft:9}}><Typography variant="h6" color="text.secondary" fontFamily="serif">The website of BIT collects a series of general data and information when a data subject or automated system calls up the website. This general data and information are stored in the server log files. Collected may be (1) the browser types and versions used, (2) the operating system used by the accessing system, (3) the website from which an accessing system reaches our website (so-called referrers), (4) the sub-websites, (9) the date and time of access to the Internet site, (6) an Internet protocol address (IP address), (7) the Internet service provider of the accessing system, and (8) any other similar data and information that may be used in the event of attacks on our information technology systems.</Typography></Box>
 <br/>
 <Box sx={{marginLeft:9}}><Typography variant="h6" color="text.secondary" fontFamily="serif">When using these general data and information, the Controller does not draw any conclusions about the data subject. Rather, this information is needed to (1) deliver the content of our website correctly, (2) optimize the content of our website as well as its advertisement, (3) ensure the long-term viability of our information technology systems and website technology, and (4) provide law enforcement authorities with the information necessary for criminal prosecution in case of a cyber-attack. Therefore, the Controller analyzes anonymously collected data and information statistically, with the aim of increasing the data protection and data security of our enterprise, and to ensure an optimal level of protection for the personal data we process. The anonymous data of the server log files are stored separately from all personal data provided by a data subject</Typography></Box>
@@ -86,24 +84,29 @@ For more details, please check out our cookie policy here.
 <Typography variant="h5" color="black"  fontFamily="serif">Who may use BIT?</Typography>
 <Typography variant="h6" color="text.secondary" >Age requirement</Typography>
 <Box sx={{marginLeft:9}}><Typography variant="h6" color="text.secondary" fontFamily="serif">You may use the Service if you are at least 13 years old; however, children of all ages may use the Service and BIT Kids (where available) if enabled by a parent or legal guardian</Typography></Box>
-<br/><br/><br/><br/><br/>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="serif">Permission by Parent or Guardian</Typography>
 <Box sx={{marginLeft:10}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If you are under 18, you must have your parent or legal guardian’s permission to use the Service. Please have them read this Agreement with you.If you are a parent or legal guardian of a user under the age of 18, by allowing your child to use the Service, you are subject to the terms of this Agreement and responsible for your child’s activity on the Service. You can find tools and resources to help you manage your family’s experience on BIT (including how to enable a child under the age of 13 to use the Service and BIT Kids) in our Help Center and through Google’s Family Link</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="serif">Businesses</Typography>
 <Box sx={{marginLeft:9}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If you are using the Service on behalf of a company or organisation, you confirm to us that you have authority to act on behalf of that entity, and that entity accepts this Agreement.</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="serif">Your Use of the Service</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">The content on the Service includes videos, audio (for example music and other sounds), graphics, photos, text (such as comments and scripts), branding (including trade names, trademarks, service marks, or logos), interactive features, software, metrics, and other materials whether provided by you, BIT or a third party (collectively, "Content”). Content may be provided to the Service and distributed by our users and BIT is a provider of hosting services for such Content. Content is the responsibility of the person or entity that provides it to the Service. If you see any Content you believe does not comply with this Agreement, such as by violating the Community Guidelines or the law, you can report it to us.</Typography></Box>
  <br/>
  <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">We will process any audio or audiovisual content uploaded by you to the Service in accordance with the BIT Data Processing Terms, except in cases where you uploaded such content for personal purposes or household activities. Learn More.</Typography></Box>
 <br/>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary">Our Privacy Policy explains how we treat your personal data and protect your privacy when you use the Service. The BIT Kids Privacy Notice provides additional information about our privacy practices that are specific to BIT Kids</Typography></Box>
-<br/>
+
 <Typography variant="h5" color="black"  fontFamily="serif">Permissions and Restrictions</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">You may access and use the Service as made available to you, as long as you comply with this Agreement and the law. You may view or listen to Content for your personal, non-commercial use. You may also show BIT videos through the embeddable BIT player.</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="serif">Reservation</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">Any right not expressly granted to you in this Agreement remains the right of BIT or the respective rights holders. This means, for example, that using the Service does not give you ownership of any intellectual property rights in the Content you access (including any branding used on or displayed in the Service).</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="">Develop, Improve and Update the Service</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">BIT is constantly changing and improving the Service. As part of this continual evolution, we may make modifications (to all or part of the Service) such as adding or removing features and functionalities, offering new digital content or services or discontinuing old ones.We may also need to alter or discontinue the Service, or any part of it, in order to make performance or security improvements, make changes to comply with law, or prevent illegal activities on or abuse of our systems. These changes may affect all users, some users or even an individual user. When the Service requires or includes downloadable software (such as the BIT Studio application), that software may update automatically on your device once a new version or feature is available, subject to your device settings. If we make material changes that negatively impact your use of the Service, we’ll provide you with reasonable advance notice, except in urgent situations such as preventing abuse, responding to legal requirements, or addressing security and operability issues. We’ll also provide you with an opportunity to export your content from your Google Account using Google Takeout, subject to applicable law and policies</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black">Your Content and Conduct</Typography>
 <Typography variant="h6" color="text.secondary"  fontFamily="serif">Uploading Content</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If you have a BIT channel, you may be able to upload Content to the Service. You may use your Content to promote your business or artistic enterprise. If you choose to upload Content, you must not submit to the Service any Content that does not comply with this Agreement or the law. For example, the Content you submit must not include third-party intellectual property (such as copyrighted material) unless you have permission from that party or are otherwise legally entitled to do so. You are legally responsible for the Content you submit to the Service. We may use automated systems that analyze your Content to help detect infringement and abuse, such as spam, malware, and illegal content.</Typography></Box>
@@ -113,8 +116,10 @@ For more details, please check out our cookie policy here.
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">By providing Content to the Service, you grant to BIT a worldwide, non-exclusive, royalty-free, transferable, sublicensable licence to use that Content (including to reproduce, distribute, modify, display and perform it) for the purpose of operating, promoting, and improving the Service.</Typography></Box>
 <Typography variant="h6" color="black"  fontFamily="serif">Removing Your Content</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">You may remove your Content from the Service at any time. You also have the option to make a copy of your Content before removing it. You must remove your Content if you no longer have the rights required by these terms</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="serif">Removal of Content By BIT</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If we reasonably believe that any of your Content (1) is in breach of this Agreement or (2) may cause harm to BIT, our users, or third parties, we reserve the right to remove or take down some or all of such Content. We will notify you with the reason for our action unless we reasonably believe that to do so: (a) would violate the law or the direction of a legal enforcement authority, or would otherwise risk legal liability for BIT or our Affiliates; (b) would compromise an investigation or the integrity or operation of the Service; or (c) would cause harm to any user, other third party, BIT or our Affiliates. You can learn more about reporting and enforcement, including how to appeal on the Troubleshooting page of our Help Center.</Typography></Box>
+<br/><br/><br/>
 <Typography variant="h5" color="black"  fontFamily="serif">Copyright Protection</Typography>
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">We provide information to help copyright holders manage their intellectual property online in our BIT Copyright Center. If you believe your copyright has been infringed on the Service, please send us a notice</Typography></Box>
 <br/><br/><br/>
@@ -137,14 +142,14 @@ For more details, please check out our cookie policy here.
 <Box sx={{marginLeft:5}}><Typography variant="h6" color="text.secondary" fontFamily="serif">If mandatory local law prohibits a dispute under this Agreement from being resolved by the courts of England and Wales, disputes can be brought in your local courts. If mandatory local law prohibits a local court from applying English law to a dispute under this Agreement, that dispute will be resolved according to the laws of your country of residence.</Typography></Box>
 <br/><br/><br/><br/>
 <Box sx={{
-    backgroundColor: 'grey',
+    backgroundColor: '#808080',
     color:'white',
 
     }}>
-  <footer style={{ display: 'flex', gap:30 }}>
+  <footer style={{ display: 'flex', gap:100 }}>
   <Avatar
   alt="Remy Sharp"
-  src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"sx={{ width: 100, height: 100 }}/>
+  src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"sx={{ width: 150, height: 150 }}/>
         <div>
         <Typography variant="h4" color="white"  fontFamily="serif">Programs</Typography>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Coding</Typography></Box>
@@ -175,6 +180,8 @@ For more details, please check out our cookie policy here.
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Donate</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Volunteer</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Work with us</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">What we do</Typography></Box>
+        <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Sponsorship</Typography></Box>
         </div>
 
         <div>
@@ -200,21 +207,11 @@ For more details, please check out our cookie policy here.
     </ListItem>
   ))}
 </List>
-        </div>
-
-<div>
-<div>
-      <CustomizableTextArea
-        value={text}
-        onChange={handleTextChange}
-        rows={4}
-        cols={30}
-        placeholder="Enter your text here"
-      />
-    </div>
-
 </div>
-  </footer>
+
+</footer>
+<Typography variant="h3" color="black"  fontFamily="fantasy" align="center">Where Entertainment Knows No Boundaries  @BIT2023</Typography>
+
 </Box>
 </Box>
 

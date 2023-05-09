@@ -25,7 +25,6 @@ const Login = () => {
 
       <Box>
   <SignInSide></SignInSide>
-  <MyComponent></MyComponent>
       </Box>
     </>
   )}
