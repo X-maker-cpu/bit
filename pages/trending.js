@@ -24,6 +24,9 @@ import { Badge } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
+
+
+
 import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
 
@@ -145,6 +148,9 @@ function ResponsiveDrawer(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
+
+
+
         // position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -210,8 +216,8 @@ function ResponsiveDrawer(props) {
 
         <Box>
           
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
+          <MyVideo src=""/>
+          <MyVideo src=""/>
         
           </Box>
 
@@ -293,10 +299,10 @@ function ResponsiveDrawer(props) {
       <Box sx={{
         display:"flex"
       }} >
-      <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
+      <MyVideo src=""/>
+          <MyVideo src=""/>
+          <MyVideo src=""/>
+          <MyVideo src=""/>
           
       </Box>
       
@@ -322,9 +328,11 @@ function ResponsiveDrawer(props) {
 
                 <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
                 <ListItemText primary="diclot" />
-       
+       <Box>
                 <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
                 <ListItemText primary="diclot" />
+                <Typography>my photo</Typography>
+                </Box>
       </Box>
 
   

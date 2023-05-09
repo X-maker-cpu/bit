@@ -1,9 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Box, Typography } from "@mui/material";
+import React from "react";
 
+<<<<<<< HEAD
 export default function Home() {
   return (
     <>
@@ -26,3 +23,10 @@ export default function Home() {
   
 
 
+=======
+const Home = () => {
+  return <div><h1>homePage</h1></div>;
+};
+
+export default Home;
+>>>>>>> e9c7b41ed51d831b1d5b3dd00edf61c09316793d

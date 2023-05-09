@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}.background-image {
+  background-image: url('https://www.pixelstalk.net/wp-content/uploads/images1/Grid-Backgrounds-HD.png');
+  background-size: cover;
+ 
+  background-repeat: no-repeat;
+}
