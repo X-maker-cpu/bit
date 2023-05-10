@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Badge from '@mui/material/Badge';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
@@ -90,31 +91,83 @@ function ResponsiveDrawer(props) {
       <List>
         <ListItemButton>
           <ListItemIcon>
+          <Badge color="success"
+              overlap="circular"
+              badgeContent=""
+              variant="dot"
+              anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+              width:"50",
+              height:"50",
+              }}
+              >
           <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </Badge>
           </ListItemIcon>
           <ListItemText primary="NATHANAEL"/>
        </ListItemButton>
        <ListItemButton>
           <ListItemIcon>
+          <Badge color="success"
+              overlap="circular"
+              badgeContent=""
+              variant="dot"
+              anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+              }}
+              >
           <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </Badge>
           </ListItemIcon>
           <ListItemText primary="ABDIZO"/>
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
+          <Badge color="success"
+              overlap="circular"
+              badgeContent=""
+              variant="dot"
+              anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+              }}
+              >
           <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU" ></Avatar>
+          </Badge>
           </ListItemIcon>
           <ListItemText primary="SUNDAY"/>
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
-          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          <Badge color="success"
+              overlap="circular"
+              badgeContent=""
+              variant="dot"
+              anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+              }}
+              >
+             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </Badge>
           </ListItemIcon>
           <ListItemText primary="ISTARLIN"/>
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
-          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            <Badge color="success"
+              overlap="circular"
+              badgeContent=""
+              variant="dot"
+              anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+              }}
+              >
+             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+             </Badge>
           </ListItemIcon>
           <ListItemText primary="EDOUIGE"/>
         </ListItemButton>
