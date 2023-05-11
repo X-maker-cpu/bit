@@ -8,9 +8,7 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import CategoryIcon from '@mui/icons-material/Category';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import SwitchVideoIcon from '@mui/icons-material/SwitchVideo';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -20,8 +18,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
-const drawerWidth = 240;
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import Badge from '@mui/material/Badge';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
 
+
+const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
