@@ -55,23 +55,8 @@ function SignInSide() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          
-          sx={{
-            backgroundImage: 'url(https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&w=600',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -80,7 +65,9 @@ function SignInSide() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              borderRadius:50,
+              backgroundRepeat: "no-repeat",
+              backgroundSize:"cover",
+              backgroundImage: 'url(https://as2.ftcdn.net/v2/jpg/01/97/01/75/1000_F_197017515_JwWuH6ws0lCz8OWpI4ey7cGDdl9dlq9u.jpg)'
             }}
           >
                   <Avatar
@@ -88,10 +75,10 @@ function SignInSide() {
   src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
   sx={{ width: 500, height: 500 }}
 />
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" fontFamily="serif" >
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} color="black">
               <TextField
                 margin="normal"
                 required
@@ -139,8 +126,7 @@ function SignInSide() {
             </Box>
           </Box>
         </Grid>
-      </Grid>
-    </ThemeProvider>
+      </ThemeProvider>
   );
 }
 ;
