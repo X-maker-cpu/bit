@@ -22,7 +22,11 @@ const Signup = () => {
     <Grid>
       <Paper elevation={20} style={paperStyle}>
         <Grid align="center">
-          <Avatar style={avatarStyle}></Avatar>
+        <Avatar
+  alt="Remy Sharp"
+  src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
+  sx={{ width: 500, height: 500 }}
+/>
           <h2 style={headerStyle}>Sign Up</h2>
           <Typography variant="caption" gutterBottom>
             Please fill this form to create an account !
@@ -112,6 +116,3 @@ const Signup = () => {
 
 
 export default Signup;
-
-
-<Box sx={{marginLeft:5}}><Typography variant="body" color="text.secondary"></Typography></Box>
