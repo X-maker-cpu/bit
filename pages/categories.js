@@ -20,14 +20,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
-
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-       
-
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -53,19 +45,20 @@ function ResponsiveDrawer(props) {
             <ListItemText primary={"Home"} />
           </ListItemButton>
         </ListItem>
+        
         {/*  trending*/}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <WhatshotIcon />
             </ListItemIcon>
-            <ListItemText primary={"popular"} />
+            <ListItemText primary={"Popular"} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CategoryIcon />
+              <FormatListBulletedIcon />
             </ListItemIcon>
             <ListItemText primary={"categories"} />
           </ListItemButton>
@@ -75,13 +68,13 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <FavoriteIcon />
             </ListItemIcon>
-            <ListItemText primary={"favourites"} />
+            <ListItemText primary={"Favourites"} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <SwitchVideoIcon />
+              <VideocamIcon />
             </ListItemIcon>
             <ListItemText primary={"Your videos"} />
           </ListItemButton>
@@ -93,10 +86,11 @@ function ResponsiveDrawer(props) {
       <List>
       <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
-              <Avatar/>
+            <ListItemIcon>  
+            <Badge color="success" variant="dot">
+            <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+          </Badge>
             </ListItemIcon>
-          
             <ListItemText primary={"Yoga with Kim"} />
           </ListItemButton>
         </ListItem>
@@ -105,7 +99,8 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Avatar src="https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"/>
+          
             </ListItemIcon>
           
             <ListItemText primary={"Books Review"} />
@@ -116,7 +111,9 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Badge color="success" variant="dot">
+            <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+          </Badge>
             </ListItemIcon>
           
             <ListItemText primary={"Brittary Bathgats"} />
@@ -127,7 +124,7 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
           
             <ListItemText primary={"GingerDog"} />
@@ -138,7 +135,7 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Avatar src="https://images.pexels.com/photos/3454298/pexels-photo-3454298.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
           
             <ListItemText primary={"Asian Recipies"} />
@@ -151,8 +148,17 @@ function ResponsiveDrawer(props) {
     backgroundColor:"whitesmoke"
   }}> 
     <Typography variant="body1" fontWeight={700} >Get 3 months of premium for free</Typography>
-    <Typography variant="caption">Enjoy ad-free content,offline watching and more</Typography>
+    <Typography variant="body2">Enjoy ad-free content,offline watching and more</Typography>
+  </Box>
+  <Box sx={{
+    borderRadius:20,
+    border: '2px solid green',
+    backgroundColor: "black",
+    padding: 1,
     
+  }}>
+  <Typography variant="h5" color="green" alignItems="center">GET PREMIUM</Typography>
+
   </Box>
     </div>
   );
