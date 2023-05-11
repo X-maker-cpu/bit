@@ -67,7 +67,9 @@ function SignInSide() {
               alignItems: 'center',
               backgroundRepeat: "no-repeat",
               backgroundSize:"cover",
-              backgroundImage: 'url(https://as2.ftcdn.net/v2/jpg/01/97/01/75/1000_F_197017515_JwWuH6ws0lCz8OWpI4ey7cGDdl9dlq9u.jpg)'
+              backgroundImage: 'url(https://as2.ftcdn.net/v2/jpg/01/97/01/75/1000_F_197017515_JwWuH6ws0lCz8OWpI4ey7cGDdl9dlq9u.jpg)',
+
+
             }}
           >
                   <Avatar
@@ -78,7 +80,7 @@ function SignInSide() {
             <Typography component="h1" variant="h5" fontFamily="serif" >
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} color="black">
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} color="black" style={{fontSize:20, fontFamily:"serif"}} >
               <TextField
                 margin="normal"
                 required
@@ -113,12 +115,12 @@ function SignInSide() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link href="#" variant="body2" style={{fontSize:20, fontFamily:"serif"}}>
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2"> {"Don't have an account? Sign Up"}
+                  <Link href="/signup" variant="body2" style={{fontSize:20, fontFamily:"serif"}}> {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
