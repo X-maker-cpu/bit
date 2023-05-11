@@ -67,13 +67,13 @@ function SignInSide() {
               alignItems: 'center',
               backgroundRepeat: "no-repeat",
               backgroundSize:"cover",
-              backgroundImage: 'url(https://as2.ftcdn.net/v2/jpg/01/97/01/75/1000_F_197017515_JwWuH6ws0lCz8OWpI4ey7cGDdl9dlq9u.jpg)',
+              backgroundImage: 'url(https://img.freepik.com/free-vector/realistic-white-monochrome-background_52683-66094.jpg?w=2000)',
             }}
           >
           <Avatar
   alt="Remy Sharp"
   src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
-  sx={{ width: 500, height: 500 }}
+  sx={{ width: 300, height: 300 }}
 />
             <Typography component="h1" variant="h5" fontFamily="serif" >
               Sign in
