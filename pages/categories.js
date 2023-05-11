@@ -20,6 +20,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
+
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+       
+
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -32,7 +40,8 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Toolbar />
+      <Toolbar >
+      </Toolbar>
       <Divider />
       <List>
         {/* home */}
@@ -172,11 +181,19 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Box>
-            <Typography variant="h6" noWrap component="div">
-              Responsive drawer
-            </Typography>
+          <Box sx={{display:"flex", gap:10}}>
+            <CustomizedInputBase/>
+            <Stack direction="row" spacing={2}>
+              <Box >
+      <Button sx={{borderRadius:200 ,ptop:5}} variant="outlined" color="success"  >ADD VIDEO</Button>
+      </Box>
+      
+    </Stack>
           </Box>
+         <Box sx={{gap:30 ,marginLeft:10}}>
+      <Avatar alt="M" src="https://images.pexels.com/photos/13020492/pexels-photo-13020492.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </Box>
+      <Typography >May Harmon</Typography>
         </Toolbar>
       </AppBar>
       <Box
@@ -289,3 +306,21 @@ const videoComponent = ({youtubeVideoUrl}) => {
   );
 };              
 
+function CustomizedInputBase() {
+  return (
+    <Paper
+      component="form"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 800 }}
+    >
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search Google Maps"
+        inputProps={{ 'aria-label': 'search google maps' }}
+      />
+ 
+    </Paper>
+  );
+}
