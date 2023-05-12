@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React ,{useState,useEffect,useRef} from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -169,17 +169,10 @@ function ResponsiveDrawer(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
-        <Toolbar />
-        <Typography paragraph>
-        Talk is cheap. Show me the code.
-Code teaches you how to face really big problems
-Whether you want to uncover the secrets of the universe, or you just want to pursue a career in the 21st century, basic Computer Programming is an essential skill to learn.
-The most damaging phrase in the language is "It's always been done this way".
-The trouble with programmers is that you can never tell what a programmer is doing until it's too late.
-You might not think that programmers are artists, but programming is an extremely creative profession. It's logic based creativity.
-Programming is usually taught by examples.
-        </Typography>
-        <Image src="https://images.pexels.com/photos/1152853/pexels-photo-1152853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={500} height={500}></Image>
+<Toolbar />
+
+<Home/>
+    
       </Box>
     </Box>
   );
@@ -194,19 +187,47 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+const Home= ()=>{
+  // video state
+  const [videos,setVideos] =useState([]);
+  const videoRef =useRef();
 
-  const Home =()=>{
-    const videoIds =[
-    ]
-    return(
-      <div>
-        {
-          videoIds.map((videoId, i)=>{
-            return <VideoComponent key ={i} id={videoId}/>;
-          })
-        }
-      </div>
-    )
-  }
+  //fetching videos
+  const fetchData = async () => {
+    const response = await axios.get("/api/video");
+    console.log(response);
+    setVideos(response.data);
+  };
+  useEffect(() => {
+    fetchData()
+  },[]);
 
+  return (
+    <box
+    sx={{
+      display:"grid",
+      griTemplatecolums: "repeat(auto-fit, 210px)",
+      gap:2,
+      alignContent:"center",
+      columGap: "45px",
+      rowGap:"15px",
+    }}
+    >
+      {videos.map((video,i) =>{
+        return <VideoComponent key={i} id={video.id}/>;
+      }) }
+    </box>
+  )
+}
+ const VideoComponent = (prop) => {
+  return (
+    <Box>
+      <iframe
+        width="auto"
+        height="auto"
+        src={"https://youtu.be/-5A3lJ59JYM"}
+      ></iframe>
+    </Box>
+  );
+ };
   

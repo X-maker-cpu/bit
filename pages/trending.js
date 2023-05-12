@@ -28,6 +28,7 @@ import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
 
 import InputBase from '@mui/material/InputBase';
+import Image from 'next/image';
 
 
 
@@ -142,7 +143,8 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex',
+     borderRadius:"20% ,20%", }}>
       <CssBaseline />
       <AppBar
 
@@ -218,31 +220,7 @@ function ResponsiveDrawer(props) {
         
           </Box> */}
 
-          
-          <Box >
-         
-          <Box sx={{
-            display:"flex"
-            
-          }}>
-         
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-          
-            <ListItemText primary="Ramadhan" />
-          
-
-        
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-            
-            <ListItemText primary="diclot" />
-        
-
-       
-      </Box>
-     </Box>
-      
+  
       
       <Typography>
         my trending page again
@@ -258,7 +236,7 @@ function ResponsiveDrawer(props) {
        }}>Disabled</Button>
 
       <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"green"
+        width:"100" ,height:"100",color:"black"
        }}>tanzania</Button>
 
       <Button href="#text-buttons" sx={{
@@ -274,11 +252,11 @@ function ResponsiveDrawer(props) {
        }}>somali</Button>
 
       <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"green"
+        width:"100" ,height:"100",color:"black"
        }}>burundi</Button>
 
       <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"yelow"
+        width:"100" ,height:"100",color:"green"
        }}>my classment</Button>
       <Button href="#text-buttons" sx={{
         width:"100" ,height:"100",color:"red"
@@ -308,75 +286,28 @@ function ResponsiveDrawer(props) {
             
           }}>
          
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-          
-            <ListItemText primary="Ramadhan" />
-          
+              <Box sx={{
+                display:"flex",
 
-        
+
+              }}>
+                <img src="" />              
+         
               
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
+                </Box>
             
-            <ListItemText primary="diclot" />
-        
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-                <ListItemText primary="diclot" />
+          
 
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
-                <ListItemText primary="diclot" />
-       
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-                <ListItemText primary="diclot" />
+        
+              
       </Box>
 
   
-      
-     
 
-
-
-
-    
-
-            {/* icon folder.................... */}
-        {/* <ButtonGroup variant="contained" aria-label="outlined primary button group">
-          <Button><Avatar sx={{ bgcolor: pink[500] }}>
-            <FolderIcon />
-          </Avatar>Folder</Button> */}
-          {/* 25 icon */}
-
-          {/* <Button><Avatar sx={{ bgcolor: pink[500] }}>
-            <AssignmentIcon />
-          </Avatar>Assignment</Button>
-        </ButtonGroup> */}
-
-
-
-        {/* video 11 */}
-        {/* <Box>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <Divider/>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra 
-        </Typography>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <Divider/>
-        
-        </Box> */}
-        {/*video11  */}
-
-
-        <Typography paragraph>
        
-        </Typography>
+        <MyVideoComponent src=""/>
+
+      
       </Box>
     </Box>
   );
@@ -443,3 +374,86 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
+const MyVideoComponent =()=>{
+  return(
+    <Box sx={{
+      bgcolor:"",
+      position:"absolute",
+      display:""
+    }}>
+      <Box sx={{display:"flex"}}>
+        <Image  src="https://images.pexels.com/photos/7341095/pexels-photo-7341095.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
+        <Typography variant="caption" sx={{
+          position:"center",
+          bottom:"10",
+          right:"30",
+          
+      
+        }}>
+           55:66
+        </Typography>
+      </Box>
+
+<Box sx={{display:"flex",gap:5,position:"absolity"}}>
+      <Box >
+<Avatar src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/a-zebra-george-stubbs.jpg"width={100} height={100} />
+<Box>
+  <Typography variant="body1">our animals</Typography>
+  <Typography variant="caption">john smith</Typography>
+</Box>
+      </Box>
+
+      <Box sx={{display:"flex"}}>
+        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
+        <Typography variant="caption" sx={{
+          position:"absolute",
+          bottom:"10",
+          right:"30",
+      
+        }}>
+           55:66
+        </Typography>
+      </Box>
+      
+      <Box >
+        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
+        <Typography variant="caption" sx={{
+          position:"absolute",
+          bottom:"10",
+          right:"30",
+      
+        }}>
+           55:66
+        </Typography>
+      </Box>
+      
+      <Box >
+        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
+        <Typography variant="caption" sx={{
+          position:"absolute",
+          bottom:"10",
+          right:"30",
+      
+        }}>
+           55:66
+        </Typography>
+      </Box>
+      
+      <Box >
+        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
+        <Typography variant="caption" sx={{
+          position:"absolute",
+          bottom:"10",
+          right:"30",
+      
+        }}>
+           55:66
+        </Typography>
+      </Box>
+      
+      
+    </Box>
+    </Box>
+  )
+}
