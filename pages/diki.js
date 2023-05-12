@@ -7,7 +7,7 @@ const Home =()=>{
     const fetData = async () =>{
         const response = await axios.get("/api/video")
         setVideos(response.data);
-        
+
     }
 }
 

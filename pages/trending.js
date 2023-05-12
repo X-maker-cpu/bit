@@ -48,7 +48,7 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-    
+
       <Toolbar />
       <Divider />
       <List sx={{
@@ -97,13 +97,13 @@ function ResponsiveDrawer(props) {
             <ListItemButton>
               <ListItemIcon>
                 <Badge badgeContent={1} color="primary">
-                  <Avatar 
-                  sx={{
-                    width:"200"
-                  
+                  <Avatar
+                    sx={{
+                      width: "200"
 
-                  }}
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
+
+                    }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
                 </Badge>         </ListItemIcon>
               <ListItemText primary="Julia" />
             </ListItemButton>
@@ -121,30 +121,37 @@ function ResponsiveDrawer(props) {
 
           </ListItem>
 
-        {/* 3 */}
-        <ListItem>
-          <ListItemButton>
-            <ListItemIcon>
-              <Badge badgeContent={77} color="primary">
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              </Badge>
-            </ListItemIcon>
-            <ListItemText primary="Ramathan" />
-          </ListItemButton>
+          {/* 3 */}
+          <ListItem>
+            <ListItemButton>
+              <ListItemIcon>
+                <Badge badgeContent={77} color="primary">
+                  <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              </Badge>
+              </ListItemIcon>
+              <ListItemText primary="Ramathan" />
+            </ListItemButton>
 
-        </ListItem>
-      </List>
+          </ListItem>
+        </List>
 
 
-    </div>
+      </div>
 
     </div >
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  let videos = [
+    "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load","https://images.pexels.com/photos/14530188/pexels-photo-14530188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  ]
   return (
-    <Box sx={{ display: 'flex',
-     borderRadius:"20% ,20%", }}>
+    <Box sx={{
+      display: 'flex',
+      borderRadius: "20% ,20%",
+    
+      backgroundImage:"url(https://th.bing.com/th/id/R.b11f80865be4702c1445db25470039ab?rik=mTyDura6CfC7kw&pid=ImgRaw&r=0) ",
+      backgroundRepeat:"no-repeat"   }}>
       <CssBaseline />
       <AppBar
 
@@ -157,7 +164,7 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Box>
-        <Search>
+          <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -166,12 +173,12 @@ function ResponsiveDrawer(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-     
 
-         < InputBase/>
-          </Box>
+
+          < InputBase />
+        </Box>
         {/* <Toolbar:> */}
-        
+
         {/* </Toolbar> */}
       </AppBar>
       <Box
@@ -220,94 +227,107 @@ function ResponsiveDrawer(props) {
         
           </Box> */}
 
-  
-      
-      <Typography>
-        my trending page again
-      </Typography>
-       <Divider/>
-       <Box>
-      <Button  sx={{
-        width:"100" ,height:"100",color:"blue"
-       }}>Primary</Button>
 
-      <Button  sx={{
-        width:"100" ,height:"100",color:"red"
-       }}>Disabled</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"black"
-       }}>tanzania</Button>
+        <Typography sx={{
+          width: "100", height: "100", color: "blue",
+        }}>
+          MY TRENDING PAGES CREATED BY DICLOT
+        </Typography>
+        <Divider />
+        <Box>
+          <Button sx={{
+            width: "100", height: "100", color: "blue"
+          }}>Primary</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"yelow"
-       }}>kenya</Button>
+          <Button sx={{
+            width: "100", height: "100", color: "red"
+          }}>Disabled</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"blue"
-       }}>canada</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "black"
+          }}>tanzania</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"red"
-       }}>somali</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "yelow"
+          }}>kenya</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"black"
-       }}>burundi</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "blue"
+          }}>canada</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"green"
-       }}>my classment</Button>
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"red"
-       }}>all refuge</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "red"
+          }}>somali</Button>
 
-      <Button href="#text-buttons"  sx={{
-        width:"100" ,height:"100",color:"black"
-       }}>all student</Button>
-      </Box>
-      <Typography  sx={{
-        width:"100" ,height:"100",color:"green",
-       }}>
-        ALL VIDEO IS ALOWED HERE
-      </Typography>
-      <Box sx={{
-        display:"flex"
-      }} >
-      {/* <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "black"
+          }}>burundi</Button>
+
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "green"
+          }}>my classment</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "red"
+          }}>all refuge</Button>
+
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "black"
+          }}>all student</Button>
+        </Box>
+        <Typography sx={{
+          width: "100", height: "100", color: "blue",
+        }}>
+          ALL VIDEO IS ALOWED HERE
+        </Typography>
+        <Box sx={{
+          display: "flex"
+        }} >
+          {/* <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
            */}
-      </Box>
-      
-      <Box sx={{
-            display:"flex"
-            
+        </Box>
+
+        <Box sx={{
+          display: "flex"
+
+        }}>
+
+          <Box sx={{
+            display: "flex",
+
+
           }}>
-         
-              <Box sx={{
-                display:"flex",
+            <img src="" />
 
 
-              }}>
-                <img src="" />              
-         
-              
-                </Box>
-            
-          
+          </Box>
 
-        
-              
-      </Box>
 
+
+
+
+        </Box>
+
+
+<Box sx={{
+  display:"grid",
+  gridTemplateColumns:"300px 300px 300px",
+  gap:10,
   
+}}>
 
-       
-        <MyVideoComponent src=""/>
+{videos.map(videoSrc=>
+       {
+        console.log("Video SRC :>>", videoSrc)
+        return( <MyVideoComponent src={videoSrc} />)
+      }
+  )}
+</Box>
 
-      
+
       </Box>
     </Box>
   );
@@ -328,9 +348,9 @@ export default ResponsiveDrawer;
 // const MyVideo =(props)=>{  
 //   return(
 //     <iframe  src={props.src} width={400} height={200} Padding={200}>
-     
+
 //     </iframe>)
-   
+
 // }
 
 
@@ -375,85 +395,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const MyVideoComponent =()=>{
-  return(
-    <Box sx={{
-      bgcolor:"",
-      position:"absolute",
-      display:""
-    }}>
-      <Box sx={{display:"flex"}}>
-        <Image  src="https://images.pexels.com/photos/7341095/pexels-photo-7341095.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
-        <Typography variant="caption" sx={{
-          position:"center",
-          bottom:"10",
-          right:"30",
-          
-      
-        }}>
-           55:66
-        </Typography>
-      </Box>
+const MyVideoComponent = (prop) => {
+  return (
+    <Box >
 
-<Box sx={{display:"flex",gap:5,position:"absolity"}}>
-      <Box >
-<Avatar src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/a-zebra-george-stubbs.jpg"width={100} height={100} />
-<Box>
-  <Typography variant="body1">our animals</Typography>
-  <Typography variant="caption">john smith</Typography>
-</Box>
-      </Box>
 
-      <Box sx={{display:"flex"}}>
-        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
-        <Typography variant="caption" sx={{
-          position:"absolute",
-          bottom:"10",
-          right:"30",
-      
-        }}>
-           55:66
-        </Typography>
+      <Box sx={{ display: "flex", gap: 5, position: "relative" }}>
+        <Image src={prop.src} width={500} height={500} />
+
       </Box>
-      
-      <Box >
-        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
-        <Typography variant="caption" sx={{
-          position:"absolute",
-          bottom:"10",
-          right:"30",
-      
-        }}>
-           55:66
-        </Typography>
-      </Box>
-      
-      <Box >
-        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
-        <Typography variant="caption" sx={{
-          position:"absolute",
-          bottom:"10",
-          right:"30",
-      
-        }}>
-           55:66
-        </Typography>
-      </Box>
-      
-      <Box >
-        <Image  src="https://images.pexels.com/photos/8935989/pexels-photo-8935989.jpeg?auto=compress&cs=tinysrgb&w=600"width={500} height={500}/>
-        <Typography variant="caption" sx={{
-          position:"absolute",
-          bottom:"10",
-          right:"30",
-      
-        }}>
-           55:66
-        </Typography>
-      </Box>
-      
-      
-    </Box>
+      {/* <Box >
+        <Avatar src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/a-zebra-george-stubbs.jpg" width={100} height={100} />
+        <Box>
+          <Typography variant="body1">our animals</Typography>
+          <Typography variant="caption">john smith</Typography>
+        </Box>
+      </Box> */}
+
+
     </Box>
   )
 }
