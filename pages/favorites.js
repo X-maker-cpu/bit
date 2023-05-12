@@ -90,7 +90,20 @@ function ResponsiveDrawer(props) {
           <ListItemButton>
             <ListItemText primary={"Chrissbuzzi"} />
           </ListItemButton>
-        </ListItem>
+        </ListItem> 
+        
+      <ListItem disablePadding>
+      <Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/95/0a/02/950a02f986810fc5ae647c52cd814aee.jpg" />
+          <ListItemButton>
+            <ListItemText primary={"igiraneza rieve"} />
+          </ListItemButton>
+        </ListItem> 
+        <ListItem disablePadding>
+      <Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/95/0a/02/950a02f986810fc5ae647c52cd814aee.jpg" />
+          <ListItemButton>
+            <ListItemText primary={"ramazan mwemedi"} />
+          </ListItemButton>
+        </ListItem> 
    </Box>
   )
   
