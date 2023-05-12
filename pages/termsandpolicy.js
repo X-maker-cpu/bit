@@ -155,7 +155,7 @@ For more details, please check out our cookie policy here.
   alt="Remy Sharp"
   src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"sx={{ width: 150, height: 150 }}/>
         <div>
-        <Typography variant="h4" color="white"  fontFamily="serif">Programs</Typography>
+        <Typography variant="h5" color="white"  fontFamily="serif">Programs</Typography>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Coding</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Web designing</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="White">Mentorship</Typography></Box>
@@ -166,7 +166,7 @@ For more details, please check out our cookie policy here.
 
         </div>
         <div>
-        <Typography variant="h4" color="white"  fontFamily="serif">Our Partners</Typography>
+        <Typography variant="h5" color="white"  fontFamily="serif">Our Partners</Typography>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">SIR</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Xavier Project</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">German Cooperation</Typography></Box>
@@ -177,7 +177,7 @@ For more details, please check out our cookie policy here.
         </div>
 
         <div>
-        <Typography variant="h4" color="white"  fontFamily="serif">Get involved</Typography>
+        <Typography variant="h5" color="white"  fontFamily="serif">Get involved</Typography>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Donate</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Volunteer</Typography></Box>
         <Box sx={{marginLeft:5}}><Typography variant="h6" color="white">Work with us</Typography></Box>
