@@ -22,13 +22,13 @@ import SendSharpIcon from '@mui/icons-material/SendSharp';
 const termsandpolicy = () => {
   return (
     <Box>
-      <Box sx={{display:"flex", alignItems:"center", marginLeft:50}}>
+      <Box sx={{display:"flex", alignItems:"center", marginLeft:20}}>
       <Avatar
   alt="Remy Sharp"
   src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
   sx={{ width: 500, height: 500 }}
 />
-<Typography variant="h2" color="text.secondary" align="center" fontFamily="fantasy">BIT  Terms and Policies</Typography>
+<Typography variant="h2" color="text.secondary" align="center" fontFamily="fantasy">Terms and Policies</Typography>
 </Box>
 <Box sx={{
   paddingLeft: 8

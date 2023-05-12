@@ -195,29 +195,18 @@ ResponsiveDrawer.propTypes = {
 
 export default ResponsiveDrawer;
 
-const MyVideo=() =>{
-  return(
-    <Box>
-      {/*Image and duration*/}
-      <Box sx={{
-        position: "relative"
-      }}
-      >
-      <Image src="" height={400} width={500}/>
-      <Typography 
-      variant="capyion"
-      sx={{
-        position: "absolute",
-        bottom: 0,
-        right: 10
-      }}
-      >
-        32:29
-      </Typography>
-      </Box>
-      {/*Author avatar, video title and author name*/}
-    </Box>
-  )
+  const Home =()=>{
+    const videoIds =[
+    ]
+    return(
+      <div>
+        {
+          videoIds.map((videoId, i)=>{
+            return <VideoComponent key ={i} id={videoId}/>;
+          })
+        }
+      </div>
+    )
+  }
 
   
-}
