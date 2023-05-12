@@ -26,6 +26,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import Image from "next/image";
 
 
 const drawerWidth = 240;
@@ -88,10 +89,18 @@ function ResponsiveDrawer(props) {
         </ListItem>
       </List>
       <Divider />
-      <Typography variant="h6" FontFamily={"robot"} fontWeight={"50"} fontSize={"1rem"} padding={"2rem"}>SUBSCRIPTIONS</Typography>
+      <Typography
+        variant="h6"
+        FontFamily={"robot"}
+        fontWeight={"50"}
+        fontSize={"1rem"}
+        padding={"2rem"}
+      >
+        SUBSCRIPTIONS
+      </Typography>
 
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>  
             <Badge color="success" variant="dot">
@@ -103,48 +112,48 @@ function ResponsiveDrawer(props) {
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
             <Avatar src="https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"/>
           
             </ListItemIcon>
-          
+
             <ListItemText primary={"Books Review"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
             <Badge color="success" variant="dot">
             <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
           </Badge>
             </ListItemIcon>
-          
+
             <ListItemText primary={"Brittary Bathgats"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
             <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
-          
+
             <ListItemText primary={"GingerDog"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
             <Avatar src="https://images.pexels.com/photos/3454298/pexels-photo-3454298.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
-          
+
             <ListItemText primary={"Asian Recipies"} />
           </ListItemButton>
         </ListItem>
@@ -169,8 +178,7 @@ function ResponsiveDrawer(props) {
   </Box>
     </div>
   );
-  
-  
+
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
