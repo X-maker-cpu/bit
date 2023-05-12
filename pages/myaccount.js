@@ -42,6 +42,7 @@ const MyAccount = () => {
             
 
           />
+          <image src="/.#">my image</image>
           <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
             <SearchIcon />
           </IconButton>
