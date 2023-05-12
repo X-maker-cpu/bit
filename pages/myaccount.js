@@ -15,6 +15,8 @@ import PhonelinkLockIcon from '@mui/icons-material/PhonelinkLock';
 import PeopleIcon from '@mui/icons-material/People';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import SettingsAccessibilityIcon from '@mui/icons-material/SettingsAccessibility';
+import { AlignVerticalTop } from '@mui/icons-material';
+
 const MyAccount = () => {
   return (
     <>
@@ -25,43 +27,48 @@ const MyAccount = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box>
+      <Box sx={{display:'absoute',position:'center'}}>
 
-    <Paper
-      sx={{ p: '2px 4px',  width: 500 ,   }}
-    >
-      <IconButton sx={{ p: '10px' }} aria-label="menu">
-        <MenuIcon />
-      </IconButton>
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search Google Account "
-        inputProps={{ 'aria-label': 'search google maps' }} 
-      
-      />
-      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-      <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
-      </IconButton>
-    </Paper>
- 
+        <Paper
+          sx={{ p: '2px 4px', width: 500,display:'absolute',position:'center' }}
+        >
+          <IconButton sx={{ p: '10px' }} aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <InputBase
+            sx={{ ml: 1, flex: 1,position:'center' }}
+            placeholder="Search Google Account "
+            inputProps={{ 'aria-label': 'search google maps' }}
+            
+
+          />
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
+          </IconButton>
+        </Paper>
+
       </Box>
-      <Box component="form" sx={{p:'3px 5px', marginleft:'5px', left:'20%',width:'100%',backgroundColor:'white'}}>
-      <Box>
-        <Button><PersonOutlineIcon/><a href='#'>Home</a></Button>
-        <Button> <SettingsAccessibilityIcon/><a>Personal info</a></Button>
-        <Button> <PhonelinkLockIcon/><a>Data & Privacy</a> </Button>
-        <Button> <LockIcon/><a href='#'>Security</a></Button>
-        <Button> <PeopleIcon/><a href='#'> People and Sharing</a></Button>
-        <Button> <PaymentsIcon/><a href='#'> Payments and Subscriptions</a></Button>
-        <Divider sx={{lenth:'28',m:1,}} orientation='horizantal'/>
-  
-        <Button> <InfoIcon/><a href='#'>About</a> </Button>
-      </Box>
-     
-       
+      <Box component="form" sx={{ p: '3px 5px', marginleft: '5px', left: '20%', width: '100%', backgroundColor: 'white', display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', marginLeft: '5px', position: 'absolute', textAlign: 'left' }}>
+          <Typography><PersonOutlineIcon />Home</Typography>
+          <br/>
+          <Typography> <SettingsAccessibilityIcon />Personal inf</Typography>
+          <br/>
+          <Typography> <PhonelinkLockIcon />Data & Privacy</Typography>
+          <br/>
+          <Typography> <LockIcon />Security</Typography>
+          <br/>
+          <Typography> <PaymentsIcon /> Payments and Subscriptions</Typography>
+          <br/>
+          <Divider sx={{ lenth: '28', m: 1, }} orientation='horizantal' />
+
+          <Typography> <InfoIcon />About </Typography>
+        </Box>
+
+
       </Box>
     </>
   );

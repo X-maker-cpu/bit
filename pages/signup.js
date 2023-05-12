@@ -1,6 +1,5 @@
 import React from "react";
 import {Grid,Paper,Avatar,Typography,TextField,Button,} from "@material-ui/core";
-//import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -78,11 +77,13 @@ const Signup = () => {
             fullWidth
             label="Password"
             placeholder="Enter your password"
+            type="password"
           />
           <TextField
             fullWidth
             label="Confirm Password"
             placeholder="Confirm your password"
+            type="password"
           />
           <FormControlLabel
             control={<Checkbox name="checkedA" />}
