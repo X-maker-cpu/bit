@@ -37,13 +37,13 @@ function ResponsiveDrawer(props) {
       <List>
         {/* home */}
         <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+            <ListItemButton>
+              <ListItemIcon>
               <HomeIcon />
-            </ListItemIcon>
+              </ListItemIcon>
             <ListItemText primary={"Home"} />
-          </ListItemButton>
-        </ListItem>
+            </ListItemButton>
+          </ListItem>
         {/*  trending*/}
         <ListItem disablePadding>
           <ListItemButton>
@@ -83,58 +83,58 @@ function ResponsiveDrawer(props) {
 
       <List>
       <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+            <ListItemButton>
+              <ListItemIcon>
               <Avatar/>
-            </ListItemIcon>
+              </ListItemIcon>
           
-            <ListItemText primary={"Yoga with Kim"} />
-          </ListItemButton>
-        </ListItem>
-      </List>
+              <ListItemText primary={"Yoga with Kim"} />
+            </ListItemButton>
+          </ListItem>
+      </List> 
       <List>
       <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+            <ListItemButton>
+              <ListItemIcon>
               <Avatar/>
-            </ListItemIcon>
+              </ListItemIcon>
           
             <ListItemText primary={"Books Review"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+              <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
               <Avatar/>
-            </ListItemIcon>
+              </ListItemIcon>
           
             <ListItemText primary={"Brittary Bathgats"} />
-          </ListItemButton>
-        </ListItem>
+                      </ListItemButton>
+          </ListItem>
       </List>
       <List>
       <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+            <ListItemButton>
+              <ListItemIcon>
               <Avatar/>
-            </ListItemIcon>
+              </ListItemIcon>
           
             <ListItemText primary={"GingerDog"} />
-          </ListItemButton>
-        </ListItem>
+            </ListItemButton>
+          </ListItem>
       </List>
       <List>
       <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+            <ListItemButton>
+              <ListItemIcon>
               <Avatar/>
-            </ListItemIcon>
+              </ListItemIcon>
           
             <ListItemText primary={"Asian Recipies"} />
-          </ListItemButton>
-        </ListItem>
+            </ListItemButton>
+          </ListItem>
       </List>
   <Box sx={{
     m:1,
@@ -145,9 +145,11 @@ function ResponsiveDrawer(props) {
     <Typography variant="caption">Enjoy ad-free content,offline watching and more</Typography>
     
   </Box>
-    </div>
+  </div>
   );
-  
+
+ 
+
   
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -173,9 +175,9 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Box>
-            <Typography variant="h6" noWrap component="div">
-              Responsive drawer
-            </Typography>
+          <Typography variant="h6" noWrap component="div">
+            Responsive drawer
+          </Typography>
           </Box>
         </Toolbar>
       </AppBar>
@@ -227,39 +229,13 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        
+
       </Box>
     </Box>
   );
 }
+
 
 ResponsiveDrawer.propTypes = {
   /**
@@ -270,3 +246,4 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+
