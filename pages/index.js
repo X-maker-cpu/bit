@@ -23,6 +23,8 @@ import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBullete
 import WhatshotRoundedIcon from '@mui/icons-material/WhatshotRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
+import Image from 'next/image';
+
 
 const drawerWidth = 240;
 
@@ -242,17 +244,29 @@ function ResponsiveDrawer(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-         
+        <Box sx={{
+          display: "flex",
+          gap: 5
+        }}>
+        <VideoComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGvFJ9IINe0jYp35DlB7F9WlsC9iqE_wZCMQ&usqp=CAU" title="morning training" />
+        <VideoComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIpNZHOdm6gPyn5EeJgtyzphnxz-PyS9Www&usqp=CAU" title="sunrise in the zoo" />
+        </Box>
+        <Typography >
+          Explore by categories 
         </Typography>
-        <Typography paragraph>
-          
+        <Box sx={{
+          borderRadius:3,
+          border:'2px solid grey',
+          padding: 1
+        }}>
+        <Typography  variant= "h5" color="grey">
+          Health Care
         </Typography>
+        </Box>
       </Box>
     </Box>
   );
-}
-
+};
 ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
@@ -262,3 +276,36 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+
+const VideoComponent = (prop) => {
+  return(
+  <Box >
+    {/* image and duratin */}
+    <Box sx={{
+      position: "relative", width: 500,
+      height: 400,
+    }}
+    >
+    <Image src={prop.src} height={400} width= {500}/>
+    <Typography 
+    variant='caption'
+    sx={{
+      position: "absolute",
+      bottom: 0,
+      right: 10,
+    }}
+    >
+     55:30
+    </Typography>
+    </Box>
+    {/* Author Avatar, video tittle and author name*/}
+    <Box sx={{ display: "flex"}}>
+      <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIowiTvupIDXVcDEnmpeWkig90a4kXRgwW8g&usqp=CAU"></Avatar>
+      <Box>
+        <Typography variant='body1'>{prop.title}</Typography>
+        <Typography variant='caption'>Bantuuuu legend </Typography>
+      </Box>
+    </Box>
+  </Box>
+  );
+};
