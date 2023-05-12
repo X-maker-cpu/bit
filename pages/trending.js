@@ -28,6 +28,7 @@ import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
 
 import InputBase from '@mui/material/InputBase';
+import Image from 'next/image';
 
 
 
@@ -47,7 +48,7 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-    
+
       <Toolbar />
       <Divider />
       <List sx={{
@@ -96,13 +97,13 @@ function ResponsiveDrawer(props) {
             <ListItemButton>
               <ListItemIcon>
                 <Badge badgeContent={1} color="primary">
-                  <Avatar 
-                  sx={{
-                    width:"200"
-                  
+                  <Avatar
+                    sx={{
+                      width: "200"
 
-                  }}
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
+
+                    }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
                 </Badge>         </ListItemIcon>
               <ListItemText primary="Julia" />
             </ListItemButton>
@@ -120,29 +121,37 @@ function ResponsiveDrawer(props) {
 
           </ListItem>
 
-        {/* 3 */}
-        <ListItem>
-          <ListItemButton>
-            <ListItemIcon>
-              <Badge badgeContent={77} color="primary">
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              </Badge>
-            </ListItemIcon>
-            <ListItemText primary="Ramathan" />
-          </ListItemButton>
+          {/* 3 */}
+          <ListItem>
+            <ListItemButton>
+              <ListItemIcon>
+                <Badge badgeContent={77} color="primary">
+                  <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              </Badge>
+              </ListItemIcon>
+              <ListItemText primary="Ramathan" />
+            </ListItemButton>
 
-        </ListItem>
-      </List>
+          </ListItem>
+        </List>
 
 
-    </div>
+      </div>
 
     </div >
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  let videos = [
+    "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load","https://images.pexels.com/photos/14530188/pexels-photo-14530188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  ]
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{
+      display: 'flex',
+      borderRadius: "20% ,20%",
+    
+      backgroundImage:"url(https://th.bing.com/th/id/R.b11f80865be4702c1445db25470039ab?rik=mTyDura6CfC7kw&pid=ImgRaw&r=0) ",
+      backgroundRepeat:"no-repeat"   }}>
       <CssBaseline />
       <AppBar
 
@@ -155,7 +164,7 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Box>
-        <Search>
+          <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -164,12 +173,12 @@ function ResponsiveDrawer(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-     
 
-         < InputBase/>
-          </Box>
+
+          < InputBase />
+        </Box>
         {/* <Toolbar:> */}
-        
+
         {/* </Toolbar> */}
       </AppBar>
       <Box
@@ -218,165 +227,107 @@ function ResponsiveDrawer(props) {
         
           </Box> */}
 
-          
-          <Box >
-         
-          <Box sx={{
-            display:"flex"
-            
-          }}>
-         
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-          
-            <ListItemText primary="Ramadhan" />
-          
 
-        
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-            
-            <ListItemText primary="diclot" />
-        
 
-       
-      </Box>
-     </Box>
-      
-      
-      <Typography>
-        my trending page again
-      </Typography>
-       <Divider/>
-       <Box>
-      <Button  sx={{
-        width:"100" ,height:"100",color:"blue"
-       }}>Primary</Button>
+        <Typography sx={{
+          width: "100", height: "100", color: "blue",
+        }}>
+          MY TRENDING PAGES CREATED BY DICLOT
+        </Typography>
+        <Divider />
+        <Box>
+          <Button sx={{
+            width: "100", height: "100", color: "blue"
+          }}>Primary</Button>
 
-      <Button  sx={{
-        width:"100" ,height:"100",color:"red"
-       }}>Disabled</Button>
+          <Button sx={{
+            width: "100", height: "100", color: "red"
+          }}>Disabled</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"green"
-       }}>tanzania</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "black"
+          }}>tanzania</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"yelow"
-       }}>kenya</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "yelow"
+          }}>kenya</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"blue"
-       }}>canada</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "blue"
+          }}>canada</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"red"
-       }}>somali</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "red"
+          }}>somali</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"green"
-       }}>burundi</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "black"
+          }}>burundi</Button>
 
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"yelow"
-       }}>my classment</Button>
-      <Button href="#text-buttons" sx={{
-        width:"100" ,height:"100",color:"red"
-       }}>all refuge</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "green"
+          }}>my classment</Button>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "red"
+          }}>all refuge</Button>
 
-      <Button href="#text-buttons"  sx={{
-        width:"100" ,height:"100",color:"black"
-       }}>all student</Button>
-      </Box>
-      <Typography  sx={{
-        width:"100" ,height:"100",color:"green",
-       }}>
-        ALL VIDEO IS ALOWED HERE
-      </Typography>
-      <Box sx={{
-        display:"flex"
-      }} >
-      {/* <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
+          <Button href="#text-buttons" sx={{
+            width: "100", height: "100", color: "black"
+          }}>all student</Button>
+        </Box>
+        <Typography sx={{
+          width: "100", height: "100", color: "blue",
+        }}>
+          ALL VIDEO IS ALOWED HERE
+        </Typography>
+        <Box sx={{
+          display: "flex"
+        }} >
+          {/* <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
           <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
            */}
-      </Box>
-      
-      <Box sx={{
-            display:"flex"
-            
+        </Box>
+
+        <Box sx={{
+          display: "flex"
+
+        }}>
+
+          <Box sx={{
+            display: "flex",
+
+
           }}>
-         
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-          
-            <ListItemText primary="Ramadhan" />
-          
+            <img src="" />
 
-        
-              
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-            
-            <ListItemText primary="diclot" />
-        
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-                <ListItemText primary="diclot" />
 
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />
-                <ListItemText primary="diclot" />
-       
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI-nKcXHtaLzZtffyoYLPrA-nd8TecPrhLqHTY9fUTQ&s" />              
-                <ListItemText primary="diclot" />
-      </Box>
+          </Box>
 
+
+
+
+
+        </Box>
+
+
+<Box sx={{
+  display:"grid",
+  gridTemplateColumns:"300px 300px 300px",
+  gap:10,
   
-      
-     
+}}>
+
+{videos.map(videoSrc=>
+       {
+        console.log("Video SRC :>>", videoSrc)
+        return( <MyVideoComponent src={videoSrc} />)
+      }
+  )}
+</Box>
 
 
-
-
-    
-
-            {/* icon folder.................... */}
-        {/* <ButtonGroup variant="contained" aria-label="outlined primary button group">
-          <Button><Avatar sx={{ bgcolor: pink[500] }}>
-            <FolderIcon />
-          </Avatar>Folder</Button> */}
-          {/* 25 icon */}
-
-          {/* <Button><Avatar sx={{ bgcolor: pink[500] }}>
-            <AssignmentIcon />
-          </Avatar>Assignment</Button>
-        </ButtonGroup> */}
-
-
-
-        {/* video 11 */}
-        {/* <Box>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <Divider/>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra 
-        </Typography>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <MyVideo src="https://d291.d2mefast.net/tb/2/29/ayra_starr_rush_official_music_video_h264_43732.mp4?play"/>
-        <Divider/>
-        
-        </Box> */}
-        {/*video11  */}
-
-
-        <Typography paragraph>
-       
-        </Typography>
       </Box>
     </Box>
   );
@@ -397,9 +348,9 @@ export default ResponsiveDrawer;
 // const MyVideo =(props)=>{  
 //   return(
 //     <iframe  src={props.src} width={400} height={200} Padding={200}>
-     
+
 //     </iframe>)
-   
+
 // }
 
 
@@ -443,3 +394,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
+const MyVideoComponent = (prop) => {
+  return (
+    <Box >
+
+
+      <Box sx={{ display: "flex", gap: 5, position: "relative" }}>
+        <Image src={prop.src} width={500} height={500} />
+
+      </Box>
+      {/* <Box >
+        <Avatar src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/a-zebra-george-stubbs.jpg" width={100} height={100} />
+        <Box>
+          <Typography variant="body1">our animals</Typography>
+          <Typography variant="caption">john smith</Typography>
+        </Box>
+      </Box> */}
+
+
+    </Box>
+  )
+}
