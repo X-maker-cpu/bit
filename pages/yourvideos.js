@@ -130,6 +130,11 @@ const drawer = (
 );
 
 const container = window !== undefined ? () => window().document.body : undefined;
+const backBg = {
+  Img1 : "https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=600",
+  Img2: "https://images.pexels.com/photos/3622517/pexels-photo-3622517.jpeg?auto=compress&cs=tinysrgb&w=600",
+  Img2: "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=600"
+}
 
 return (
 <Box sx={{ display: 'flex' }}>
@@ -242,9 +247,15 @@ return (
     <Toolbar />
     <Box sx={{
       height:"60%",
-      width: '100%'
+      width: '100%',
+      backgroundImage : "url(https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=600)"
       }}>
-      <Box></Box>
+      <Box sx=
+      {{
+         width : 200,
+         height: 200,
+         backgroundColor: "red"
+        }}></Box>
       <Box></Box>
     </Box>
     
