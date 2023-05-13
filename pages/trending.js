@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 
+
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -22,14 +23,16 @@ import Stack from '@mui/material/Stack';
 import ImageList from '@mui/material/ImageList';
 import { Badge } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import MovingText from  'moving-text'
+
 
 import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
 
 import InputBase from '@mui/material/InputBase';
 import Image from 'next/image';
-
+import Grid from '@mui/material/Unstable_Grid2';
 
 
 
@@ -143,14 +146,19 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   let videos = [
-    "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load","https://images.pexels.com/photos/14530188/pexels-photo-14530188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-at-a-beach-louise-dahl-wolfe.jpg",
+    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-sitting-on-sand-dunes-in-california-clifford-coffin.jpg",
+    "https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/summer-on-the-beach-paul-fischer.jpg",
+    "https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/the-bath-alfred-george-stevens.jpg",
   ]
   return (
     <Box sx={{
       display: 'flex',
       borderRadius: "20% ,20%",
-    
-      backgroundImage:"url(https://th.bing.com/th/id/R.b11f80865be4702c1445db25470039ab?rik=mTyDura6CfC7kw&pid=ImgRaw&r=0) ",
+    height:"500",
+    width:"500",
+      backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
       backgroundRepeat:"no-repeat"   }}>
       <CssBaseline />
       <AppBar
@@ -229,12 +237,20 @@ function ResponsiveDrawer(props) {
 
 
 
-        <Typography sx={{
-          width: "100", height: "100", color: "blue",
-        }}>
-          MY TRENDING PAGES CREATED BY DICLOT
-        </Typography>
-        <Divider />
+        <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2} minHeight={160}>
+        <Grid xs display="flex" justifyContent="center" alignItems="center">
+          <Avatar src=""/>
+        </Grid>
+        <Grid display="flex" justifyContent="center" alignItems="center">
+          <Avatar src="" />
+        </Grid>
+        <Grid xs display="flex" justifyContent="center" alignItems="center">
+          <Avatar src="https://scontent.fnbo10-1.fna.fbcdn.net/v/t39.30808-6/277248531_674246557057718_2754724700745100586_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGO6e6L9g_K4TKJiItWwA-tuxUA6sQLWoq7FQDqxAtaioBIMwVLWoeiQfSvhby6rw5PADjCOw0PWwjRxvHQE-qF&_nc_ohc=cRKqrQv01FMAX9f6V1B&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo10-1.fna&oh=00_AfCYTgFFxgyhNh_I8fMBk57Hc6DYUZTwum_1Xl2QPEAWgQ&oe=646451FE" />
+        </Grid>
+      </Grid>
+    </Box>
+      
         <Box>
           <Button sx={{
             width: "100", height: "100", color: "blue"
@@ -275,9 +291,12 @@ function ResponsiveDrawer(props) {
             width: "100", height: "100", color: "black"
           }}>all student</Button>
         </Box>
+        <Divider sx={{color:"green"}}/>
         <Typography sx={{
           width: "100", height: "100", color: "blue",
         }}>
+
+
           ALL VIDEO IS ALOWED HERE
         </Typography>
         <Box sx={{
@@ -302,7 +321,11 @@ function ResponsiveDrawer(props) {
           }}>
             <img src="" />
 
-
+            {/* <FloatingLettersTextBuilder
+        floatingSpeed={500}
+        lettersAppearanceDelay={250}
+      > Floating Letters 
+</FloatingLettersTextBuilder> */}
           </Box>
 
 
@@ -329,6 +352,7 @@ function ResponsiveDrawer(props) {
 
 
       </Box>
+
     </Box>
   );
 }
