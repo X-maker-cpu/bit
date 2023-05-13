@@ -6,9 +6,7 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-
-
-
+import { useRouter } from 'next/router'
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -16,7 +14,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
-
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
@@ -26,11 +23,8 @@ import { Badge } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 // import FavoriteIcon from '@mui/icons-material/Favorite';
 // import MovingText from  'moving-text'
-
-
 import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
-
 import InputBase from '@mui/material/InputBase';
 import Image from 'next/image';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -45,10 +39,11 @@ const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const router = useRouter()
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  
 
   const drawer = (
     <div>
@@ -153,11 +148,13 @@ function ResponsiveDrawer(props) {
     
   ]
   return (
+
+    // back ground image.....................
     <Box sx={{
       display: 'flex',
       borderRadius: "20% ,20%",
-    height:"500",
-    width:"500",
+      height:"500",
+      width:"500",
       backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
       backgroundRepeat:"no-repeat"   }}>
       <CssBaseline />
@@ -317,8 +314,7 @@ function ResponsiveDrawer(props) {
 <Box sx={{
   display:"grid",
   gridTemplateColumns:"300px 300px 300px",
-  gap:10,
-  
+  gap:15
 }}>
 
 {videos.map(videoSrc=>
@@ -328,14 +324,37 @@ function ResponsiveDrawer(props) {
       }
   )}
 </Box>
-<Typography sx={{
+<hr />
+<br/>
+<Typography  sx={{
           width: "100", height: "100", color: "blue",
+          padding:"right",
+          textAlign:"center",
+        
         }}>
 
 
-          ALL VIDEO IS ALOWED HERE
+           YOU CAN ASK ABOUT OUR SERVICE
         </Typography>
-
+        <br/>
+        <Box>
+          <useRouter>
+  
+          </useRouter>
+          
+        <Stack direction="contained" spacing={2} sx={{gap:40}}>
+      <Button variant='contained' color="success" onClick={()=>router.push("/login")}>
+        
+        kind of keep that you need </Button>
+      <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
+        kinds of clothes that you need
+      </Button>
+      <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
+        kind of shoues that you need
+      </Button>
+    </Stack>
+    </Box>
+    <image src="https://images.pexels.com/photos/5709665/pexels-photo-5709665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
       </Box>
     
     </Box>
@@ -361,6 +380,8 @@ export default ResponsiveDrawer;
 //     </iframe>)
 
 // }
+
+
 
 
 const Search = styled('div')(({ theme }) => ({
