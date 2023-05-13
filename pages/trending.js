@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 
 
+
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -145,12 +146,11 @@ function ResponsiveDrawer(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  let videos = [
+  let videos = [ 
     "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-at-a-beach-louise-dahl-wolfe.jpg",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-sitting-on-sand-dunes-in-california-clifford-coffin.jpg",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/summer-on-the-beach-paul-fischer.jpg",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/1/the-bath-alfred-george-stevens.jpg",
+    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/a-model-wearing-a-corset-by-detolle-horst-p-horst.jpg",
+    
   ]
   return (
     <Box sx={{
@@ -239,14 +239,26 @@ function ResponsiveDrawer(props) {
 
         <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} minHeight={160}>
+      
         <Grid xs display="flex" justifyContent="center" alignItems="center">
-          <Avatar src=""/>
+        < Badge badgeContent={9} color='primary'>
+          <Avatar src="https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/137648146_418386059310437_8173974305911207792_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFcnlv_VVvx9UYlzaiyQps3hMs_vIQZgN-Eyz-8hBmA31Bhl1ATAPHDndgbaKcQ7xQwh3qfZ-68fHXRlWuSNhsY&_nc_ohc=dqaYRiCSLIwAX9WWWYZ&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfCocOCfUUyoWLwdy7DewORtabkZz6dFY9XBVDx7Dvv-fw&oe=6486F2AF"/>
+          </Badge>
         </Grid>
+      
+       
         <Grid display="flex" justifyContent="center" alignItems="center">
-          <Avatar src="" />
+        < Badge badgeContent={45} color='primary'>
+          <Avatar src="https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-at-a-beach-louise-dahl-wolfe.jpg" />
+          </Badge>
         </Grid>
+        
+
         <Grid xs display="flex" justifyContent="center" alignItems="center">
+          <Badge badgeContent={99} color='primary' >
+          
           <Avatar src="https://scontent.fnbo10-1.fna.fbcdn.net/v/t39.30808-6/277248531_674246557057718_2754724700745100586_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGO6e6L9g_K4TKJiItWwA-tuxUA6sQLWoq7FQDqxAtaioBIMwVLWoeiQfSvhby6rw5PADjCOw0PWwjRxvHQE-qF&_nc_ohc=cRKqrQv01FMAX9f6V1B&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo10-1.fna&oh=00_AfCYTgFFxgyhNh_I8fMBk57Hc6DYUZTwum_1Xl2QPEAWgQ&oe=646451FE" />
+          </Badge>
         </Grid>
       </Grid>
     </Box>
@@ -299,40 +311,7 @@ function ResponsiveDrawer(props) {
 
           ALL VIDEO IS ALOWED HERE
         </Typography>
-        <Box sx={{
-          display: "flex"
-        }} >
-          {/* <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-          <MyVideo src=" https://d227.d2mefast.net/tb/d/e7/diamond_platnumz_yatapita_official_music_video_h264_46841.mp4?play"/>
-           */}
-        </Box>
-
-        <Box sx={{
-          display: "flex"
-
-        }}>
-
-          <Box sx={{
-            display: "flex",
-
-
-          }}>
-            <img src="" />
-
-            {/* <FloatingLettersTextBuilder
-        floatingSpeed={500}
-        lettersAppearanceDelay={250}
-      > Floating Letters 
-</FloatingLettersTextBuilder> */}
-          </Box>
-
-
-
-
-
-        </Box>
+      
 
 
 <Box sx={{
@@ -349,10 +328,16 @@ function ResponsiveDrawer(props) {
       }
   )}
 </Box>
+<Typography sx={{
+          width: "100", height: "100", color: "blue",
+        }}>
 
+
+          ALL VIDEO IS ALOWED HERE
+        </Typography>
 
       </Box>
-
+    
     </Box>
   );
 }
