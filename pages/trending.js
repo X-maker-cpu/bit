@@ -259,6 +259,7 @@ function ResponsiveDrawer(props) {
         </Grid>
       </Grid>
     </Box>
+    <br/>
       
         <Box>
           <Button sx={{
@@ -306,7 +307,7 @@ function ResponsiveDrawer(props) {
         }}>
 
 
-          ALL VIDEO IS ALOWED HERE
+          ALL PHOTOS IS ALOWED HERE
         </Typography>
       
 
@@ -327,7 +328,7 @@ function ResponsiveDrawer(props) {
 <hr />
 <br/>
 <Typography  sx={{
-          width: "100", height: "100", color: "blue",
+          width: "100", height: "100", color: "green",
           padding:"right",
           textAlign:"center",
         
@@ -354,8 +355,8 @@ function ResponsiveDrawer(props) {
       </Button>
     </Stack>
     </Box>
-    <image src="https://images.pexels.com/photos/5709665/pexels-photo-5709665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-      </Box>
+    </Box>
+    
     
     </Box>
   );
