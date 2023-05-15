@@ -27,12 +27,48 @@ import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Image from "next/image";
+import{useRouter} from "next/router";
+
+
+
+const Home =()=>{
+
+  // video state 
+
+ const [Videos,setVideos]  =useState([]);
+ const videoRef =userRef();
+
+// Fetching Videos
+const fetchingData =async() => {
+  const response =await axios.get("/api/videos");
+  setVideos(response.data);
+};
+
+useEffect(() => {
+  fetchingData();
+}, []);
+
+return (
+  <>
+  <button varriant ="container"
+  color="secondary"
+  sx={{
+    textTransformation:"home",
+  }}
+  >
+    Go to Trending page
+  </button>
+  </>
+)
+
+}
 
 
 const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const router=useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -56,7 +92,7 @@ function ResponsiveDrawer(props) {
         
         {/*  trending*/}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick ={() =>router.push("/trending")}>
             <ListItemIcon>
               <WhatshotIcon />
             </ListItemIcon>
