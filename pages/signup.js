@@ -1,6 +1,5 @@
 import React from "react";
 import {Grid,Paper,Avatar,Typography,TextField,Button,} from "@material-ui/core";
-//import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -22,7 +21,11 @@ const Signup = () => {
     <Grid>
       <Paper elevation={20} style={paperStyle}>
         <Grid align="center">
-          <Avatar style={avatarStyle}></Avatar>
+        <Avatar
+  alt="Remy Sharp"
+  src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
+  sx={{ width: 500, height: 500 }}
+/>
           <h2 style={headerStyle}>Sign Up</h2>
           <Typography variant="caption" gutterBottom>
             Please fill this form to create an account !
@@ -74,11 +77,13 @@ const Signup = () => {
             fullWidth
             label="Password"
             placeholder="Enter your password"
+            type="password"
           />
           <TextField
             fullWidth
             label="Confirm Password"
             placeholder="Confirm your password"
+            type="password"
           />
           <FormControlLabel
             control={<Checkbox name="checkedA" />}
@@ -112,6 +117,3 @@ const Signup = () => {
 
 
 export default Signup;
-
-
-<Box sx={{marginLeft:5}}><Typography variant="body" color="text.secondary"></Typography></Box>
