@@ -255,17 +255,23 @@ return (
     sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` }, bgcolor: '#231F1F',height: '100vh',color:'white'}}>
     <Toolbar />
     <Box sx={{
-      height:"60%",
+      position: "relative",
+      height:"30rem",
       width: '100%',
-      backgroundImage : "url(https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=600)"
+      backgroundImage : "url(https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)",
+      backgroundRepeat : "no-repeat",
+      backgroundPosition : "center",
+      backgroundSize : "cover"
       }}>
       <Box sx=
       {{
-         width : 200,
-         height: 200,
-         backgroundColor: "red"
-        }}></Box>
-      <Box></Box>
+        position : "absolute",
+        height:"30rem",
+        width: '100%',
+        backgroundColor: "linear-gradient(rgba(186, 0, 0, 1))",
+        }}>
+          <Typography variant="h1" sx={{color : 'white', fontWeight : 'bold', p:4}}>Enjoy your videos</Typography>
+        </Box>
     </Box>
     
   </Box>
