@@ -13,7 +13,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
+import SvgIcon from '@mui/material/SvgIcon';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
@@ -28,6 +28,8 @@ import Button from '@mui/material/Button';
 import InputBase from '@mui/material/InputBase';
 import Image from 'next/image';
 import Grid from '@mui/material/Unstable_Grid2';
+import Rating from '@mui/material/Rating';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 
@@ -49,8 +51,9 @@ function ResponsiveDrawer(props) {
     <div>
 
       <Toolbar />
-      <Divider />
-      <List sx={{
+  
+      {/* <List sx={{
+
         color: "red"
 
       }}>
@@ -65,21 +68,56 @@ function ResponsiveDrawer(props) {
           </ListItem>
         ))}
       </List>
-      <Divider />
+      <Divider /> */}
+      <Button  variant="contained" color="action" onClick={()=>router.push("/home")}>
+        <ListItemButton>
+     <SvgIcon />
+    < HomeIcon/>
+     {/* <SvgIcon {...props}>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon> */}
+     <Typography>
+      Home
+     </Typography>
+     </ListItemButton>
+     
+    </Button>
 
+      <Box>
+<ListItemButton>
 
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+</ListItemButton>
+       </Box>
+
+       <Box>
+
+       </Box>
+
+      <Box>
+
+    </Box>
+
+    <Box>
+
+   </Box>
+
+      {/* <List>
+        {['Home', 'Popular', 'Categories','Favorites','YourVideo'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <InboxIcon /> : <SvgIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+      
+       */}
+      <Typography>
+        Subscriptions
+      </Typography>
       <Stack direction="" spacing={3}>
 
 
@@ -350,12 +388,51 @@ function ResponsiveDrawer(props) {
       <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
         kinds of clothes that you need
       </Button>
-      <Button variant="contained" color="success" onClick={()=>router.push("/")}>
+      <Button variant="contained" color="success" onClick={()=>router.push("/signup")}>
         kind of shoues that you need
       </Button>
     </Stack>
     </Box>
-    
+    <br/>
+
+    {/* ......................start of group photo........................... */}
+    <Box sx={{gap:2,display:"flex"}}>
+      <Box>
+        <Rating/>
+        <Typography variant='caption'>
+            natural food
+        </Typography>
+        {/* <Box   sx={{
+        '& > legend': { mt: 2 },
+      }}>
+        <Typography component="legend">Controlled</Typography>
+      <Rating
+        name="simple-controlled"
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      />
+      </Box> */}
+    <Image src="https://media.istockphoto.com/id/993119894/photo/food-containing-vitamin-c-healthy-eating.jpg?b=1&s=612x612&w=0&k=20&c=SFcIrLv3QsCApZVBWL61mmKiJwBrZvFpX3TyxZrK-og=" width={350} height={350}/>
+    </Box>
+
+    <Box>
+      <Typography>
+
+      </Typography>
+    <Image src="https://images.pexels.com/photos/175695/pexels-photo-175695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
+    </Box>
+
+    <Box>
+      <Typography>
+
+      </Typography>
+    <Image src="https://images.pexels.com/photos/730911/water-splash-with-hair-beautiful-girl-seaside-portrait-motion-730911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
+    </Box>
+    </Box>
+    {/* ....end of group photo................................. */}
+
     </Box>
     
     
