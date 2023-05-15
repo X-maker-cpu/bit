@@ -350,11 +350,12 @@ function ResponsiveDrawer(props) {
       <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
         kinds of clothes that you need
       </Button>
-      <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
+      <Button variant="contained" color="success" onClick={()=>router.push("/")}>
         kind of shoues that you need
       </Button>
     </Stack>
     </Box>
+    
     </Box>
     
     
