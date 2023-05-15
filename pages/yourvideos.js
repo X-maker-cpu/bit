@@ -1,4 +1,5 @@
 import { Box, Typography, Avatar, Toolbar, Divider } from "@mui/material";
+import { useRouter } from "next/router";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
@@ -34,14 +35,22 @@ const Yourvideos = () => {
 
 const drawerWidth = 200;
 
+
+
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
   
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);    
+  };
+
+  const homeSwitch = useRouter();
+  const trendingSwitch = useRouter();
+  const categoriesSwitch = useRouter();
+  const favoritySwitch = useRouter();
+  const yourvideosSwitch = useRouter();
+
 const drawer = (
 <div>
   <Toolbar sx={{bgcolor:"#322F2F", boxShadow: 4}}>
@@ -53,7 +62,7 @@ const drawer = (
   <List sx={{color: '#A4A4A4'}}>
     {/* Home btn */}
   <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => homeSwitch.push('/home')}>
           <ListItemIcon>
               <HomeIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -62,7 +71,7 @@ const drawer = (
       </ListItem>
       {/* popural btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => trendingSwitch.push('/trending')}>
           <ListItemIcon>
           <WhatshotIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -71,7 +80,7 @@ const drawer = (
       </ListItem>
       {/* categories btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => categoriesSwitch.push('/categories')}>
           <ListItemIcon>
           <ViewListIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -80,7 +89,7 @@ const drawer = (
       </ListItem>
       {/* Favorites btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => favoritySwitch.push('/favorites')}>
           <ListItemIcon>
           <FavoriteIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -89,7 +98,7 @@ const drawer = (
       </ListItem>
       {/* Yourvideos btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => yourvideosSwitch.push('/yourvideos')}>
           <ListItemIcon>
           <VideocamIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
