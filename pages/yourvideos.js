@@ -62,7 +62,7 @@ const drawer = (
   <List sx={{color: '#A4A4A4'}}>
     {/* Home btn */}
   <ListItem  disablePadding>
-        <ListItemButton onClick={() => homeSwitch.push('/home')}>
+        <ListItemButton onClick={() => homeSwitch.push('/')}>
           <ListItemIcon>
               <HomeIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
