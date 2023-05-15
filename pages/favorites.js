@@ -23,7 +23,7 @@ import { Avatar } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import Image from "next/image";
 import axios from "axios";
-<<<<<<< HEAD
+ 
 import { useRouter } from "next/router";
 
 
@@ -61,8 +61,8 @@ const favourites = () => {
   )
 
 }
-=======
->>>>>>> 46fe7cb44c319b71879fb608aae1bd72d55a522f
+
+ 
 
 
 
