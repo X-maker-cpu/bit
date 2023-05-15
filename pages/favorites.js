@@ -195,7 +195,7 @@ const Home= ()=>{
 
   //fetching videos
   const fetchData = async () => {
-    const response = await axios.get("/api/video");
+    const response = await axios.get("/api/videos");
     console.log(response);
     setVideos(response.data);
   };
@@ -223,11 +223,7 @@ const Home= ()=>{
  const VideoComponent = (prop) => {
   return (
     <Box>
-      <iframe
-        width="auto"
-        height="auto"
-        src={"https://youtu.be/-5A3lJ59JYM"}
-      ></iframe>
+      <iframe width="735" height="413" src={`https://www.youtube.com/watch?v=${prop.id}`} ></iframe>
     </Box>
   );
  };
