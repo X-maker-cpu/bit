@@ -26,8 +26,12 @@ import ListItemText from "@mui/material/ListItemText";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Avatar, Box, Divider, Toolbar, Typography } from "@mui/material";
+import{useRouter} from "next/router";
+// videos state
+
 
 const Home = () => {
+  const router = useRouter();
   return (
     <>
       <ResponsiveDrawer />
@@ -279,7 +283,20 @@ function ResponsiveDrawer(props) {
               color: "#A4A4A4",
             },
           }}
+
         >
+            
+            <button
+            variant="containt"
+            color="secondary"
+            sx={{
+              textTransform:"none",
+            }}
+            onClick={()=> router.push("/trending")}
+            >Go Trending page
+            </button>
+        
+          
           {drawer}
         </Drawer>
         <Drawer
