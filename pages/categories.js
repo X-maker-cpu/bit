@@ -8,9 +8,7 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import CategoryIcon from '@mui/icons-material/Category';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import SwitchVideoIcon from '@mui/icons-material/SwitchVideo';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -20,8 +18,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
-const drawerWidth = 240;
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import Badge from '@mui/material/Badge';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import Image from "next/image";
 
+
+const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -32,7 +40,8 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Toolbar />
+      <Toolbar >
+      </Toolbar>
       <Divider />
       <List>
         {/* home */}
@@ -44,19 +53,20 @@ function ResponsiveDrawer(props) {
             <ListItemText primary={"Home"} />
           </ListItemButton>
         </ListItem>
+        
         {/*  trending*/}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <WhatshotIcon />
             </ListItemIcon>
-            <ListItemText primary={"popular"} />
+            <ListItemText primary={"Popular"} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CategoryIcon />
+              <FormatListBulletedIcon />
             </ListItemIcon>
             <ListItemText primary={"categories"} />
           </ListItemButton>
@@ -66,72 +76,84 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <FavoriteIcon />
             </ListItemIcon>
-            <ListItemText primary={"favourites"} />
+            <ListItemText primary={"Favourites"} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <SwitchVideoIcon />
+              <VideocamIcon />
             </ListItemIcon>
             <ListItemText primary={"Your videos"} />
           </ListItemButton>
         </ListItem>
       </List>
       <Divider />
-      <Typography variant="h6" FontFamily={"robot"} fontWeight={"50"} fontSize={"1rem"} padding={"2rem"}>SUBSCRIPTIONS</Typography>
+      <Typography
+        variant="h6"
+        FontFamily={"robot"}
+        fontWeight={"50"}
+        fontSize={"1rem"}
+        padding={"2rem"}
+      >
+        SUBSCRIPTIONS
+      </Typography>
 
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
-              <Avatar/>
+            <ListItemIcon>  
+            <Badge color="success" variant="dot">
+            <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+          </Badge>
             </ListItemIcon>
-          
             <ListItemText primary={"Yoga with Kim"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
-            </ListItemIcon>
+            <Avatar src="https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"/>
           
+            </ListItemIcon>
+
             <ListItemText primary={"Books Review"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Badge color="success" variant="dot">
+            <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+          </Badge>
             </ListItemIcon>
-          
+
             <ListItemText primary={"Brittary Bathgats"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
-          
+
             <ListItemText primary={"GingerDog"} />
           </ListItemButton>
         </ListItem>
       </List>
       <List>
-      <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Avatar src="https://images.pexels.com/photos/3454298/pexels-photo-3454298.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
-          
+
             <ListItemText primary={"Asian Recipies"} />
           </ListItemButton>
         </ListItem>
@@ -142,13 +164,21 @@ function ResponsiveDrawer(props) {
     backgroundColor:"whitesmoke"
   }}> 
     <Typography variant="body1" fontWeight={700} >Get 3 months of premium for free</Typography>
-    <Typography variant="caption">Enjoy ad-free content,offline watching and more</Typography>
+    <Typography variant="body2">Enjoy ad-free content,offline watching and more</Typography>
+  </Box>
+  <Box sx={{
+    borderRadius:20,
+    border: '2px solid green',
+    backgroundColor: "black",
+    padding: 1,
     
+  }}>
+  <Typography variant="h5" color="green" alignItems="center">GET PREMIUM</Typography>
+
   </Box>
     </div>
   );
-  
-  
+
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -172,11 +202,19 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Box>
-            <Typography variant="h6" noWrap component="div">
-              Responsive drawer
-            </Typography>
+          <Box sx={{display:"flex", gap:10}}>
+            <CustomizedInputBase/>
+            <Stack direction="row" spacing={2}>
+              <Box >
+      <Button sx={{borderRadius:200 ,ptop:5}} variant="outlined" color="success"  >ADD VIDEO</Button>
+      </Box>
+      
+    </Stack>
           </Box>
+         <Box sx={{gap:30 ,marginLeft:10}}>
+      <Avatar alt="M" src="https://images.pexels.com/photos/13020492/pexels-photo-13020492.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </Box>
+      <Typography >May Harmon</Typography>
         </Toolbar>
       </AppBar>
       <Box
@@ -227,35 +265,6 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
       </Box>
     </Box>
   );
@@ -270,3 +279,69 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+const videoComponent = ({youtubeVideoUrl}) => {
+  return (
+    <Box>
+      sx={{
+        height:200,
+        width:300,
+        borderRadius: 10,
+        bcolor:"dodgerblue",
+      }}
+      {/* Video Image */}
+      <Box 
+      sx={{
+        position:"relative",
+      }}>
+        <Image
+        src="https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        height={200}
+        width={300}
+        alt="Zebra"
+        />
+        <Typography
+        sx={{
+          position:"absolute",
+          right:10,
+          bottom:15,
+          color:"white",
+          backgroundcolor: "GreyText",
+          p:0.5,
+        }}
+        variant="GrayText"
+        >55:03</Typography>
+       </Box>
+       {/*video Details */}
+       <Box
+       sx={{
+        display:"flex",
+       }}
+       >
+       <Avatar>PE</Avatar>
+       <Box>
+        <Typography>Title</Typography>
+        <Typography>Author Name</Typography>
+       </Box>
+       </Box>
+    </Box>
+  );
+};              
+
+function CustomizedInputBase() {
+  return (
+    <Paper
+      component="form"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 800 }}
+    >
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search Google Maps"
+        inputProps={{ 'aria-label': 'search google maps' }}
+      />
+ 
+    </Paper>
+  );
+}

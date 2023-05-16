@@ -55,23 +55,8 @@ function SignInSide() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          
-          sx={{
-            backgroundImage: 'url(https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&w=600',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -80,18 +65,20 @@ function SignInSide() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              borderRadius:50,
+              backgroundRepeat: "no-repeat",
+              backgroundSize:"cover",
+              backgroundImage: 'url(https://img.freepik.com/free-vector/realistic-white-monochrome-background_52683-66094.jpg?w=2000)',
             }}
           >
-                  <Avatar
+          <Avatar
   alt="Remy Sharp"
   src="https://play-lh.googleusercontent.com/xbGT908pv88eb0J9ZirsNEf0G35BEEhcON_wfKaMogVXMbqVlWPFCe73ZnwWY94o7mQ"
-  sx={{ width: 500, height: 500 }}
+  sx={{ width: 300, height: 300 }}
 />
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" fontFamily="serif" >
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} color="black" style={{fontSize:20, fontFamily:"serif"}} >
               <TextField
                 margin="normal"
                 required
@@ -126,12 +113,12 @@ function SignInSide() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link href="#" variant="body2" style={{fontSize:20, fontFamily:"serif"}}>
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2"> {"Don't have an account? Sign Up"}
+                  <Link href="/signup" variant="body2" style={{fontSize:20, fontFamily:"serif"}}> {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
@@ -139,8 +126,7 @@ function SignInSide() {
             </Box>
           </Box>
         </Grid>
-      </Grid>
-    </ThemeProvider>
+      </ThemeProvider>
   );
 }
 ;
