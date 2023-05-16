@@ -58,6 +58,14 @@ return (
   >
     Go to Trending page
   </button>
+  <button varriant ="container"
+  color="secondary"
+  sx={{
+    textTransformation:"home",
+  }}
+  >
+    Go to home
+  </button>
   </>
 )
 
@@ -69,7 +77,6 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const router=useRouter();
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -82,7 +89,7 @@ function ResponsiveDrawer(props) {
       <List>
         {/* home */}
         <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick ={() =>router.push("/home")}>
               <ListItemIcon>
               <HomeIcon />
               </ListItemIcon>
