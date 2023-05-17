@@ -14,6 +14,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import Button from "@mui/material/Button";
 import Image from "next/image";
+import vidBg from "../public/vidBg.mp4";
 import React from "react";
 import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -259,12 +260,8 @@ return (
       width: '100%',
       backgroundImage : "url(https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=600)"
       }}>
-      <Box sx=
-      {{
-         width : 200,
-         height: 200,
-         backgroundColor: "red"
-        }}></Box>
+        <Video src={vidBg}/>
+      <Box></Box>
       <Box></Box>
     </Box>
     

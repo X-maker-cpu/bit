@@ -248,7 +248,11 @@ const Home= ()=>{
 
   //fetching videos
   const fetchData = async () => {
+<<<<<<< HEAD
+    const response = await axios.get("/api/videos");
+=======
     const response = await axios.get("https://youtu.be/my0EWweUzmw");
+>>>>>>> 0299ad62d4e323c5d2372090e2afc7d9f75410eb
     console.log(response);
     setVideos(response.data);
   };
@@ -276,11 +280,15 @@ const Home= ()=>{
  const VideoComponent = (prop) => {
   return (
     <Box>
+<<<<<<< HEAD
+      <iframe width="735" height="413" src={`https://www.youtube.com/watch?v=${prop.id}`} ></iframe>
+=======
       <iframe
         width="auto"
         height="auto"
         src={"https://youtu.be/my0EWweUzmw"}
       ></iframe>
+>>>>>>> 0299ad62d4e323c5d2372090e2afc7d9f75410eb
     </Box>
   );
  };

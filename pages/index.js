@@ -17,12 +17,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar, Badge } from "@mui/material";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
-import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
-import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-import VideocamRoundedIcon from "@mui/icons-material/VideocamRounded";
-
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded"
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
+import WhatshotRoundedIcon from '@mui/icons-material/WhatshotRounded';
+import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
+import Image from 'next/image';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -84,36 +84,84 @@ function ResponsiveDrawer(props) {
           </ListItemButton>
         </ListItem>
       </List>
-      <Box
+      <Typography
+        variant="subtitle1"
         sx={{
-          alignItems: "center",
-          justifyContent: "center",
+          fontSize: 13,
+          color: "#A4A4A4",
+          letterSpacing:1,
+          P: "0 0 8px 0",
+          ml: 2,
         }}
       >
         SUBSCRIPTIONS
-      </Box>
+      </Typography>
       <List>
         <ListItemButton>
           <ListItemIcon>
+          <Badge
+            color="success"
+            overlap="circular"
+            badgeContent=" "
+            variant="dot"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+          >
             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+          </Badge>
           </ListItemIcon>
           <ListItemText primary="NATHANAEL" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
+          <Badge
+            color="success"
+            overlap="circular"
+            badgeContent=" "
+            variant="dot"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+          >
             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            </Badge>
           </ListItemIcon>
           <ListItemText primary="ABDIZO" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
+          <Badge
+            color="success"
+            overlap="circular"
+            badgeContent=" "
+            variant="dot"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+          >
             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+           </Badge>
           </ListItemIcon>
           <ListItemText primary="SUNDAY" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
+          <Badge
+            color="success"
+            overlap="circular"
+            badgeContent=" "
+            variant="dot"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+          >
             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            </Badge>
           </ListItemIcon>
           <ListItemText primary="ISTARLIN" />
         </ListItemButton>
@@ -133,7 +181,7 @@ function ResponsiveDrawer(props) {
           <ListItemText primary="EDOUIGE" />
         </ListItemButton>
       </List>
-      <Badge>fs</Badge>
+      <Badge></Badge>
     </div>
   );
 
@@ -213,13 +261,29 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph></Typography>
-        <Typography paragraph></Typography>
+        <Box sx={{
+          display: "flex",
+          gap: 5
+        }}>
+        <VideoComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGvFJ9IINe0jYp35DlB7F9WlsC9iqE_wZCMQ&usqp=CAU" title="morning training" />
+        <VideoComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIpNZHOdm6gPyn5EeJgtyzphnxz-PyS9Www&usqp=CAU" title="sunrise in the zoo" />
+        </Box>
+        <Typography >
+          Explore by categories 
+        </Typography>
+        <Box sx={{
+          borderRadius:3,
+          border:'2px solid grey',
+          padding: 1
+        }}>
+        <Typography  variant= "h5" color="grey">
+          Health Care
+        </Typography>
+        </Box>
       </Box>
     </Box>
   );
-}
-
+};
 ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
@@ -229,3 +293,36 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+
+const VideoComponent = (prop) => {
+  return(
+  <Box >
+    {/* image and duratin */}
+    <Box sx={{
+      position: "relative", width: 500,
+      height: 400,
+    }}
+    >
+    <Image src={prop.src} height={400} width= {500}/>
+    <Typography 
+    variant='caption'
+    sx={{
+      position: "absolute",
+      bottom: 0,
+      right: 10,
+    }}
+    >
+     55:30
+    </Typography>
+    </Box>
+    {/* Author Avatar, video tittle and author name*/}
+    <Box sx={{ display: "flex"}}>
+      <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIowiTvupIDXVcDEnmpeWkig90a4kXRgwW8g&usqp=CAU"></Avatar>
+      <Box>
+        <Typography variant='body1'>{prop.title}</Typography>
+        <Typography variant='caption'>Bantuuuu legend </Typography>
+      </Box>
+    </Box>
+  </Box>
+  );
+};
