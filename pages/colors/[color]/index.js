@@ -1,20 +1,20 @@
-import{Box} from "@mui/material";
-import { useRouter } from "next/router";
+import {Box,Typography} from "@mui/material";
+
 import React from "react";
 
-const Index = () =>{
-    const router = useRouter();
-    return(
-        <Box 
-        SX={{
-            bgcolor:router.query.color,
-            height: "100vh",
-            width: "100vw",
+
+const Index = () => {
+    
+    return (
+        <Box
+        sx={{
+            display: "grid",
+            placeItems: "center",
         }}
         >
-            color
+        <Typography variant="h1">color </Typography>
         </Box>
-    )
-}
+    );
+};
 
 export default Index;
