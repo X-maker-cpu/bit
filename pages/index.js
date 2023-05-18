@@ -6,6 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -23,6 +24,9 @@ import WhatshotRoundedIcon from '@mui/icons-material/WhatshotRounded';
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import Image from 'next/image';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import Paper from "@mui/material/Paper";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -209,9 +213,24 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
+          <Paper component="form"
+        sx={{ 
+          backgroundColor: "grey",
+          p: '2px 2px', 
+          display: 'flex', 
+          alignItems: 'center', 
+          width: 700,
+          height: 40,
+          borderRadius: "50px"
+          }}>
+    <IconButton type="button" sx={{ p: '10px', color: "#DEDDDD" }} aria-label="search">
+      <SearchIcon />
+    </IconButton>
+    <InputBase
+      sx={{ ml: 1, flex: 1, color: "#DEDDDD"}}
+      placeholder="Search"
+      inputProps={{ 'aria-label': 'search google maps' }}/>
+    </Paper>
         </Toolbar>
       </AppBar>
       <Box
@@ -257,7 +276,6 @@ function ResponsiveDrawer(props) {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
         <Toolbar />
@@ -271,15 +289,13 @@ function ResponsiveDrawer(props) {
         <Typography >
           Explore by categories 
         </Typography>
-        <Box sx={{
+        
+        <Button sx={{
           borderRadius:3,
-          border:'2px solid grey',
-          padding: 1
-        }}>
-        <Typography  variant= "h5" color="grey">
+          padding: 1,
+        }} variant= "contained" color="action">
           Health Care
-        </Typography>
-        </Box>
+        </Button>
       </Box>
     </Box>
   );
