@@ -284,9 +284,10 @@ return (
         </Box>
      </Box> {/*========>>>> closing tag for header */}
 
-     
-           <Grid sx={{ bgcolor: '#231F1F', height: '30rem' }}>
-            <Grid item xs={12}>
+     <Toolbar />
+
+           <Grid sx={{ bgcolor: '#231F1F', height: '29rem' }}>
+            <Grid sx={{bgcolor: "#231F1F", height: '22rem', p:3.5}}>
               <Grid container justifyContent="center" spacing={spacing}>
                 {[0, 1, 2, 3, 4].map((value) => (
                   <Grid key={value} item>
