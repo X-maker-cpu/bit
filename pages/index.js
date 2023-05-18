@@ -27,6 +27,8 @@ import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import Paper from "@mui/material/Paper";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
+import Stack from "@mui/material/Stack";
+import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -231,6 +233,34 @@ function ResponsiveDrawer(props) {
       placeholder="Search"
       inputProps={{ 'aria-label': 'search google maps' }}/>
     </Paper>
+    <Box sx=
+    {{
+      display: "flex",
+      width: "35em",
+      height: 40,
+      alignItems: "center",
+      justifyContent: "flex-end",
+      float: "right"
+      }}>
+
+      <Stack spacing={2} direction="row">
+          <Button variant="outlined" 
+          sx={{
+            border:"2px solid #8CC800", 
+            color: "#8CC800", 
+            borderRadius: "30px",
+            margin: "0 60px 0 0",
+            height: 30,
+            width: 130,
+            fontSize: 12,
+            fontWeight: "bold"
+            }}>ADD VIDEO</Button>
+      </Stack>  
+      <Avatar src="DSC_0556.png" />
+
+      <Typography variant='subtitle1'sx={{p: "0 20px 0 18px"}}>ABDIZO</Typography>
+      <ArrowDropDownTwoToneIcon sx={{margin: "0 30px 0 0"}}/>
+    </Box> 
         </Toolbar>
       </AppBar>
       <Box
