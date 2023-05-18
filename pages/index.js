@@ -202,7 +202,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          bgcolor: "red",
+          bgcolor: "blue",
         }}
       >
         <Toolbar>
@@ -319,13 +319,60 @@ function ResponsiveDrawer(props) {
         <Typography >
           Explore by categories 
         </Typography>
-        
+        <Box sx={{
+          display: "flex",
+          gap: 6
+        }}>
         <Button sx={{
           borderRadius:3,
           padding: 1,
         }} variant= "contained" color="action">
           Health Care
         </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+          gap:50,
+        }} variant= "contained" color="action">
+          EDUCATION
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          SPORTS
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          CLASSES
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          NATURE
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          COOKING
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          FASHION
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          ANIMALS
+        </Button>
+        </Box>
       </Box>
     </Box>
   );
