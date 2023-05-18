@@ -14,7 +14,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import Button from "@mui/material/Button";
 import Image from "next/image";
-import vidBg from "../public/vidBg.mp4";
 import React from "react";
 import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
