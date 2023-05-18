@@ -18,14 +18,20 @@ import React from "react";
 import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
+import Grid from '@mui/material/Grid';
 import MenuIcon from '@mui/icons-material/Menu';
+
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+
 
 
 const Yourvideos = () => {
@@ -139,11 +145,11 @@ const drawer = (
 );
 
 const container = window !== undefined ? () => window().document.body : undefined;
-const backBg = {
-  Img1 : "https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=600",
-  Img2: "https://images.pexels.com/photos/3622517/pexels-photo-3622517.jpeg?auto=compress&cs=tinysrgb&w=600",
-  Img2: "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=600"
-}
+
+const [spacing, setSpacing] = React.useState(4);
+const handleChange = (event) => {
+  setSpacing(Number(event.target.value));
+};
 
 return (
 <Box sx={{ display: 'flex' }}>
@@ -247,14 +253,12 @@ return (
     </Drawer>
   </Box>
 
-
-
-
   <Box
     component="main"
     sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` }, bgcolor: '#231F1F',height: '100vh',color:'white'}}>
     <Toolbar />
-    <Box sx={{
+   {/*=========== opening tag for header =============*/}
+    <Box sx={{   
       position: "relative",
       height:"30rem",
       width: '100%',
@@ -268,15 +272,40 @@ return (
         position : "absolute",
         height:"30rem",
         width: '100%',
-        backgroundColor: "linear-gradient(rgba(186, 0, 0, 1))",
+        opacity: 0.78,
+        backgroundImage: "linear-gradient(to right top, #0f0f11, #0d1113, #0b1313, #0d1411, #12140d)",
         }}>
-          <Typography variant="h1" sx={{color : 'white', fontWeight : 'bold', p:4}}>Enjoy your videos</Typography>
         </Box>
-    </Box>
-    
+        <Box sx={{zIndex: 100, position: 'absolute'}}>
+          <Typography variant="h1" sx={{color : 'white', fontWeight : 'bold', p:4}}>Enjoy your videos</Typography>
+          <Typography variant="subtitle1" sx={{color : 'white', pl:4, pr: 10, fontSize: 25}}>
+            Join a million of movie streams around the world. Enjoy your latest videos Shorts, Pranks, Comedies, Animation, Seires and movie, plus other networks of your will.
+          </Typography>
+        </Box>
+     </Box> {/*========>>>> closing tag for header */}
+
+     
+           <Grid sx={{ bgcolor: '#231F1F', height: '30rem' }}>
+            <Grid item xs={12}>
+              <Grid container justifyContent="center" spacing={spacing}>
+                {[0, 1, 2, 3, 4].map((value) => (
+                  <Grid key={value} item>
+                    <Paper
+                      sx={{
+                        height: 290,
+                        width: 200,
+                        bgcolor: 'blue'
+                      }}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+     </Box>
   </Box>
-</Box>
 );
+
 }
 
 
