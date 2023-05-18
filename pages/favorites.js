@@ -1,4 +1,4 @@
-import  React ,{useState,useEffect,useRef} from "react";
+import  React ,{useState,useEffect,useRef,} from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -23,6 +23,46 @@ import { Avatar } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import Image from "next/image";
 import axios from "axios";
+ 
+import { useRouter } from "next/router";
+
+
+
+const favourites = () => {
+  const router = useRouter();
+  // video state
+
+  const [video, setVideo] = useState([]);
+  const videoRef = useRef();
+
+  // fetching video
+  const fetchData =async() => {
+    const rensponse = await axios.get("/api/videos");
+    console.log(response.data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  },[]);
+
+  return (
+    <>
+    <button
+    variant="contained"
+    color="secontary"
+    sx={{
+      textTransform: "none",
+    }}
+    onClick={() =>router.push("/trending")}
+    >
+      go to trinding page
+    </button>
+    </>
+  )
+
+}
+
+ 
 
 
 
@@ -91,7 +131,20 @@ function ResponsiveDrawer(props) {
           <ListItemButton>
             <ListItemText primary={"Chrissbuzzi"} />
           </ListItemButton>
-        </ListItem>
+        </ListItem> 
+        
+      <ListItem disablePadding>
+      <Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/95/0a/02/950a02f986810fc5ae647c52cd814aee.jpg" />
+          <ListItemButton>
+            <ListItemText primary={"igiraneza rieve"} />
+          </ListItemButton>
+        </ListItem> 
+        <ListItem disablePadding>
+      <Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/95/0a/02/950a02f986810fc5ae647c52cd814aee.jpg" />
+          <ListItemButton>
+            <ListItemText primary={"Alphonnsine uwimana"} />
+          </ListItemButton>
+        </ListItem> 
    </Box>
   )
   
@@ -195,7 +248,11 @@ const Home= ()=>{
 
   //fetching videos
   const fetchData = async () => {
-    const response = await axios.get("/api/video");
+<<<<<<< HEAD
+    const response = await axios.get("/api/videos");
+=======
+    const response = await axios.get("https://youtu.be/my0EWweUzmw");
+>>>>>>> 0299ad62d4e323c5d2372090e2afc7d9f75410eb
     console.log(response);
     setVideos(response.data);
   };
@@ -223,11 +280,15 @@ const Home= ()=>{
  const VideoComponent = (prop) => {
   return (
     <Box>
+<<<<<<< HEAD
+      <iframe width="735" height="413" src={`https://www.youtube.com/watch?v=${prop.id}`} ></iframe>
+=======
       <iframe
         width="auto"
         height="auto"
-        src={"https://youtu.be/-5A3lJ59JYM"}
+        src={"https://youtu.be/my0EWweUzmw"}
       ></iframe>
+>>>>>>> 0299ad62d4e323c5d2372090e2afc7d9f75410eb
     </Box>
   );
  };
