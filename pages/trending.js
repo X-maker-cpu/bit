@@ -30,7 +30,9 @@ import Image from 'next/image';
 import Grid from '@mui/material/Unstable_Grid2';
 import Rating from '@mui/material/Rating';
 import HomeIcon from '@mui/icons-material/Home';
-
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
@@ -71,7 +73,7 @@ function ResponsiveDrawer(props) {
       <Divider /> */}
       <Button  variant="contained" color="action" onClick={()=>router.push("/home")}>
         <ListItemButton>
-     <SvgIcon />
+     
     < HomeIcon/>
      {/* <SvgIcon {...props}>
       <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
@@ -80,25 +82,41 @@ function ResponsiveDrawer(props) {
       Home
      </Typography>
      </ListItemButton>
-     
     </Button>
 
-      <Box>
-<ListItemButton>
+      <Box  variant="contained" color="action" onClick={()=>router.push("/popular")}>
+<ListItem>
 
+</ListItem>
+       </Box>
+
+       <Box  variant="contained" color="action" onClick={()=>router.push("/categories")}>
+       <ListItemButton>
+<FormatListBulletedIcon/>
+<Typography>
+  Categories
+</Typography>
 </ListItemButton>
        </Box>
 
-       <Box>
-
-       </Box>
-
-      <Box>
-
+      <Box  variant="contained" color="action" onClick={()=>router.push("/favorities")}>
+      
+      <ListItemButton>
+      <FavoriteIcon/>
+        <Typography>
+          Favorite
+        </Typography>
+      </ListItemButton>
     </Box>
 
-    <Box>
-
+    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideo")}>
+   
+      <ListItemButton>
+      < VideocamIcon/>
+<Typography>
+  yourvideo
+</Typography>
+</ListItemButton>
    </Box>
 
       {/* <List>
@@ -356,10 +374,10 @@ function ResponsiveDrawer(props) {
   gap:15
 }}>
 
-{videos.map(videoSrc=>
+{videos.map((videoSrc,i)=>
        {
         console.log("Video SRC :>>", videoSrc)
-        return( <MyVideoComponent src={videoSrc} />)
+        return( <MyVideoComponent key={i} src={videoSrc} />)
       }
   )}
 </Box>
