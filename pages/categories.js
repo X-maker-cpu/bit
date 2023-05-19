@@ -36,7 +36,7 @@ const Home =()=>{
   // video state 
 
  const [Videos,setVideos]  =useState([]);
- const videoRef =userRef();
+ const VideoRef =userRef();
 
 // Fetching Videos
 const fetchingData =async() => {
@@ -65,6 +65,14 @@ return (
   }}
   >
     Go to home
+  </button>
+  <button varriant ="container"
+  color="secondary"
+  sx={{
+    textTransformation:"home",
+  }}
+  >
+    Go to Favorite page
   </button>
   </>
 )
@@ -120,10 +128,10 @@ function ResponsiveDrawer(props) {
               <FavoriteIcon />
             </ListItemIcon>
             <ListItemText primary={"Favourites"} />
-          </ListItemButton>
+          </ListItemButton >
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick ={() =>router.push("/trending")}>
             <ListItemIcon>
               <VideocamIcon />
             </ListItemIcon>
@@ -146,9 +154,17 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
-            </ListItemIcon>
+            <Badge color="success"  badgeContent=" " variant="dot"   anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'right',
+  }}>
+
+<Avatar alt="Y" src="https://i.pinimg.com/564x/90/62/55/90625588b0fc8ec87aad6f70a5515204.jpg"/>
+  </Badge>
+
+
           
+            </ListItemIcon>
             <ListItemText primary={"Yoga with Kim"} />
           </ListItemButton>
         </ListItem>
@@ -157,7 +173,14 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Badge color="success"  badgeContent=" " variant="dot"   anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'right',
+  }}>
+              <Avatar alt="B" src="https://images.unsplash.com/photo-1615791287388-6f1bd87ace4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9vayUyMHJldmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"/>
+
+  </Badge>
+
             </ListItemIcon>
           
             <ListItemText primary={"Books Review"} />
@@ -168,7 +191,13 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Badge color="success"  badgeContent=" " variant="dot"   anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'right',
+  }}>
+              <Avatar alt="Br" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIC38MwoYtW4L7x1z5o4FVzgwdRBcHbA1QRQ&usqp=CAU"/>
+
+  </Badge>
             </ListItemIcon>
           
             <ListItemText primary={"Brittary Bathgats"} />
@@ -179,7 +208,13 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Badge color="success"  badgeContent=" " variant="dot"   anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'right',
+  }}>
+              <Avatar alt="G" src ="https://thumbs.dreamstime.com/b/portrait-funny-cute-ginger-dog-big-ears-looks-straight-camera-background-isolated-194579466.jpg"/>
+
+  </Badge>
             </ListItemIcon>
           
             <ListItemText primary={"GingerDog"} />
@@ -190,7 +225,13 @@ function ResponsiveDrawer(props) {
       <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar/>
+            <Badge color="success"  badgeContent=" " variant="dot"   anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'right',
+  }}>
+              <Avatar alt="A" src="https://media.istockphoto.com/id/545286388/photo/chinese-food-blank-background.webp?s=612x612&w=is&k=20&c=yn2iMa8SUVvOTjMX5kMaebQEWkT00PZqYI5Dr0FFxZU="/>
+
+  </Badge>
             </ListItemIcon>
           
             <ListItemText primary={"Asian Recipies"} />
@@ -247,8 +288,8 @@ function ResponsiveDrawer(props) {
               Responsive drawer
             </Typography>
           </Box>
-         <Box sx={{gap:30 ,marginLeft:10}}>
-      <Avatar alt="M" src="https://images.pexels.com/photos/13020492/pexels-photo-13020492.jpeg?auto=compress&cs=tinysrgb&w=600" />
+         <Box sx={{gap:30 ,marginLeft:90}}>
+      <Avatar alt="M" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OpvCyhmhGki-ZZ2Ly4LZIF-EavKqSUHCuA&usqp=CAU" />
     </Box>
       <Typography >May Harmon</Typography>
         </Toolbar>
@@ -265,7 +306,8 @@ function ResponsiveDrawer(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
+             // Better open performance on mobile.
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -301,21 +343,6 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
 
       </Box>
     </Box>
