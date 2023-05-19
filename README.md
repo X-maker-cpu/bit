@@ -33,6 +33,7 @@ const [videos, setVideos] = React.useState([]);
         </Box>)
 }
 
+
 const VideoComponent = ({ video }) => {
   console.log(video);
   const router = useRouter();
