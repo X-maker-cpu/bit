@@ -35,6 +35,11 @@ const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  
   const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
@@ -49,10 +54,6 @@ function ResponsiveDrawer(props) {
       setVideos([]);
     };
   }, []);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
 
   const drawer = (
     <div>
@@ -208,7 +209,7 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        
+
         <Toolbar>
           <IconButton
             color="inherit"
@@ -283,9 +284,6 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-<<<<<<< HEAD
-
-=======
         <Box
           sx={{
             display: "grid",
@@ -297,7 +295,6 @@ function ResponsiveDrawer(props) {
             <VideoComponent key={i} video={video} />
           ))}
         </Box>
->>>>>>> f7da7664335927e7f8557beb81073aa60183ac4a
       </Box>
     </Box>
   );
@@ -310,6 +307,55 @@ ResponsiveDrawer.propTypes = {
    */
   window: PropTypes.func,
 };
+
+export default ResponsiveDrawer;
+const videoComponent = ({youtubeVideoUrl}) => {
+  return (
+    <Box>
+      sx={{
+        height:200,
+        width:300,
+        borderRadius: 10,
+        bcolor:"dodgerblue",
+      }}
+      {/* Video Image */}
+      <Box 
+      sx={{
+        position:"relative",
+      }}>
+        <Image
+        src="https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        height={200}
+        width={300}
+        alt="Zebra"
+        />
+        <Typography
+        sx={{
+          position:"absolute",
+          right:10,
+          bottom:15,
+          color:"white",
+          backgroundcolor: "GreyText",
+          p:0.5,
+        }}
+        variant="GrayText"
+        >55:03</Typography>
+       </Box>
+       {/*video Details */}
+       <Box
+       sx={{
+        display:"flex",
+       }}
+       >
+       <Avatar>PE</Avatar>
+       <Box>
+        <Typography>Title</Typography>
+        <Typography>Author Name</Typography>
+       </Box>
+       </Box>
+    </Box>
+  );
+};              
 const VideoComponent = ({ video }) => {
   console.log(video);
   const router = useRouter();
@@ -367,54 +413,6 @@ const VideoComponent = ({ video }) => {
   );
 };
 
-export default ResponsiveDrawer;
-const videoComponent = ({youtubeVideoUrl}) => {
-  return (
-    <Box>
-      sx={{
-        height:200,
-        width:300,
-        borderRadius: 10,
-        bcolor:"dodgerblue",
-      }}
-      {/* Video Image */}
-      <Box 
-      sx={{
-        position:"relative",
-      }}>
-        <Image
-        src="https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        height={200}
-        width={300}
-        alt="Zebra"
-        />
-        <Typography
-        sx={{
-          position:"auto",
-          right:10,
-          bottom:15,
-          color:"white",
-          backgroundcolor: "GreyText",
-          p:0.5,
-        }}
-        variant="GrayText"
-        >55:03</Typography>
-       </Box>
-       {/*video Details */}
-       <Box
-       sx={{
-        display:"flex",
-       }}
-       >
-       <Avatar>PE</Avatar>
-       <Box>
-        <Typography>Title</Typography>
-        <Typography>Author Name</Typography>
-       </Box>
-       </Box>
-    </Box>
-  );
-};              
 
 function CustomizedInputBase() {
   return (
