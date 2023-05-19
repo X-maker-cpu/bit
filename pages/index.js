@@ -6,6 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -23,6 +24,11 @@ import WhatshotRoundedIcon from '@mui/icons-material/WhatshotRounded';
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import Image from 'next/image';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import Paper from "@mui/material/Paper";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
+import Stack from "@mui/material/Stack";
+import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -196,7 +202,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          bgcolor: "red",
+          bgcolor: "blue",
         }}
       >
         <Toolbar>
@@ -209,9 +215,52 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
+          <Paper component="form"
+        sx={{ 
+          backgroundColor: "grey",
+          p: '2px 2px', 
+          display: 'flex', 
+          alignItems: 'center', 
+          width: 700,
+          height: 40,
+          borderRadius: "50px"
+          }}>
+    <IconButton type="button" sx={{ p: '10px', color: "#DEDDDD" }} aria-label="search">
+      <SearchIcon />
+    </IconButton>
+    <InputBase
+      sx={{ ml: 1, flex: 1, color: "#DEDDDD"}}
+      placeholder="Search"
+      inputProps={{ 'aria-label': 'search google maps' }}/>
+    </Paper>
+    <Box sx=
+    {{
+      display: "flex",
+      width: "35em",
+      height: 40,
+      alignItems: "center",
+      justifyContent: "flex-end",
+      float: "right"
+      }}>
+
+      <Stack spacing={2} direction="row">
+          <Button variant="outlined" 
+          sx={{
+            border:"2px solid #8CC800", 
+            color: "#8CC800", 
+            borderRadius: "30px",
+            margin: "0 60px 0 0",
+            height: 30,
+            width: 130,
+            fontSize: 12,
+            fontWeight: "bold"
+            }}>ADD VIDEO</Button>
+      </Stack>  
+      <Avatar src="DSC_0556.png" />
+
+      <Typography variant='subtitle1'sx={{p: "0 20px 0 18px"}}>ABDIZO</Typography>
+      <ArrowDropDownTwoToneIcon sx={{margin: "0 30px 0 0"}}/>
+    </Box> 
         </Toolbar>
       </AppBar>
       <Box
@@ -257,7 +306,6 @@ function ResponsiveDrawer(props) {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
         <Toolbar />
@@ -272,13 +320,58 @@ function ResponsiveDrawer(props) {
           Explore by categories 
         </Typography>
         <Box sx={{
-          borderRadius:3,
-          border:'2px solid grey',
-          padding: 1
+          display: "flex",
+          gap: 6
         }}>
-        <Typography  variant= "h5" color="grey">
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
           Health Care
-        </Typography>
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+          gap:50,
+        }} variant= "contained" color="action">
+          EDUCATION
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          SPORTS
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          CLASSES
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          NATURE
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          COOKING
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          FASHION
+        </Button>
+        <Button sx={{
+          borderRadius:3,
+          padding: 1,
+        }} variant= "contained" color="action">
+          ANIMALS
+        </Button>
         </Box>
       </Box>
     </Box>

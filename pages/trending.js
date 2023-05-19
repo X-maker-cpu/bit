@@ -37,6 +37,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
+
 const drawerWidth = 240;
 
 
@@ -71,18 +72,17 @@ function ResponsiveDrawer(props) {
         ))}
       </List>
       <Divider /> */}
-      <Button  variant="contained" color="action" onClick={()=>router.push("/home")}>
-        <ListItemButton>
      
-    < HomeIcon/>
-     {/* <SvgIcon {...props}>
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-    </SvgIcon> */}
-     <Typography>
-      Home
-     </Typography>
-     </ListItemButton>
-    </Button>
+      <Box  variant="contained" color="action" onClick={()=>router.push("/home")}>
+        
+       <ListItemButton>
+      
+<FormatListBulletedIcon/>
+<Typography>
+home
+</Typography>
+</ListItemButton>
+</Box>
 
       <Box  variant="contained" color="action" onClick={()=>router.push("/popular")}>
 <ListItem>
@@ -99,7 +99,7 @@ function ResponsiveDrawer(props) {
 </ListItemButton>
        </Box>
 
-      <Box  variant="contained" color="action" onClick={()=>router.push("/favorities")}>
+      <Box  variant="contained" color="action" onClick={()=>router.push("/favorites")}>
       
       <ListItemButton>
       <FavoriteIcon/>
@@ -109,12 +109,12 @@ function ResponsiveDrawer(props) {
       </ListItemButton>
     </Box>
 
-    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideo")}>
+    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideos")}>
    
       <ListItemButton>
       < VideocamIcon/>
 <Typography>
-  yourvideo
+  yourvideos
 </Typography>
 </ListItemButton>
    </Box>
@@ -133,9 +133,16 @@ function ResponsiveDrawer(props) {
       </List>
       
        */}
+       <Button>
+
+       <List>
+        <ListItemIcon>
       <Typography>
         Subscriptions
       </Typography>
+      </ListItemIcon>
+      </List>
+      </Button>
       <Stack direction="" spacing={3}>
 
 
@@ -211,7 +218,7 @@ function ResponsiveDrawer(props) {
       borderRadius: "20% ,20%",
       height:"500",
       width:"500",
-      backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
+      // backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
       backgroundRepeat:"no-repeat"   }}>
       <CssBaseline />
       <AppBar
@@ -416,8 +423,8 @@ function ResponsiveDrawer(props) {
     {/* ......................start of group photo........................... */}
     <Box sx={{gap:2,display:"flex"}}>
       <Box>
-        <Rating/>
-        <Typography variant='caption'>
+        
+        <Typography variant='contained'>
             natural food
         </Typography>
         {/* <Box   sx={{
@@ -436,21 +443,30 @@ function ResponsiveDrawer(props) {
     </Box>
 
     <Box>
-      <Typography>
 
-      </Typography>
+
+      
     <Image src="https://images.pexels.com/photos/175695/pexels-photo-175695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
+    
     </Box>
 
     <Box>
-      <Typography>
-
-      </Typography>
+     
     <Image src="https://images.pexels.com/photos/730911/water-splash-with-hair-beautiful-girl-seaside-portrait-motion-730911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
     </Box>
     </Box>
     {/* ....end of group photo................................. */}
+    <Box sx={{display :"flex",placeItems:"center"}} >
+<Typography variant='h1' paragraph> 
+<Rating/>
 
+
+JOB IS HERE
+
+</Typography>
+</Box>
+
+	
     </Box>
     
     
