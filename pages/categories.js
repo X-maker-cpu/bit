@@ -30,16 +30,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import axios from "axios";
 
+
 const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
   const [videos, setVideos] = React.useState([]);
-  
+
   React.useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("/api/videos");
@@ -52,6 +49,10 @@ function ResponsiveDrawer(props) {
       setVideos([]);
     };
   }, []);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
 
   const drawer = (
     <div>
@@ -283,16 +284,16 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar />
         <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
-              gap: 2,
-            }}
-          >
-            {videos.map((video, i) => (
-              <VideoComponent key={i} video={video} />
-            ))}
-          </Box>
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
+            gap: 2,
+          }}
+        >
+          {videos.map((video, i) => (
+            <VideoComponent key={i} video={video} />
+          ))}
+        </Box>
       </Box>
     </Box>
   );
@@ -305,46 +306,6 @@ ResponsiveDrawer.propTypes = {
    */
   window: PropTypes.func,
 };
-
-export default ResponsiveDrawer;
-
-<Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
-              gap: 2,
-            }}
-          >
-            {videos.map((video, i) => (
-              <VideoComponent key={i} video={video} />
-            ))}
-          </Box>
-          
-
-
-
-
-
-
-
-function CustomizedInputBase() {
-  return (
-    <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 800 }}
-    >
-      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search Google Maps"
-        inputProps={{ 'aria-label': 'search google maps' }}
-      />
- 
-    </Paper>
-  );
-}
 const VideoComponent = ({ video }) => {
   console.log(video);
   const router = useRouter();
@@ -401,3 +362,71 @@ const VideoComponent = ({ video }) => {
     </Box>
   );
 };
+
+export default ResponsiveDrawer;
+const videoComponent = ({youtubeVideoUrl}) => {
+  return (
+    <Box>
+      sx={{
+        height:200,
+        width:300,
+        borderRadius: 10,
+        bcolor:"dodgerblue",
+      }}
+      {/* Video Image */}
+      <Box 
+      sx={{
+        position:"relative",
+      }}>
+        <Image
+        src="https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        height={200}
+        width={300}
+        alt="Zebra"
+        />
+        <Typography
+        sx={{
+          position:"auto",
+          right:10,
+          bottom:15,
+          color:"white",
+          backgroundcolor: "GreyText",
+          p:0.5,
+        }}
+        variant="GrayText"
+        >55:03</Typography>
+       </Box>
+       {/*video Details */}
+       <Box
+       sx={{
+        display:"flex",
+       }}
+       >
+       <Avatar>PE</Avatar>
+       <Box>
+        <Typography>Title</Typography>
+        <Typography>Author Name</Typography>
+       </Box>
+       </Box>
+    </Box>
+  );
+};              
+
+function CustomizedInputBase() {
+  return (
+    <Paper
+      component="form"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 800 }}
+    >
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search Google Maps"
+        inputProps={{ 'aria-label': 'search google maps' }}
+      />
+ 
+    </Paper>
+  );
+}
