@@ -424,7 +424,8 @@ function CustomizedInputBase() {
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Google Maps"
-        inputProps={{ 'aria-label': 'search google maps' }}
+        inputProps={{ 'aria-label': 'search google maps'
+         }}
       />
  
     </Paper>
