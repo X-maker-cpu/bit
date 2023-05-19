@@ -192,6 +192,7 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
+        
         <Toolbar>
           <IconButton
             color="inherit"
@@ -256,7 +257,6 @@ function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-
       
       <Box
         component="main"
@@ -267,6 +267,7 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
+
       </Box>
     </Box>
   );
