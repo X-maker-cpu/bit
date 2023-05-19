@@ -1,19 +1,15 @@
-import {Box} from "@mui/material";
-import { useRouter} from "next/router";
+import { Box , Typography } from "@mui/material";
 import React from "react";
 
-const Index = () => { 
-  const useRouter=useRouter();
-    return (
+const Index = () => {
+    return(
         <Box
         sx={{
-            bgcolor: Router.query.color,
-
-            width: "100vh",
-            height: "100vh",
+            display: "grid",
+            placeItems: "center",
         }}
         >
-       
+         <Typography variant="h1">colors page</Typography>
         </Box>
     );
 };
