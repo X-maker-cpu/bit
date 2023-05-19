@@ -27,12 +27,28 @@ import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Image from "next/image";
+import { useRouter } from "next/router";
+import axios from "axios";
 
 
 const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [videos, setVideos] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/videos");
+      setVideos(response.data);
+    };
+
+    fetchData();
+
+    return () => {
+      setVideos([]);
+    };
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -267,6 +283,17 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
+            gap: 2,
+          }}
+        >
+          {videos.map((video, i) => (
+            <VideoComponent key={i} video={video} />
+          ))}
+        </Box>
       </Box>
     </Box>
   );
@@ -278,6 +305,62 @@ ResponsiveDrawer.propTypes = {
    * You won't need it on your project.
    */
   window: PropTypes.func,
+};
+const VideoComponent = ({ video }) => {
+  console.log(video);
+  const router = useRouter();
+
+  return (
+    <Box
+      sx={{
+        height: 300,
+        width: 300,
+        borderRadius: 10,
+        boxShadow: 3,
+        mb: 1,
+      }}
+      onClick={() => router.push(`/categories/${video.id}`)}
+    >
+      {/* Video Image */}
+      <Box
+        sx={{
+          position: "relative",
+        }}
+      >
+        <Image
+          src={video.snippet.thumbnails.medium.url}
+          height={200}
+          width={300}
+          alt="Zebra"
+        />
+        <Typography
+          sx={{
+            position: "absolute",
+            right: 10,
+            bottom: 15,
+            color: "white",
+            backgroundcolor: "GreyText",
+            p: 0.5,
+          }}
+          variant="GrayText"
+        >
+          55:03
+        </Typography>
+      </Box>
+      {/*video Details */}
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Avatar>PE</Avatar>
+        <Box>
+          <Typography>Zebra</Typography>
+          <Typography>Author Name</Typography>
+        </Box>
+      </Box>
+    </Box>
+  );
 };
 
 export default ResponsiveDrawer;
