@@ -33,6 +33,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import axios from "axios";
 
 
 
@@ -43,11 +44,24 @@ const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const router = useRouter()
+  const router = useRouter();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  
+  const [videos, setVideos] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/videos");
+      setVideos(response.data);
+    };
+
+    fetchData();
+
+    return () => {
+      setVideos([]);
+    };
+  }, []);
 
   const drawer = (
     <div>
@@ -197,12 +211,6 @@ function ResponsiveDrawer(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  let videos = [ 
-    "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-at-a-beach-louise-dahl-wolfe.jpg",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/a-model-wearing-a-corset-by-detolle-horst-p-horst.jpg",
-    
-  ]
   return (
 
     // back ground image.....................
@@ -374,12 +382,7 @@ function ResponsiveDrawer(props) {
   gap:15
 }}>
 
-{videos.map((videoSrc,i)=>
-       {
-        console.log("Video SRC :>>", videoSrc)
-        return( <MyVideoComponent key={i} src={videoSrc} />)
-      }
-  )}
+
 </Box>
 <hr />
 <br/>
@@ -395,19 +398,17 @@ function ResponsiveDrawer(props) {
         </Typography>
         <br/>
         <Box>
-          <useRouter>
-  
-          </useRouter>
+      
           
         <Stack direction="contained" spacing={2} sx={{gap:40}}>
-      <Button variant='contained' color="success" onClick={()=>router.push("/login")}>
+      <Button variant='contained' color="success" onClick={()=>router.push("/trending")}>
         
-        kind of keep that you need </Button>
-      <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
-        kinds of clothes that you need
+        all videos trending now </Button>
+      <Button variant="contained" color="success" onClick={()=>router.push("/trending")}>
+         all videos trending now
       </Button>
-      <Button variant="contained" color="success" onClick={()=>router.push("/signup")}>
-        kind of shoues that you need
+      <Button variant="contained" color="success" onClick={()=>router.push("/trendig")}>
+      all videos trending now
       </Button>
     </Stack>
     </Box>
@@ -450,6 +451,17 @@ function ResponsiveDrawer(props) {
     </Box>
     </Box>
     {/* ....end of group photo................................. */}
+    <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
+            gap: 2,
+          }}
+        >
+          {videos.map((video, i) => (
+            <VideoComponent key={i} video={video} />
+          ))}
+        </Box>
 
     </Box>
     
@@ -543,3 +555,60 @@ const MyVideoComponent = (prop) => {
     </Box>
   )
 }
+
+const VideoComponent = ({ video }) => {
+  console.log(video);
+  const router = useRouter();
+
+  return (
+    <Box
+      sx={{
+        height: 300,
+        width: 300,
+        borderRadius: 10,
+        boxShadow: 3,
+        mb: 1,
+      }}
+      onClick={() => router.push(`/trending/${video.id}`)}
+    >
+      {/* Video Image */}
+      <Box
+        sx={{
+          position: "relative",
+        }}
+      >
+        <Image
+          src={video.snippet.thumbnails.medium.url}
+          height={200}
+          width={300}
+          alt="Zebra"
+        />
+        <Typography
+          sx={{
+            position: "absolute",
+            right: 10,
+            bottom: 15,
+            color: "white",
+            backgroundcolor: "GreyText",
+            p: 0.5,
+          }}
+          variant="GrayText"
+        >
+          55:03
+        </Typography>
+      </Box>
+      {/*video Details */}
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Avatar>PE</Avatar>
+        <Box>
+          <Typography>Zebra</Typography>
+          <Typography>Author Name</Typography>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
