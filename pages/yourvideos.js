@@ -1,4 +1,5 @@
 import { Box, Typography, Avatar, Toolbar, Divider } from "@mui/material";
+import { useRouter } from "next/router";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
@@ -17,14 +18,20 @@ import React from "react";
 import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
+import Grid from '@mui/material/Grid';
 import MenuIcon from '@mui/icons-material/Menu';
+
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+
 
 
 const Yourvideos = () => {
@@ -34,14 +41,22 @@ const Yourvideos = () => {
 
 const drawerWidth = 200;
 
+
+
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
   
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);    
+  };
+
+  const homeSwitch = useRouter();
+  const trendingSwitch = useRouter();
+  const categoriesSwitch = useRouter();
+  const favoritySwitch = useRouter();
+  const yourvideosSwitch = useRouter();
+
 const drawer = (
 <div>
   <Toolbar sx={{bgcolor:"#322F2F", boxShadow: 4}}>
@@ -53,7 +68,7 @@ const drawer = (
   <List sx={{color: '#A4A4A4'}}>
     {/* Home btn */}
   <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => homeSwitch.push('/')}>
           <ListItemIcon>
               <HomeIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -62,7 +77,7 @@ const drawer = (
       </ListItem>
       {/* popural btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => trendingSwitch.push('/trending')}>
           <ListItemIcon>
           <WhatshotIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -71,7 +86,7 @@ const drawer = (
       </ListItem>
       {/* categories btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => categoriesSwitch.push('/categories')}>
           <ListItemIcon>
           <ViewListIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -80,7 +95,7 @@ const drawer = (
       </ListItem>
       {/* Favorites btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => favoritySwitch.push('/favorites')}>
           <ListItemIcon>
           <FavoriteIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -89,7 +104,7 @@ const drawer = (
       </ListItem>
       {/* Yourvideos btn */}
       <ListItem  disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={() => yourvideosSwitch.push('/yourvideos')}>
           <ListItemIcon>
           <VideocamIcon sx={{color:'#A4A4A4'}}/> 
           </ListItemIcon>
@@ -130,6 +145,11 @@ const drawer = (
 );
 
 const container = window !== undefined ? () => window().document.body : undefined;
+
+const [spacing, setSpacing] = React.useState(4);
+const handleChange = (event) => {
+  setSpacing(Number(event.target.value));
+};
 
 return (
 <Box sx={{ display: 'flex' }}>
@@ -233,24 +253,59 @@ return (
     </Drawer>
   </Box>
 
-
-
-
   <Box
     component="main"
     sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` }, bgcolor: '#231F1F',height: '100vh',color:'white'}}>
     <Toolbar />
-    <Box sx={{
-      height:"60%",
-      width: '100%'
+   {/*=========== opening tag for header =============*/}
+    <Box sx={{   
+      position: "relative",
+      height:"30rem",
+      width: '100%',
+      backgroundImage : "url(https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)",
+      backgroundRepeat : "no-repeat",
+      backgroundPosition : "center",
+      backgroundSize : "cover"
       }}>
-      <Box></Box>
-      <Box></Box>
-    </Box>
-    
+      <Box sx=
+      {{
+        position : "absolute",
+        height:"30rem",
+        width: '100%',
+        opacity: 0.78,
+        backgroundImage: "linear-gradient(to right top, #0f0f11, #0d1113, #0b1313, #0d1411, #12140d)",
+        }}>
+        </Box>
+        <Box sx={{zIndex: 100, position: 'absolute'}}>
+          <Typography variant="h1" sx={{color : 'white', fontWeight : 'bold', p:4}}>Enjoy your videos</Typography>
+          <Typography variant="subtitle1" sx={{color : 'white', pl:4, pr: 10, fontSize: 25}}>
+            Join a million of movie streams around the world. Enjoy your latest videos Shorts, Pranks, Comedies, Animation, Seires and movie, plus other networks of your will.
+          </Typography>
+        </Box>
+     </Box> {/*========>>>> closing tag for header */}
+
+     
+           <Grid sx={{ bgcolor: '#231F1F', height: '30rem' }}>
+            <Grid item xs={12}>
+              <Grid container justifyContent="center" spacing={spacing}>
+                {[0, 1, 2, 3, 4].map((value) => (
+                  <Grid key={value} item>
+                    <Paper
+                      sx={{
+                        height: 290,
+                        width: 200,
+                        bgcolor: 'blue'
+                      }}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+     </Box>
   </Box>
-</Box>
 );
+
 }
 
 
