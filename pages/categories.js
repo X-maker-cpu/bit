@@ -386,7 +386,7 @@ const videoComponent = ({youtubeVideoUrl}) => {
         />
         <Typography
         sx={{
-          position:"absolute",
+          position:"auto",
           right:10,
           bottom:15,
           color:"white",
