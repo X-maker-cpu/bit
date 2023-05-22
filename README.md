@@ -1,76 +1,69 @@
-# Fetching
+# /{}/id
 
 ```jsx
-import { useRouter } from "next/router";
+import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
 import axios from "axios";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
-const App =()=>{
-const [videos, setVideos] = React.useState([]);
-
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("/api/videos");
-      setVideos(response.data);
+const Index = () => {
+  const router = useRouter();
+  const id = router.query.id;
+  const [videoData, setVideoData] = useState(null);
+  useEffect(() => {
+    const getVideoData = async (videoId) => {
+      if (videoId) {
+        const response = await axios.get(`/api/videos/${videoId}`);
+        setVideoData(response.data);
+      }
     };
-
-    fetchData();
+    getVideoData(id);
 
     return () => {
-      setVideos([]);
+      setVideoData(null);
     };
-  }, []);
+  }, [id]);
 
-  return(<Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
-            gap: 2,
-          }}
-        >
-          {videos.map((video, i) => (
-            <VideoComponent key={i} video={video} />
-          ))}
-        </Box>)
-}
-
-
-const VideoComponent = ({ video }) => {
-  console.log(video);
-  const router = useRouter();
-
+  console.log(
+    "Video Data:>>",
+    videoData && typeof videoData.video.snippet.description
+  );
   return (
-    <Box
-      sx={{
-        height: 300,
-        width: 300,
-        borderRadius: 10,
-        boxShadow: 3,
-        mb: 1,
-      }}
-      onClick={() => router.push(`/categories/${video.id}`)}
-    >
-      {/* Video Image */}
-      <Box
-        sx={{
-          position: "relative",
-        }}
-      >
-        <Image
-          src={video.snippet.thumbnails.medium.url}
-          height={200}
-          width={300}
-          alt="Zebra"
-        />
-        <Typography
+    <Box sx={{ display: "flex" }}>
+      <Box>
+        <iframe
+          width="1100"
+          height="620"
+          src={`https://www.youtube.com/embed/${id}`}
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        {videoData ? (
+          <Box sx={{ display: "flex" }}>
+            <Avatar
+              sx={{
+                height: 100,
+                width: 100,
+              }}
+              src={videoData.channelProfileImage}
+            ></Avatar>
+            <Box>
+              <Typography variant="h5">
+                {videoData.video.snippet.channelTitle}
+              </Typography>
+              <Typography variant="h6">
+                {videoData.video.snippet.title}
+              </Typography>
+            </Box>
+          </Box>
+        ) : null}
+      </Box>
+      {videoData && (
+        <Box
           sx={{
-            position: "absolute",
-            right: 10,
-            bottom: 15,
-            color: "white",
-            backgroundcolor: "GreyText",
-            p: 0.5,
+            p: 1,
           }}
-          variant="GrayText"
         >
           55:03
         </Typography>
@@ -83,11 +76,14 @@ const VideoComponent = ({ video }) => {
       >
         <Avatar>PE</Avatar>
         <Box>
-          <Typography>zebra</Typography>
-          <Typography>authors Messege</Typography>
+          <Typography>Zebra</Typography>
+          <Typography>Author Name</Typography>
         </Box>
-      </Box>
+      )}
     </Box>
   );
 };
+
+export default Index;
+
 ```
