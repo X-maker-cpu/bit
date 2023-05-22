@@ -85,7 +85,7 @@ function ResponsiveDrawer(props) {
         ))}
       </List>
       <Divider /> */}
-      <Button  variant="contained" color="action" onClick={()=>router.push("/home")}>
+      <Box variant="contained" color="action" onClick={()=>router.push("/home")}>
         <ListItemButton>
      
     < HomeIcon/>
@@ -96,7 +96,7 @@ function ResponsiveDrawer(props) {
       Home
      </Typography>
      </ListItemButton>
-    </Button>
+        </Box>
 
       <Box  variant="contained" color="action" onClick={()=>router.push("/popular")}>
 <ListItem>
