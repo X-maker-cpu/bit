@@ -7,8 +7,8 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -18,17 +18,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import VideocamIcon from "@mui/icons-material/Videocam";
-import Badge from "@mui/material/Badge";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import Badge from '@mui/material/Badge';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
 import Image from "next/image";
 import { useRouter } from "next/router";
 import axios from "axios";
+
 
 const drawerWidth = 240;
 function ResponsiveDrawer(props) {
@@ -38,6 +39,7 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
   const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
@@ -55,7 +57,8 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Toolbar></Toolbar>
+      <Toolbar >
+      </Toolbar>
       <Divider />
       <List>
         {/* home */}
@@ -116,10 +119,10 @@ function ResponsiveDrawer(props) {
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
-              <Badge color="success" variant="dot">
-                <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
-              </Badge>
+            <ListItemIcon>  
+            <Badge color="success" variant="dot">
+            <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+          </Badge>
             </ListItemIcon>
             <ListItemText primary={"Yoga with Kim"} />
           </ListItemButton>
@@ -129,7 +132,8 @@ function ResponsiveDrawer(props) {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar src="https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600" />
+            <Avatar src="https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"/>
+
             </ListItemIcon>
 
             <ListItemText primary={"Books Review"} />
@@ -140,9 +144,9 @@ function ResponsiveDrawer(props) {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Badge color="success" variant="dot">
-                <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
-              </Badge>
+            <Badge color="success" variant="dot">
+            <Avatar src="https://images.pexels.com/photos/15332188/pexels-photo-15332188.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+          </Badge>
             </ListItemIcon>
 
             <ListItemText primary={"Brittary Bathgats"} />
@@ -153,7 +157,7 @@ function ResponsiveDrawer(props) {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600" />
+            <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
 
             <ListItemText primary={"GingerDog"} />
@@ -164,39 +168,31 @@ function ResponsiveDrawer(props) {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Avatar src="https://images.pexels.com/photos/3454298/pexels-photo-3454298.jpeg?auto=compress&cs=tinysrgb&w=600" />
+            <Avatar src="https://images.pexels.com/photos/3454298/pexels-photo-3454298.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             </ListItemIcon>
 
             <ListItemText primary={"Asian Recipies"} />
           </ListItemButton>
         </ListItem>
       </List>
-      <Box
-        sx={{
-          m: 1,
-          p: 1,
-          backgroundColor: "whitesmoke",
-        }}
-      >
-        <Typography variant="body1" fontWeight={700}>
-          Get 3 months of premium for free
-        </Typography>
-        <Typography variant="body2">
-          Enjoy ad-free content,offline watching and more
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          borderRadius: 20,
-          border: "2px solid green",
-          backgroundColor: "black",
-          padding: 1,
-        }}
-      >
-        <Typography variant="h5" color="green" alignItems="center">
-          GET PREMIUM
-        </Typography>
-      </Box>
+  <Box sx={{
+    m:1,
+    p:1,
+    backgroundColor:"whitesmoke"
+  }}> 
+    <Typography variant="body1" fontWeight={700} >Get 3 months of premium for free</Typography>
+    <Typography variant="body2">Enjoy ad-free content,offline watching and more</Typography>
+  </Box>
+  <Box sx={{
+    borderRadius:20,
+    border: '2px solid green',
+    backgroundColor: "black",
+    padding: 1,
+
+  }}>
+  <Typography variant="h5" color="green" alignItems="center">GET PREMIUM</Typography>
+
+  </Box>
     </div>
   );
 
@@ -213,6 +209,7 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
+
         <Toolbar>
           <IconButton
             color="inherit"
@@ -223,27 +220,19 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: "flex", gap: 10 }}>
-            <CustomizedInputBase />
+          <Box sx={{display:"flex", gap:10}}>
+            <CustomizedInputBase/>
             <Stack direction="row" spacing={2}>
-              <Box>
-                <Button
-                  sx={{ borderRadius: 200, ptop: 5 }}
-                  variant="outlined"
-                  color="success"
-                >
-                  ADD VIDEO
-                </Button>
-              </Box>
-            </Stack>
+              <Box >
+      <Button sx={{borderRadius:200 ,ptop:5}} variant="outlined" color="success"  >ADD VIDEO</Button>
+      </Box>
+
+    </Stack>
           </Box>
-          <Box sx={{ gap: 30, marginLeft: 10 }}>
-            <Avatar
-              alt="M"
-              src="https://images.pexels.com/photos/13020492/pexels-photo-13020492.jpeg?auto=compress&cs=tinysrgb&w=600"
-            />
-          </Box>
-          <Typography>May Harmon</Typography>
+         <Box sx={{gap:30 ,marginLeft:10}}>
+      <Avatar alt="M" src="https://images.pexels.com/photos/13020492/pexels-photo-13020492.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </Box>
+      <Typography >May Harmon</Typography>
         </Toolbar>
       </AppBar>
       <Box
@@ -320,7 +309,53 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
-
+const videoComponent = ({youtubeVideoUrl}) => {
+  return (
+    <Box>
+      sx={{
+        height:200,
+        width:300,
+        borderRadius: 10,
+        bcolor:"dodgerblue",
+      }}
+      {/* Video Image */}
+      <Box 
+      sx={{
+        position:"relative",
+      }}>
+        <Image
+        src="https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        height={200}
+        width={300}
+        alt="Zebra"
+        />
+        <Typography
+        sx={{
+          position:"absolute",
+          right:10,
+          bottom:15,
+          color:"white",
+          backgroundcolor: "GreyText",
+          p:0.5,
+        }}
+        variant="GrayText"
+        >55:03</Typography>
+       </Box>
+       {/*video Details */}
+       <Box
+       sx={{
+        display:"flex",
+       }}
+       >
+       <Avatar>PE</Avatar>
+       <Box>
+        <Typography>Title</Typography>
+        <Typography>Author Name</Typography>
+       </Box>
+       </Box>
+    </Box>
+  );
+};              
 const VideoComponent = ({ video }) => {
   console.log(video);
   const router = useRouter();
@@ -378,20 +413,22 @@ const VideoComponent = ({ video }) => {
   );
 };
 
+
 function CustomizedInputBase() {
   return (
     <Paper
       component="form"
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 800 }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 800 }}
     >
-      <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />
       </IconButton>
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Google Maps"
-        inputProps={{ "aria-label": "search google maps" }}
+        inputProps={{ 'aria-label': 'search google maps' }}
       />
+
     </Paper>
   );
 }
