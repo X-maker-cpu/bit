@@ -29,6 +29,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import Stack from "@mui/material/Stack";
 import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
+import { useRouter } from "next/router";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -38,7 +39,12 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const homeSwitch = useRouter();
+  const trendingSwitch = useRouter();
+  const categoriesSwitch = useRouter();
+  const favoritySwitch = useRouter();
+  const yourvideosSwitch = useRouter();
+    
   const drawer = (
     <div>
       <Toolbar />
@@ -46,7 +52,7 @@ function ResponsiveDrawer(props) {
       <List>
         {/* Home */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => homeSwitch.push('/')}>
             <ListItemIcon>
               <HomeRoundedIcon />
             </ListItemIcon>
@@ -64,7 +70,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Categories */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => categoriesSwitch.push('/categories')}>
             <ListItemIcon>
               <FormatListBulletedRoundedIcon />
             </ListItemIcon>
@@ -73,7 +79,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Favarites */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => favoritySwitch.push('/favorites')}>
             <ListItemIcon>
               <FavoriteRoundedIcon />
             </ListItemIcon>
@@ -82,7 +88,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Your videos */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => yourvideosSwitch.push('/yourvideos')}>
             <ListItemIcon>
               <VideocamRoundedIcon />
             </ListItemIcon>
