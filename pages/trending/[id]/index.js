@@ -8,7 +8,7 @@ const Index = ()=>{
             <iframe 
                 width="1280"
                 height="720"
-                    src={`https://www.youtube.com/embed/${router.query.id}`}
+                    src={`https://www.youtube.com/embed/${router.query.id} `}
                 frameborder="0"
                 allowfullsreen
             ></iframe>

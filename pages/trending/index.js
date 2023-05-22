@@ -299,81 +299,9 @@ function ResponsiveDrawer(props) {
 
 
 
-        <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} minHeight={160}>
-      
-        <Grid xs display="flex" justifyContent="center" alignItems="center">
-        < Badge badgeContent={9} color='primary'>
-          <Avatar src="https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/137648146_418386059310437_8173974305911207792_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFcnlv_VVvx9UYlzaiyQps3hMs_vIQZgN-Eyz-8hBmA31Bhl1ATAPHDndgbaKcQ7xQwh3qfZ-68fHXRlWuSNhsY&_nc_ohc=dqaYRiCSLIwAX9WWWYZ&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfCocOCfUUyoWLwdy7DewORtabkZz6dFY9XBVDx7Dvv-fw&oe=6486F2AF"/>
-          </Badge>
-        </Grid>
+    
       
        
-        <Grid display="flex" justifyContent="center" alignItems="center">
-        < Badge badgeContent={45} color='primary'>
-          <Avatar src="https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-at-a-beach-louise-dahl-wolfe.jpg" />
-          </Badge>
-        </Grid>
-        
-
-        <Grid xs display="flex" justifyContent="center" alignItems="center">
-          <Badge badgeContent={99} color='primary' >
-          
-          <Avatar src="https://scontent.fnbo10-1.fna.fbcdn.net/v/t39.30808-6/277248531_674246557057718_2754724700745100586_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGO6e6L9g_K4TKJiItWwA-tuxUA6sQLWoq7FQDqxAtaioBIMwVLWoeiQfSvhby6rw5PADjCOw0PWwjRxvHQE-qF&_nc_ohc=cRKqrQv01FMAX9f6V1B&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo10-1.fna&oh=00_AfCYTgFFxgyhNh_I8fMBk57Hc6DYUZTwum_1Xl2QPEAWgQ&oe=646451FE" />
-          </Badge>
-        </Grid>
-      </Grid>
-    </Box>
-    <br/>
-      
-        <Box>
-          <Button sx={{
-            width: "100", height: "100", color: "blue"
-          }}>Primary</Button>
-
-          <Button sx={{
-            width: "100", height: "100", color: "red"
-          }}>Disabled</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "black"
-          }}>tanzania</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "yelow"
-          }}>kenya</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "blue"
-          }}>canada</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "red"
-          }}>somali</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "black"
-          }}>burundi</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "green"
-          }}>my classment</Button>
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "red"
-          }}>all refuge</Button>
-
-          <Button href="#text-buttons" sx={{
-            width: "100", height: "100", color: "black"
-          }}>all student</Button>
-        </Box>
-        <Divider sx={{color:"green"}}/>
-        <Typography sx={{
-          width: "100", height: "100", color: "blue",
-        }}>
-
-
-          ALL PHOTOS IS ALOWED HERE
-        </Typography>
       
 
 
@@ -387,16 +315,7 @@ function ResponsiveDrawer(props) {
 </Box>
 <hr />
 <br/>
-<Typography  sx={{
-          width: "100", height: "100", color: "green",
-          padding:"right",
-          textAlign:"center",
-        
-        }}>
 
-
-           YOU CAN ASK ABOUT OUR SERVICE
-        </Typography>
         <br/>
         <Box>
       
@@ -604,7 +523,7 @@ const VideoComponent = ({ video }) => {
         <Avatar>PE</Avatar>
         <Box>
           <Typography>Zebra</Typography>
-          <Typography>Author Name</Typography>
+          <Typography>diclot</Typography>
         </Box>
       </Box>
     </Box>
