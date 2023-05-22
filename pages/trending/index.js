@@ -219,8 +219,9 @@ function ResponsiveDrawer(props) {
       borderRadius: "20% ,20%",
       height:"500",
       width:"500",
-      backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
-      backgroundRepeat:"no-repeat"   }}>
+      backgroundColor:"puple",
+      // backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
+    }}>
       <CssBaseline />
       <AppBar
 
@@ -415,12 +416,9 @@ function ResponsiveDrawer(props) {
     <br/>
 
     {/* ......................start of group photo........................... */}
-    <Box sx={{gap:2,display:"flex"}}>
-      <Box>
+    
         <Rating/>
-        <Typography variant='caption'>
-            natural food
-        </Typography>
+      
         {/* <Box   sx={{
         '& > legend': { mt: 2 },
       }}>
@@ -433,23 +431,23 @@ function ResponsiveDrawer(props) {
         }}
       />
       </Box> */}
-    <Image src="https://media.istockphoto.com/id/993119894/photo/food-containing-vitamin-c-healthy-eating.jpg?b=1&s=612x612&w=0&k=20&c=SFcIrLv3QsCApZVBWL61mmKiJwBrZvFpX3TyxZrK-og=" width={350} height={350}/>
-    </Box>
 
-    <Box>
+    
+{/*  */}
+    {/* <Box>
       <Typography>
 
       </Typography>
     <Image src="https://images.pexels.com/photos/175695/pexels-photo-175695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
-    </Box>
+    </Box> */}
 
-    <Box>
+    {/* <Box>
       <Typography>
 
       </Typography>
     <Image src="https://images.pexels.com/photos/730911/water-splash-with-hair-beautiful-girl-seaside-portrait-motion-730911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
-    </Box>
-    </Box>
+    </Box> */}
+    
     {/* ....end of group photo................................. */}
     <Box
           sx={{
