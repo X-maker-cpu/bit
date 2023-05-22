@@ -45,6 +45,23 @@ function ResponsiveDrawer(props) {
   const favoritySwitch = useRouter();
   const yourvideosSwitch = useRouter();
     
+  const router = useRouter();
+  // video state
+
+  const [videos, setVideos] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/videos");
+      setVideos(response.data);
+    };
+
+    fetchData();
+
+    return () => {
+      setVideos([]);
+    };
+  }, []);
   const drawer = (
     <div>
       <Toolbar />
@@ -213,6 +230,7 @@ function ResponsiveDrawer(props) {
   </Box>
     </div>
   );
+
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
