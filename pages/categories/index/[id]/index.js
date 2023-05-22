@@ -1,6 +1,3 @@
-# Fetching
-
-```jsx
 import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -122,4 +119,3 @@ const Index = () => {
 
 export default Index;
 
-```
