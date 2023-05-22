@@ -65,55 +65,19 @@ const Index = () => {
             p: 1,
           }}
         >
-          <Typography variant="h6">Statistic</Typography>
-          <Divider />
-          <Box>
-            <Typography variant="body2">
-              Views {videoData.video.statistics.viewCount}
-            </Typography>
-            <Typography variant="body2">
-              Likes {videoData.video.statistics.likeCount}
-            </Typography>
-            <Typography variant="body2">
-              Comments {videoData.video.statistics.commentCount}
-            </Typography>
-          </Box>
-          <Typography variant="h6">Description</Typography>
-          <Divider />
-          <Typography variant="body2">
-            {String(videoData.video.snippet.description)
-              .split(`\n`)
-              .map((item, key) => {
-                // match URLs and hashtags using regular expressions
-                const urls = item.match(/https?:\/\/[^\s]+/g);
-                const hashtags = item.match(/#\w+/g);
-
-                // replace URLs and hashtags with links and colored text
-                if (urls && urls.length > 0) {
-                  urls.forEach((url) => {
-                    item = item.replace(
-                      url,
-                      `<a style="color:#1565c0;padding:0px" target=_blank href=${url}>${url}</a>`
-                    );
-                  });
-                }
-                if (hashtags && hashtags.length > 0) {
-                  hashtags.forEach((hashtag) => {
-                    item = item.replace(
-                      hashtag,
-                      `<span style="color: #1565c0; font-weight: bold;">${hashtag}</span>`
-                    );
-                  });
-                }
-
-                return (
-                  <span key={key}>
-                    {ReactHtmlParser(item)}
-                    <br />
-                  </span>
-                );
-              })}
-          </Typography>
+          55:03
+        </Typography>
+      </Box>
+      {/*video Details */}
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Avatar>PE</Avatar>
+        <Box>
+          <Typography>Zebra</Typography>
+          <Typography>Author Name</Typography>
         </Box>
       )}
     </Box>
