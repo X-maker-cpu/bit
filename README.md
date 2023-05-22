@@ -78,7 +78,20 @@ const Index = () => {
               Comments {videoData.video.statistics.commentCount}
             </Typography>
           </Box>
-          <Typography variant="h6">Description</Typography>
+          <Ty
+                );
+              })}
+          </Typography>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
+export default Index;
+
+```
+pography variant="h6">Description</Typography>
           <Divider />
           <Typography variant="body2">
             {String(videoData.video.snippet.description)
@@ -111,15 +124,3 @@ const Index = () => {
                     {ReactHtmlParser(item)}
                     <br />
                   </span>
-                );
-              })}
-          </Typography>
-        </Box>
-      )}
-    </Box>
-  );
-};
-
-export default Index;
-
-```
