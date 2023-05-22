@@ -39,7 +39,7 @@ const favourites = () => {
     sx={{
       textTransform: "none",
     }}
-    onClick={() =>router.push("/trending")}
+    onClick={() =>router.push("/favorites")}
     >
       go to trinding page
     </button>
