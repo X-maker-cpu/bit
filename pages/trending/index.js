@@ -33,7 +33,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import axios from "axios";
 
 
 
@@ -44,11 +44,24 @@ const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const router = useRouter()
+  const router = useRouter();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  
+  const [videos, setVideos] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/videos");
+      setVideos(response.data);
+    };
+
+    fetchData();
+
+    return () => {
+      setVideos([]);
+    };
+  }, []);
 
   const drawer = (
     <div>
@@ -72,17 +85,18 @@ function ResponsiveDrawer(props) {
         ))}
       </List>
       <Divider /> */}
+      <Button  variant="contained" color="action" onClick={()=>router.push("/home")}>
+        <ListItemButton>
      
-      <Box  variant="contained" color="action" onClick={()=>router.push("/home")}>
-        
-       <ListItemButton>
-      
-<FormatListBulletedIcon/>
-<Typography>
-home
-</Typography>
-</ListItemButton>
-</Box>
+    < HomeIcon/>
+     {/* <SvgIcon {...props}>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon> */}
+     <Typography>
+      Home
+     </Typography>
+     </ListItemButton>
+    </Button>
 
       <Box  variant="contained" color="action" onClick={()=>router.push("/popular")}>
 <ListItem>
@@ -99,7 +113,7 @@ home
 </ListItemButton>
        </Box>
 
-      <Box  variant="contained" color="action" onClick={()=>router.push("/favorites")}>
+      <Box  variant="contained" color="action" onClick={()=>router.push("/favorities")}>
       
       <ListItemButton>
       <FavoriteIcon/>
@@ -109,12 +123,12 @@ home
       </ListItemButton>
     </Box>
 
-    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideos")}>
+    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideo")}>
    
       <ListItemButton>
       < VideocamIcon/>
 <Typography>
-  yourvideos
+  yourvideo
 </Typography>
 </ListItemButton>
    </Box>
@@ -133,16 +147,9 @@ home
       </List>
       
        */}
-       <Button>
-
-       <List>
-        <ListItemIcon>
       <Typography>
         Subscriptions
       </Typography>
-      </ListItemIcon>
-      </List>
-      </Button>
       <Stack direction="" spacing={3}>
 
 
@@ -204,12 +211,6 @@ home
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  let videos = [ 
-    "https://images.pexels.com/photos/15174712/pexels-photo-15174712.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/models-at-a-beach-louise-dahl-wolfe.jpg",
-    "https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/a-model-wearing-a-corset-by-detolle-horst-p-horst.jpg",
-    
-  ]
   return (
 
     // back ground image.....................
@@ -218,7 +219,7 @@ home
       borderRadius: "20% ,20%",
       height:"500",
       width:"500",
-      // backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
+      backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
       backgroundRepeat:"no-repeat"   }}>
       <CssBaseline />
       <AppBar
@@ -381,12 +382,7 @@ home
   gap:15
 }}>
 
-{videos.map((videoSrc,i)=>
-       {
-        console.log("Video SRC :>>", videoSrc)
-        return( <MyVideoComponent key={i} src={videoSrc} />)
-      }
-  )}
+
 </Box>
 <hr />
 <br/>
@@ -402,19 +398,17 @@ home
         </Typography>
         <br/>
         <Box>
-          <useRouter>
-  
-          </useRouter>
+      
           
         <Stack direction="contained" spacing={2} sx={{gap:40}}>
-      <Button variant='contained' color="success" onClick={()=>router.push("/login")}>
+      <Button variant='contained' color="success" onClick={()=>router.push("/trending")}>
         
-        kind of keep that you need </Button>
-      <Button variant="contained" color="success" onClick={()=>router.push("/login")}>
-        kinds of clothes that you need
+        all videos trending now </Button>
+      <Button variant="contained" color="success" onClick={()=>router.push("/trending")}>
+         all videos trending now
       </Button>
-      <Button variant="contained" color="success" onClick={()=>router.push("/signup")}>
-        kind of shoues that you need
+      <Button variant="contained" color="success" onClick={()=>router.push("/trendig")}>
+      all videos trending now
       </Button>
     </Stack>
     </Box>
@@ -423,8 +417,8 @@ home
     {/* ......................start of group photo........................... */}
     <Box sx={{gap:2,display:"flex"}}>
       <Box>
-        
-        <Typography variant='contained'>
+        <Rating/>
+        <Typography variant='caption'>
             natural food
         </Typography>
         {/* <Box   sx={{
@@ -443,30 +437,32 @@ home
     </Box>
 
     <Box>
+      <Typography>
 
-
-      
+      </Typography>
     <Image src="https://images.pexels.com/photos/175695/pexels-photo-175695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
-    
     </Box>
 
     <Box>
-     
+      <Typography>
+
+      </Typography>
     <Image src="https://images.pexels.com/photos/730911/water-splash-with-hair-beautiful-girl-seaside-portrait-motion-730911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"width={350} height={350}/>
     </Box>
     </Box>
     {/* ....end of group photo................................. */}
-    <Box sx={{display :"flex",placeItems:"center"}} >
-<Typography variant='h1' paragraph> 
-<Rating/>
+    <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
+            gap: 2,
+          }}
+        >
+          {videos.map((video, i) => (
+            <VideoComponent key={i} video={video} />
+          ))}
+        </Box>
 
-
-JOB IS HERE
-
-</Typography>
-</Box>
-
-	
     </Box>
     
     
@@ -559,3 +555,60 @@ const MyVideoComponent = (prop) => {
     </Box>
   )
 }
+
+const VideoComponent = ({ video }) => {
+  console.log(video);
+  const router = useRouter();
+
+  return (
+    <Box
+      sx={{
+        height: 300,
+        width: 300,
+        borderRadius: 10,
+        boxShadow: 3,
+        mb: 1,
+      }}
+      onClick={() => router.push(`/trending/${video.id}`)}
+    >
+      {/* Video Image */}
+      <Box
+        sx={{
+          position: "relative",
+        }}
+      >
+        <Image
+          src={video.snippet.thumbnails.medium.url}
+          height={200}
+          width={300}
+          alt="Zebra"
+        />
+        <Typography
+          sx={{
+            position: "absolute",
+            right: 10,
+            bottom: 15,
+            color: "white",
+            backgroundcolor: "GreyText",
+            p: 0.5,
+          }}
+          variant="GrayText"
+        >
+          55:03
+        </Typography>
+      </Box>
+      {/*video Details */}
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Avatar>PE</Avatar>
+        <Box>
+          <Typography>Zebra</Typography>
+          <Typography>Author Name</Typography>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
