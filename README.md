@@ -83,8 +83,8 @@ const VideoComponent = ({ video }) => {
       >
         <Avatar>PE</Avatar>
         <Box>
-          <Typography>Zebra</Typography>
-          <Typography>Author Name</Typography>
+          <Typography>zebra</Typography>
+          <Typography>authors Messege</Typography>
         </Box>
       </Box>
     </Box>
