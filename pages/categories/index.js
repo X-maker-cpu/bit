@@ -39,7 +39,7 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  
+
   const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
@@ -70,7 +70,7 @@ function ResponsiveDrawer(props) {
             <ListItemText primary={"Home"} />
           </ListItemButton>
         </ListItem>
-        
+
         {/*  trending*/}
         <ListItem disablePadding>
           <ListItemButton>
@@ -133,7 +133,7 @@ function ResponsiveDrawer(props) {
           <ListItemButton>
             <ListItemIcon>
             <Avatar src="https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"/>
-          
+
             </ListItemIcon>
 
             <ListItemText primary={"Books Review"} />
@@ -188,7 +188,7 @@ function ResponsiveDrawer(props) {
     border: '2px solid green',
     backgroundColor: "black",
     padding: 1,
-    
+
   }}>
   <Typography variant="h5" color="green" alignItems="center">GET PREMIUM</Typography>
 
@@ -226,7 +226,7 @@ function ResponsiveDrawer(props) {
               <Box >
       <Button sx={{borderRadius:200 ,ptop:5}} variant="outlined" color="success"  >ADD VIDEO</Button>
       </Box>
-      
+
     </Stack>
           </Box>
          <Box sx={{gap:30 ,marginLeft:10}}>
@@ -274,7 +274,7 @@ function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      
+
       <Box
         component="main"
         sx={{
@@ -428,7 +428,7 @@ function CustomizedInputBase() {
         placeholder="Search Google Maps"
         inputProps={{ 'aria-label': 'search google maps' }}
       />
- 
+
     </Paper>
   );
 }
