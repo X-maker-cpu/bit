@@ -38,6 +38,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { red } from '@mui/material/colors';
 
 
 
@@ -220,10 +221,12 @@ function ResponsiveDrawer(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Accordion 1</Typography>
+          <Typography variant='h5'color={red}> all design </Typography>
         </AccordionSummary>
         <AccordionDetails>
+        <AccordionDetails src=""></AccordionDetails>
           <Typography>
+            
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
@@ -235,7 +238,7 @@ function ResponsiveDrawer(props) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Accordion 2</Typography>
+          <Typography variant='h5'>learn our condition</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -244,7 +247,7 @@ function ResponsiveDrawer(props) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion disabled>
+      {/* <Accordion disabled>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3a-content"
@@ -252,7 +255,7 @@ function ResponsiveDrawer(props) {
         >
           <Typography>Disabled Accordion</Typography>
         </AccordionSummary>
-      </Accordion>
+      </Accordion> */}
     </div>
       </Box>
 
