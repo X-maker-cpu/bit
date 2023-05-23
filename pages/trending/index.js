@@ -85,6 +85,7 @@ function ResponsiveDrawer(props) {
         ))}
       </List>
       <Divider /> */}
+      <Box sx={{backgroundColor:"darkgrey",}}>
       <Box variant="contained" color="action" onClick={()=>router.push("/home")}>
         <ListItemButton>
      
@@ -147,9 +148,12 @@ function ResponsiveDrawer(props) {
       </List>
       
        */}
+       <ListItemButton>
       <Typography>
         Subscriptions
       </Typography>
+      </ListItemButton>
+      <Divider></Divider>
       <Stack direction="" spacing={3}>
 
 
@@ -205,6 +209,7 @@ function ResponsiveDrawer(props) {
 
 
       </div>
+      </Box>
 
     </div >
   );
