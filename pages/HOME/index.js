@@ -39,29 +39,7 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const homeSwitch = useRouter();
-  const trendingSwitch = useRouter();
-  const categoriesSwitch = useRouter();
-  const favoritySwitch = useRouter();
-  const yourvideosSwitch = useRouter();
-    
-  const router = useRouter();
-  // video state
-
-  const [videos, setVideos] = React.useState([]);
-
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("/api/videos");
-      setVideos(response.data);
-    };
-
-    fetchData();
-
-    return () => {
-      setVideos([]);
-    };
-  }, []);
+  
   const drawer = (
     <div>
       <Toolbar />
@@ -69,7 +47,7 @@ function ResponsiveDrawer(props) {
       <List>
         {/* Home */}
         <ListItem disablePadding>
-          <ListItemButton onClick={() => homeSwitch.push('/')}>
+          <ListItemButton>
             <ListItemIcon>
               <HomeRoundedIcon />
             </ListItemIcon>
@@ -87,7 +65,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Categories */}
         <ListItem disablePadding>
-          <ListItemButton onClick={() => categoriesSwitch.push('/categories')}>
+          <ListItemButton >
             <ListItemIcon>
               <FormatListBulletedRoundedIcon />
             </ListItemIcon>
@@ -96,7 +74,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Favarites */}
         <ListItem disablePadding>
-          <ListItemButton onClick={() => favoritySwitch.push('/favorites')}>
+          <ListItemButton >
             <ListItemIcon>
               <FavoriteRoundedIcon />
             </ListItemIcon>
@@ -105,7 +83,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Your videos */}
         <ListItem disablePadding>
-          <ListItemButton onClick={() => yourvideosSwitch.push('/yourvideos')}>
+          <ListItemButton >
             <ListItemIcon>
               <VideocamRoundedIcon />
             </ListItemIcon>
@@ -219,18 +197,16 @@ function ResponsiveDrawer(props) {
     <Typography variant="body2">Enjoy ad-free content,offline watching and more</Typography>
   </Box>
   <Box sx={{
-    borderRadius:20,
+    borderRadius:10,
     border: '2px solid green',
     backgroundColor: "black",
     padding: 1,
-
   }}>
   <Typography variant="h5" color="green" alignItems="center">GET PREMIUM</Typography>
 
   </Box>
     </div>
   );
-
 
   const container =
     window !== undefined ? () => window().document.body : undefined;

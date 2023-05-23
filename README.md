@@ -1,7 +1,6 @@
 # Fetching
 
-```jsx
-import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
+```jsxtar, Box, Button, Divider, Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -14,6 +13,7 @@ const Index = () => {
   useEffect(() => {
     const getVideoData = async (videoId) => {
       if (videoId) {
+import { Ava
         const response = await axios.get(`/api/videos/${videoId}`);
         setVideoData(response.data);
       }
