@@ -215,38 +215,52 @@ function ResponsiveDrawer(props) {
 
       </div>
       <div>
+      <Box>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography variant='h5'color={red}> all design </Typography>
+          <Typography variant='h5'color={red}> chara boy </Typography>
         </AccordionSummary>
         <AccordionDetails>
         <AccordionDetails src=""></AccordionDetails>
           <Typography>
-            
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+            </Typography>
+            <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/8/8/mirror/break/images/artworkimages/medium/3/sophia-loren-archive-photos-canvas-print.jpg" width={100} height={100}>
+
+            </Image>
+        
         </AccordionDetails>
       </Accordion>
+      </Box>
+
+      {/* ........ */}
+      <Box>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography variant='h5'>learn our condition</Typography>
+          
+          <Typography variant='h5'>learn more  </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
+          <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/7.5/10/black/break/images/artworkimages/medium/2/new-england-patriots-super-bowl-liii-champions-february-14-2019-sports-illustrated-cover-canvas-print.jpg" width={100} height={100}></Image>
+          <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/10.5/14/mirror/break/images/artworkimages/medium/3/tom-brady-retirement-tribute-special-issue-cover-sports-illustrated-canvas-print.jpg" width={100} height={100}></Image>
+          <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/11/14/mirror/break/images/artworkimages/medium/2/kingdom-comeback-kansas-city-chiefs-super-bowl-liv-february-06-2020-sports-illustrated-cover-canvas-print.jpg" width={100} height={100}></Image>
+
         </AccordionDetails>
       </Accordion>
+            </Box>
       {/* <Accordion disabled>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -272,7 +286,7 @@ function ResponsiveDrawer(props) {
       borderRadius: "20% ,20%",
       height:"500",
       width:"500",
-      backgroundColor:"darkgrey",
+      backgroundColor:"purple",
       // backgroundImage:"url(https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.6435-9/69256722_153812735767772_6797131980413599744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7Uqn-h6tWZUyLH_o2G3Hzv8EHznkAlB2_wQfOeQCUHZf8yAaUqeUK8mlrxLXSqG8psoIDLjaBZqCMM1DBEeVD&_nc_ohc=2AajZBG7Id4AX900Uld&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfDND4y_ClNmgaNfNvPCsuNnlJlIR0XduehLVLu2BipDjQ&oe=6486E3F7) ",
     }}>
       <CssBaseline />
