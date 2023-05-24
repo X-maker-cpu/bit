@@ -291,13 +291,7 @@ return (
               <Grid container justifyContent="center" spacing={spacing}>
                 {[0, 1, 2, 3, 4].map((value) => (
                   <Grid key={value} item>
-                    <Paper
-                      sx={{
-                        height: 290,
-                        width: 200,
-                        bgcolor: 'blue'
-                      }}
-                    />
+                    <Paper sx={{height: 290, width: 200, bgcolor: 'blue'}}/>
                   </Grid>
                 ))}
               </Grid>
