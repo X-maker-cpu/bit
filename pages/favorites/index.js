@@ -62,8 +62,8 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
   const router = useRouter();
-  // video state
 
+  // video state
   const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
@@ -78,6 +78,8 @@ function ResponsiveDrawer(props) {
       setVideos([]);
     };
   }, []);
+
+
   const drawer = (
     <Box>
       <Toolbar />
@@ -309,7 +311,7 @@ const VideoComponent = ({ video }) => {
 }
 
 export default ResponsiveDrawer;
-const Home= ()=>{
+{/*const Home= ()=>{
   // video state
   const [videos,setVideos] =useState([]);
   const videoRef =useRef();
@@ -341,3 +343,4 @@ const Home= ()=>{
     </box>
   )
 }
+*/}
