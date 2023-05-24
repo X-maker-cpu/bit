@@ -1,38 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fetching
 
-## Getting Started
+```jsxtar, Box, Button, Divider, Typography } from "@mui/material";
+import axios from "axios";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
-First, run the development server:
+const Index = () => {
+  const router = useRouter();
+  const id = router.query.id;
+  const [videoData, setVideoData] = useState(null);
+  useEffect(() => {
+    const getVideoData = async (videoId) => {
+      if (videoId) {
+import { Ava
+        const response = await axios.get(`/api/videos/${videoId}`);
+        setVideoData(response.data);
+      }
+    };
+    getVideoData(id);
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+    return () => {
+      setVideoData(null);
+    };
+  }, [id]);
+
+  console.log(
+    "Video Data:>>",
+    videoData && typeof videoData.video.snippet.description
+  );
+  return (
+    <Box sx={{ display: "flex" }}>
+      <Box>
+        <iframe
+          width="1100"
+          height="620"
+          src={`https://www.youtube.com/embed/${id}`}
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        {videoData ? (
+          <Box sx={{ display: "flex" }}>
+            <Avatar
+              sx={{
+                height: 100,
+                width: 100,
+              }}
+              src={videoData.channelProfileImage}
+            ></Avatar>
+            <Box>
+              <Typography variant="h5">
+                {videoData.video.snippet.channelTitle}
+              </Typography>
+              <Typography variant="h6">
+                {videoData.video.snippet.title}
+              </Typography>
+            </Box>
+          </Box>
+        ) : null}
+      </Box>
+      {videoData && (
+        <Box
+          sx={{
+            p: 1,
+          }}
+        >
+          <Typography variant="h6">Statistic</Typography>
+          <Divider />
+          <Box>
+            <Typography variant="body2">
+              Views {videoData.video.statistics.viewCount}
+            </Typography>
+            <Typography variant="body2">
+              Likes {videoData.video.statistics.likeCount}
+            </Typography>
+            <Typography variant="body2">
+              Comments {videoData.video.statistics.commentCount}
+            </Typography>
+          </Box>
+          <Typography variant="h6">Description</Typography>
+          <Divider />
+          <Typography variant="body2">
+            {String(videoData.video.snippet.description)
+              .split(`\n`)
+              .map((item, key) => {
+                // match URLs and hashtags using regular expressions
+                const urls = item.match(/https?:\/\/[^\s]+/g);
+                const hashtags = item.match(/#\w+/g);
+
+                // replace URLs and hashtags with links and colored text
+                if (urls && urls.length > 0) {
+                  urls.forEach((url) => {
+                    item = item.replace(
+                      url,
+                      `<a style="color:#1565c0;padding:0px" target=_blank href=${url}>${url}</a>`
+                    );
+                  });
+                }
+                if (hashtags && hashtags.length > 0) {
+                  hashtags.forEach((hashtag) => {
+                    item = item.replace(
+                      hashtag,
+                      `<span style="color: #1565c0; font-weight: bold;">${hashtag}</span>`
+                    );
+                  });
+                }
+
+                return (
+                  <span key={key}>
+                    {ReactHtmlParser(item)}
+                    <br />
+                  </span>
+                );
+              })}
+          </Typography>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
+export default Index;
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
