@@ -129,12 +129,12 @@ function ResponsiveDrawer(props) {
       </ListItemButton>
     </Box>
 
-    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideo")}>
+    <Box  variant="contained" color="action" onClick={()=>router.push("/yourvideos")}>
    
       <ListItemButton>
       < VideocamIcon/>
 <Typography>
-  yourvideo
+  yourvideos
 </Typography>
 </ListItemButton>
    </Box>
@@ -211,56 +211,20 @@ function ResponsiveDrawer(props) {
 
           </ListItem>
         </List>
-
+        <Button sx={{
+         bgcolor:"greenyellow",
+         borderRadius:"25px"
+        }} >
+           <Rating/>
+      add cart
+      </Button>
 
       </div>
       <div>
-      <Box>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant='h5'color={red}> chara boy </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <AccordionDetails src=""></AccordionDetails>
-          <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </Typography>
-            <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/8/8/mirror/break/images/artworkimages/medium/3/sophia-loren-archive-photos-canvas-print.jpg" width={100} height={100}>
-
-            </Image>
-        
-        </AccordionDetails>
-      </Accordion>
-      </Box>
+    
 
       {/* ........ */}
-      <Box>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          
-          <Typography variant='h5'>learn more  </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-          <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/7.5/10/black/break/images/artworkimages/medium/2/new-england-patriots-super-bowl-liii-champions-february-14-2019-sports-illustrated-cover-canvas-print.jpg" width={100} height={100}></Image>
-          <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/10.5/14/mirror/break/images/artworkimages/medium/3/tom-brady-retirement-tribute-special-issue-cover-sports-illustrated-canvas-print.jpg" width={100} height={100}></Image>
-          <Image src="https://render.fineartamerica.com/images/rendered/search/canvas-print/11/14/mirror/break/images/artworkimages/medium/2/kingdom-comeback-kansas-city-chiefs-super-bowl-liv-february-06-2020-sports-illustrated-cover-canvas-print.jpg" width={100} height={100}></Image>
-
-        </AccordionDetails>
-      </Accordion>
-            </Box>
+     
       {/* <Accordion disabled>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
