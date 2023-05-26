@@ -403,55 +403,59 @@ const VideoComponent = ({ video }) => {
   const router = useRouter();
 
   return (
-    <Box
-      sx={{
-        height: 300,
-        width: 300,
-        borderRadius: 10,
-        boxShadow: 3,
-        mb: 1,
-      }}
-      onClick={() => router.push(`/home/${video.id}`)}
-    >
-      {/* Video Image */}
-      <Box
-        sx={{
-          position: "relative",
-        }}
-      >
-        <Image
-          src={video.snippet.thumbnails.medium.url}
-          height={200}
-          width={300}
-          alt="Zebra"
-        />
-        <Typography
+    <>
+      {video && (
+        <Box
           sx={{
-            position: "absolute",
-            right: 10,
-            bottom: 15,
-            color: "white",
-            backgroundcolor: "GreyText",
-            p: 0.5,
+            height: 300,
+            width: 300,
+            borderRadius: 10,
+            boxShadow: 3,
+            mb: 1,
           }}
-          variant="GrayText"
+          onClick={() => router.push(`/home/${video.id}`)}
         >
-          55:03
-        </Typography>
-      </Box>
-      {/*video Details */}
-      <Box
-        sx={{
-          display: "flex",
-        }}
-      >
-        <Avatar>PE</Avatar>
-        <Box>
-          <Typography>Zebra</Typography>
-          <Typography>Zebra</Typography>
-          <Typography>Author Name</Typography>
+          {/* Video Image */}
+          <Box
+            sx={{
+              position: "relative",
+            }}
+          >
+            <Image
+              src={video.snippet.thumbnails.medium.url}
+              height={200}
+              width={300}
+              alt="Zebra"
+            />
+            <Typography
+              sx={{
+                position: "absolute",
+                right: 10,
+                bottom: 15,
+                color: "white",
+                backgroundcolor: "GreyText",
+                p: 0.5,
+              }}
+              variant="GrayText"
+            >
+              55:03
+            </Typography>
+          </Box>
+          {/*video Details */}
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
+            <Avatar>PE</Avatar>
+            <Box>
+              <Typography>Zebra</Typography>
+              <Typography>Zebra</Typography>
+              <Typography>Author Name</Typography>
+            </Box>
+          </Box>
         </Box>
-      </Box>
-    </Box>
+      )}
+    </>
   );
 };
