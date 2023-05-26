@@ -266,7 +266,7 @@ const VideoComponent = ({ video }) => {
         boxShadow: 3,
         mb: 1,
       }}
-      onClick={() => router.push(`/favorites/${video.id}`)}
+      onClick={() => router.push(`/home/${video.id}`)}
     >
       {/* Video Image */}
       <Box

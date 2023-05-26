@@ -505,7 +505,6 @@ const MyVideoComponent = (prop) => {
 }
 
 const VideoComponent = ({ video }) => {
-  console.log(video);
   const router = useRouter();
 
   return (
@@ -517,7 +516,7 @@ const VideoComponent = ({ video }) => {
         boxShadow: 3,
         mb: 1,
       }}
-      onClick={() => router.push(`/trending/${video.id}`)}
+      onClick={() => router.push(`/home/${video.id}`)}
     >
       {/* Video Image */}
       <Box
