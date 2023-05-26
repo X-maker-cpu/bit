@@ -18,28 +18,43 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Avatar, Badge } from "@mui/material";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded"
-import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import WhatshotRoundedIcon from '@mui/icons-material/WhatshotRounded';
-import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
-import Image from 'next/image';
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
+import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
+import VideocamRoundedIcon from "@mui/icons-material/VideocamRounded";
+import Image from "next/image";
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import Paper from "@mui/material/Paper";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import Stack from "@mui/material/Stack";
 import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 import { useRouter } from "next/router";
+import axios from "axios";
+
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/videos");
+      setVideos(response.data);
+    };
+
+    fetchData();
+
+    return () => {
+      setVideos([]);
+    };
+  }, []);
   const drawer = (
     <div>
       <Toolbar />
@@ -47,7 +62,7 @@ function ResponsiveDrawer(props) {
       <List>
         {/* Home */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={()=>{router.push("/home")}}>
             <ListItemIcon>
               <HomeRoundedIcon />
             </ListItemIcon>
@@ -56,25 +71,25 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Popular */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={()=>{router.push("/trending")}}>
             <ListItemIcon>
               <WhatshotRoundedIcon />
             </ListItemIcon>
-            <ListItemText primary={"Popular"} />
+            <ListItemText primary={"Trending"} />
           </ListItemButton>
         </ListItem>
         {/* Categories */}
         <ListItem disablePadding>
-          <ListItemButton >
+          <ListItemButton onClick={()=>{router.push("/categories")}}>
             <ListItemIcon>
               <FormatListBulletedRoundedIcon />
             </ListItemIcon>
-            <ListItemText primary={"Categiries"} />
+            <ListItemText primary={"Categories"} />
           </ListItemButton>
         </ListItem>
         {/* Favarites */}
         <ListItem disablePadding>
-          <ListItemButton >
+          <ListItemButton onClick={()=>{router.push("/favotites")}}>
             <ListItemIcon>
               <FavoriteRoundedIcon />
             </ListItemIcon>
@@ -83,7 +98,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
         {/* Your videos */}
         <ListItem disablePadding>
-          <ListItemButton >
+          <ListItemButton onClick={()=>{router.push("/yourvideos")}}>
             <ListItemIcon>
               <VideocamRoundedIcon />
             </ListItemIcon>
@@ -96,7 +111,7 @@ function ResponsiveDrawer(props) {
         sx={{
           fontSize: 13,
           color: "#A4A4A4",
-          letterSpacing:1,
+          letterSpacing: 1,
           P: "0 0 8px 0",
           ml: 2,
         }}
@@ -106,68 +121,68 @@ function ResponsiveDrawer(props) {
       <List>
         <ListItemButton>
           <ListItemIcon>
-          <Badge
-            color="success"
-            overlap="circular"
-            badgeContent=" "
-            variant="dot"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
-          </Badge>
+            <Badge
+              color="success"
+              overlap="circular"
+              badgeContent=" "
+              variant="dot"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            </Badge>
           </ListItemIcon>
           <ListItemText primary="NATHANAEL" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
-          <Badge
-            color="success"
-            overlap="circular"
-            badgeContent=" "
-            variant="dot"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            <Badge
+              color="success"
+              overlap="circular"
+              badgeContent=" "
+              variant="dot"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
             </Badge>
           </ListItemIcon>
           <ListItemText primary="ABDIZO" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
-          <Badge
-            color="success"
-            overlap="circular"
-            badgeContent=" "
-            variant="dot"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
-           </Badge>
+            <Badge
+              color="success"
+              overlap="circular"
+              badgeContent=" "
+              variant="dot"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            </Badge>
           </ListItemIcon>
           <ListItemText primary="SUNDAY" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
-          <Badge
-            color="success"
-            overlap="circular"
-            badgeContent=" "
-            variant="dot"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
+            <Badge
+              color="success"
+              overlap="circular"
+              badgeContent=" "
+              variant="dot"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCnuiDHpCwTM6Y9vr1KIcN6zGA8Sr0bvTIRL6IAgAe7Mcrj4e46WYpYItYNn9LJpEY_s&usqp=CAU"></Avatar>
             </Badge>
           </ListItemIcon>
           <ListItemText primary="ISTARLIN" />
@@ -188,23 +203,32 @@ function ResponsiveDrawer(props) {
           <ListItemText primary="EDOUIGE" />
         </ListItemButton>
       </List>
-      <Box sx={{
-    m:1,
-    p:1,
-    backgroundColor:"whitesmoke"
-  }}> 
-    <Typography variant="body1" fontWeight={700} >Get 3 months of premium for free</Typography>
-    <Typography variant="body2">Enjoy ad-free content,offline watching and more</Typography>
-  </Box>
-  <Box sx={{
-    borderRadius:10,
-    border: '2px solid green',
-    backgroundColor: "black",
-    padding: 1,
-  }}>
-  <Typography variant="h5" color="green" alignItems="center">GET PREMIUM</Typography>
-
-  </Box>
+      <Box
+        sx={{
+          m: 1,
+          p: 1,
+          backgroundColor: "whitesmoke",
+        }}
+      >
+        <Typography variant="body1" fontWeight={700}>
+          Get 3 months of premium for free
+        </Typography>
+        <Typography variant="body2">
+          Enjoy ad-free content,offline watching and more
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          borderRadius: 10,
+          border: "2px solid green",
+          backgroundColor: "black",
+          padding: 1,
+        }}
+      >
+        <Typography variant="h5" color="green" alignItems="center">
+          GET PREMIUM
+        </Typography>
+      </Box>
     </div>
   );
 
@@ -232,52 +256,65 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Paper component="form"
-        sx={{ 
-          backgroundColor: "grey",
-          p: '2px 2px', 
-          display: 'flex', 
-          alignItems: 'center', 
-          width: 700,
-          height: 40,
-          borderRadius: "50px"
-          }}>
-    <IconButton type="button" sx={{ p: '10px', color: "#DEDDDD" }} aria-label="search">
-      <SearchIcon />
-    </IconButton>
-    <InputBase
-      sx={{ ml: 1, flex: 1, color: "#DEDDDD"}}
-      placeholder="Search"
-      inputProps={{ 'aria-label': 'search google maps' }}/>
-    </Paper>
-    <Box sx=
-    {{
-      display: "flex",
-      width: "35em",
-      height: 40,
-      alignItems: "center",
-      justifyContent: "flex-end",
-      float: "right"
-      }}>
+          <Paper
+            component="form"
+            sx={{
+              backgroundColor: "grey",
+              p: "2px 2px",
+              display: "flex",
+              alignItems: "center",
+              width: 700,
+              height: 40,
+              borderRadius: "50px",
+            }}
+          >
+            <IconButton
+              type="button"
+              sx={{ p: "10px", color: "#DEDDDD" }}
+              aria-label="search"
+            >
+              <SearchIcon />
+            </IconButton>
+            <InputBase
+              sx={{ ml: 1, flex: 1, color: "#DEDDDD" }}
+              placeholder="Search"
+              inputProps={{ "aria-label": "search google maps" }}
+            />
+          </Paper>
+          <Box
+            sx={{
+              display: "flex",
+              width: "35em",
+              height: 40,
+              alignItems: "center",
+              justifyContent: "flex-end",
+              float: "right",
+            }}
+          >
+            <Stack spacing={2} direction="row">
+              <Button
+                variant="outlined"
+                sx={{
+                  border: "2px solid #8CC800",
+                  color: "#8CC800",
+                  borderRadius: "30px",
+                  margin: "0 60px 0 0",
+                  height: 30,
+                  width: 130,
+                  fontSize: 12,
+                  fontWeight: "bold",
+                }}
+              >
+                ADD VIDEO
+              </Button>
+            </Stack>
+            <Avatar src="DSC_0556.png" />
 
-      <Stack spacing={2} direction="row">
-          <Button variant="outlined" 
-          sx={{
-            border:"2px solid #8CC800", 
-            color: "#8CC800", 
-            borderRadius: "30px",
-            margin: "0 60px 0 0",
-            height: 30,
-            width: 130,
-            fontSize: 12,
-            fontWeight: "bold"
-            }}>ADD VIDEO</Button>
-      </Stack>  
-      <Avatar src="DSC_0556.png" />
-
-      <Typography variant='subtitle1'sx={{p: "0 20px 0 18px"}}>ABDIZO</Typography>
-      <ArrowDropDownTwoToneIcon sx={{margin: "0 30px 0 0"}}/>
-    </Box> 
+            <Typography variant="subtitle1" sx={{ p: "0 20px 0 18px" }}>
+              ABDIZO
+            </Typography>
+            <ArrowDropDownTwoToneIcon sx={{ margin: "0 30px 0 0" }} />
+          </Box>
         </Toolbar>
       </AppBar>
       <Box
@@ -326,74 +363,125 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <Box sx={{
-          display: "flex",
-          gap: 5
-        }}>
-        <VideoComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGvFJ9IINe0jYp35DlB7F9WlsC9iqE_wZCMQ&usqp=CAU" title="morning training" />
-        <VideoComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIpNZHOdm6gPyn5EeJgtyzphnxz-PyS9Www&usqp=CAU" title="sunrise in the zoo" />
+        <Box
+          sx={{
+            display: "flex",
+            gap: 5,
+          }}
+        >
+          <VideoComponent
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGvFJ9IINe0jYp35DlB7F9WlsC9iqE_wZCMQ&usqp=CAU"
+            title="morning training"
+          />
+          <VideoComponent
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIpNZHOdm6gPyn5EeJgtyzphnxz-PyS9Www&usqp=CAU"
+            title="sunrise in the zoo"
+          />
         </Box>
-        <Typography >
-          Explore by categories 
-        </Typography>
-        <Box sx={{
-          display: "flex",
-          gap: 6
-        }}>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          Health Care
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-          gap:50,
-        }} variant= "contained" color="action">
-          EDUCATION
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          SPORTS
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          CLASSES
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          NATURE
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          COOKING
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          FASHION
-        </Button>
-        <Button sx={{
-          borderRadius:3,
-          padding: 1,
-        }} variant= "contained" color="action">
-          ANIMALS
-        </Button>
+        <Typography>Explore by categories</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 6,
+          }}
+        >
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            Health Care
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+              gap: 50,
+            }}
+            variant="contained"
+            color="action"
+          >
+            EDUCATION
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            SPORTS
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            CLASSES
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            NATURE
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            COOKING
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            FASHION
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 3,
+              padding: 1,
+            }}
+            variant="contained"
+            color="action"
+          >
+            ANIMALS
+          </Button>
+        </Box>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 300px))",
+            gap: 2,
+          }}
+        >
+          {videos.map((video, i) => (
+            <VideoComponent key={i} video={video} />
+          ))}
         </Box>
       </Box>
     </Box>
   );
-};
+}
 ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
@@ -404,35 +492,60 @@ ResponsiveDrawer.propTypes = {
 
 export default ResponsiveDrawer;
 
-const VideoComponent = (prop) => {
-  return(
-  <Box >
-    {/* image and duratin */}
-    <Box sx={{
-      position: "relative", width: 500,
-      height: 400,
-    }}
+const VideoComponent = ({ video }) => {
+  console.log(video);
+  const router = useRouter();
+
+  return (
+    <Box
+      sx={{
+        height: 300,
+        width: 300,
+        borderRadius: 10,
+        boxShadow: 3,
+        mb: 1,
+      }}
+      onClick={() => router.push(`/home/${video.id}`)}
     >
-    <Image src={prop.src} height={400} width= {500}/>
-    <Typography 
-    variant='caption'
-    sx={{
-      position: "absolute",
-      bottom: 0,
-      right: 10,
-    }}
-    >
-     55:30
-    </Typography>
-    </Box>
-    {/* Author Avatar, video tittle and author name*/}
-    <Box sx={{ display: "flex"}}>
-      <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIowiTvupIDXVcDEnmpeWkig90a4kXRgwW8g&usqp=CAU"></Avatar>
-      <Box>
-        <Typography variant='body1'>{prop.title}</Typography>
-        <Typography variant='caption'>Bantuuuu legend </Typography>
+      {/* Video Image */}
+      <Box
+        sx={{
+          position: "relative",
+        }}
+      >
+        <Image
+          src={video.snippet.thumbnails.medium.url}
+          height={200}
+          width={300}
+          alt="Zebra"
+        />
+        <Typography
+          sx={{
+            position: "absolute",
+            right: 10,
+            bottom: 15,
+            color: "white",
+            backgroundcolor: "GreyText",
+            p: 0.5,
+          }}
+          variant="GrayText"
+        >
+          55:03
+        </Typography>
+      </Box>
+      {/*video Details */}
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Avatar>PE</Avatar>
+        <Box>
+          <Typography>Zebra</Typography>
+          <Typography>Zebra</Typography>
+          <Typography>Author Name</Typography>
+        </Box>
       </Box>
     </Box>
-  </Box>
   );
 };
