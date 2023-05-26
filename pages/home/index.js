@@ -542,32 +542,7 @@ const VideoComponent = ({ video }) => {
               width={300}
               alt="Zebra"
             />
-            <Typography
-              sx={{
-                position: "absolute",
-                right: 10,
-                bottom: 15,
-                color: "white",
-                backgroundcolor: "GreyText",
-                p: 0.5,
-              }}
-              variant="GrayText"
-            >
-              55:03
-            </Typography>
-          </Box>
-          {/*video Details */}
-          <Box
-            sx={{
-              display: "flex",
-            }}
-          >
-            <Avatar>PE</Avatar>
-            <Box>
-              <Typography>Zebra</Typography>
-              <Typography>Zebra</Typography>
-              <Typography>Author Name</Typography>
-            </Box>
+    
           </Box>
         </Box>
       )}
