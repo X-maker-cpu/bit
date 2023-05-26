@@ -42,6 +42,7 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {

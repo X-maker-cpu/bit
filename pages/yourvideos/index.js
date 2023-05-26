@@ -53,6 +53,8 @@ function ResponsiveDrawer(props) {
   };
 
   const router = useRouter();
+    const [videos, setVideos] = React.useState([]);
+
   React.useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("/api/videos");
