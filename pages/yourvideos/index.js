@@ -380,8 +380,8 @@ function ResponsiveDrawer(props) {
         </Box>{" "}
         {/*========>>>> closing tag for header */}
         <Toolbar />
-        <Grid sx={{ bgcolor: "#231F1F", height: "29rem" }}>
-          <Grid sx={{ bgcolor: "#231F1F", height: "22rem", p: 3.5 }}>
+        <Grid sx={{ bgcolor: "#231F1F", height: "auto" }}>
+          <Grid sx={{ bgcolor: "#231F1F", height: "auto", p: 3.5 }}>
             <Grid container justifyContent="center" spacing={spacing}>
               {videos.map((video, i) => (
                 <Grid key={i} item>
