@@ -384,7 +384,7 @@ function ResponsiveDrawer(props) {
           <Grid sx={{ bgcolor: "#231F1F", height: "22rem", p: 3.5 }}>
             <Grid container justifyContent="center" spacing={spacing}>
               {videos.map((video, i) => (
-                <Grid key={value} item>
+                <Grid key={i} item>
                   <VideoComponent key={i} video={video} />
                 </Grid>
               ))}
