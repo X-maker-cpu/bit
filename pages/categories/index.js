@@ -309,55 +309,8 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
-const videoComponent = ({youtubeVideoUrl}) => {
-  return (
-    <Box>
-      sx={{
-        height:200,
-        width:300,
-        borderRadius: 10,
-        bcolor:"dodgerblue",
-      }}
-      {/* Video Image */}
-      <Box 
-      sx={{
-        position:"relative",
-      }}>
-        <Image
-        src="https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        height={200}
-        width={300}
-        alt="Zebra"
-        />
-        <Typography
-        sx={{
-          position:"absolute",
-          right:10,
-          bottom:15,
-          color:"white",
-          backgroundcolor: "GreyText",
-          p:0.5,
-        }}
-        variant="GrayText"
-        >55:03</Typography>
-       </Box>
-       {/*video Details */}
-       <Box
-       sx={{
-        display:"flex",
-       }}
-       >
-       <Avatar>PE</Avatar>
-       <Box>
-        <Typography>Title</Typography>
-        <Typography>Author Name</Typography>
-       </Box>
-       </Box>
-    </Box>
-  );
-};              
+             
 const VideoComponent = ({ video }) => {
-  console.log(video);
   const router = useRouter();
 
   return (
@@ -369,7 +322,7 @@ const VideoComponent = ({ video }) => {
         boxShadow: 3,
         mb: 1,
       }}
-      onClick={() => router.push(`/categories/${video.id}`)}
+      onClick={() => router.push(`/home/${video.id}`)}
     >
       {/* Video Image */}
       <Box
@@ -383,33 +336,10 @@ const VideoComponent = ({ video }) => {
           width={300}
           alt="Zebra"
         />
-        <Typography
-          sx={{
-            position: "absolute",
-            right: 10,
-            bottom: 15,
-            color: "white",
-            backgroundcolor: "GreyText",
-            p: 0.5,
-          }}
-          variant="GrayText"
-        >
-          55:03
-        </Typography>
+       
       </Box>
       {/*video Details */}
-      <Box
-        sx={{
-          display: "flex",
-        }}
-      >
-        <Avatar>PE</Avatar>
-        <Box>
-          <Typography>Zebra</Typography>
-          <Typography>Zebra</Typography>
-          <Typography>Author Name</Typography>
-        </Box>
-      </Box>
+    
     </Box>
   );
 };

@@ -62,8 +62,8 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
   const router = useRouter();
-  // video state
 
+  // video state
   const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
@@ -78,6 +78,8 @@ function ResponsiveDrawer(props) {
       setVideos([]);
     };
   }, []);
+
+
   const drawer = (
     <Box>
       <Toolbar />
@@ -264,7 +266,7 @@ const VideoComponent = ({ video }) => {
         boxShadow: 3,
         mb: 1,
       }}
-      onClick={() => router.push(`/favorites/${video.id}`)}
+      onClick={() => router.push(`/home/${video.id}`)}
     >
       {/* Video Image */}
       <Box
@@ -278,38 +280,16 @@ const VideoComponent = ({ video }) => {
           width={300}
           alt="Zebra"
         />
-        <Typography
-          sx={{
-            position: "absolute",
-            right: 10,
-            bottom: 15,
-            color: "white",
-            backgroundcolor: "GreyText",
-            p: 0.5,
-          }}
-          variant="GrayText"
-        >
-          55:03
-        </Typography>
+      
       </Box>
       {/*video Details */}
-      <Box
-        sx={{
-          display: "flex",
-        }}
-      >
-        <Avatar>PE</Avatar>
-        <Box>
-          <Typography>Zebra</Typography>
-          <Typography>Author Name</Typography>
-        </Box>
-      </Box>
+  
     </Box>
   );
 }
 
 export default ResponsiveDrawer;
-const Home= ()=>{
+{/*const Home= ()=>{
   // video state
   const [videos,setVideos] =useState([]);
   const videoRef =useRef();
@@ -341,3 +321,4 @@ const Home= ()=>{
     </box>
   )
 }
+*/}

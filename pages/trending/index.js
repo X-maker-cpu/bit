@@ -505,7 +505,6 @@ const MyVideoComponent = (prop) => {
 }
 
 const VideoComponent = ({ video }) => {
-  console.log(video);
   const router = useRouter();
 
   return (
@@ -517,7 +516,7 @@ const VideoComponent = ({ video }) => {
         boxShadow: 3,
         mb: 1,
       }}
-      onClick={() => router.push(`/trending/${video.id}`)}
+      onClick={() => router.push(`/home/${video.id}`)}
     >
       {/* Video Image */}
       <Box
@@ -531,31 +530,7 @@ const VideoComponent = ({ video }) => {
           width={300}
           alt="Zebra"
         />
-        <Typography
-          sx={{
-            position: "absolute",
-            right: 10,
-            bottom: 15,
-            color: "white",
-            backgroundcolor: "GreyText",
-            p: 0.5,
-          }}
-          variant="GrayText"
-        >
-          55:03
-        </Typography>
-      </Box>
-      {/*video Details */}
-      <Box
-        sx={{
-          display: "flex",
-        }}
-      >
-        <Avatar>PE</Avatar>
-        <Box>
-          <Typography>Zebra</Typography>
-          <Typography>diclot</Typography>
-        </Box>
+      
       </Box>
     </Box>
   );
